@@ -1,0 +1,1681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>4</fileVersion>
+    <fileChecksum>3174597722</fileChecksum>
+    <configuration>
+        <name>nrf52840_xxaa</name>
+        <outputs>
+            <file>$PROJ_DIR$\_build\hardfault_implementation.pbi</file>
+            <file>$PROJ_DIR$\_build\SEGGER_RTT.pbi</file>
+            <file>$PROJ_DIR$\_build\app_scheduler.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_memobj.pbi</file>
+            <file>$PROJ_DIR$\_build\SEGGER_RTT_printf.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_log_default_backends.pbi</file>
+            <file>$PROJ_DIR$\_build\utf.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_assert.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_log_str_formatter.pbi</file>
+            <file>$PROJ_DIR$\_build\SEGGER_RTT_Syscalls_IAR.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_sdh.pbi</file>
+            <file>$PROJ_DIR$\_build\retarget.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_sdh_ble.pbi</file>
+            <file>$PROJ_DIR$\_build\ble_app_uart_pca10056_s140.pbd</file>
+            <file>$PROJ_DIR$\_build\hardfault_implementation.o</file>
+            <file>$PROJ_DIR$\_build\nrf_balloc.o</file>
+            <file>$PROJ_DIR$\_build\nrfx_uart.o</file>
+            <file>$PROJ_DIR$\_build\app_error_weak.o</file>
+            <file>$PROJ_DIR$\_build\nrf_atflags.o</file>
+            <file>$PROJ_DIR$\_build\retarget.o</file>
+            <file>$PROJ_DIR$\_build\nrf_atflags.pbi</file>
+            <file>$PROJ_DIR$\_build\nrfx_uarte.o</file>
+            <file>$PROJ_DIR$\_build\app_error.o</file>
+            <file>$PROJ_DIR$\_build\nrfx_prs.o</file>
+            <file>$PROJ_DIR$\_build\nrf_section_iter.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_fprintf_format.pbi</file>
+            <file>$PROJ_DIR$\_build\app_error.pbi</file>
+            <file>$PROJ_DIR$\_build\ble_app_uart_pca10056_s140.hex</file>
+            <file>$PROJ_DIR$\_build\nrf_sdh_soc.pbi</file>
+            <file>$PROJ_DIR$\_build\app_fifo.o</file>
+            <file>$PROJ_DIR$\_build\nrf_section_iter.o</file>
+            <file>$PROJ_DIR$\_build\ble_app_uart_pca10056_s140.out</file>
+            <file>$PROJ_DIR$\_build\nrf_memobj.o</file>
+            <file>$PROJ_DIR$\_build\app_uart_fifo.o</file>
+            <file>$PROJ_DIR$\_build\nrf_ble_gatt.o</file>
+            <file>$PROJ_DIR$\_build\app_error_handler_iar.o</file>
+            <file>$PROJ_DIR$\_build\app_scheduler.o</file>
+            <file>$PROJ_DIR$\_build\nrf_fprintf_format.o</file>
+            <file>$PROJ_DIR$\_build\bsp_btn_ble.o</file>
+            <file>$PROJ_DIR$\_build\ble_srv_common.o</file>
+            <file>$PROJ_DIR$\_build\nrfx_clock.o</file>
+            <file>$PROJ_DIR$\_build\bsp.o</file>
+            <file>$PROJ_DIR$\_build\main.o</file>
+            <file>$PROJ_DIR$\_build\nrf_atfifo.o</file>
+            <file>$PROJ_DIR$\_build\nrf_drv_uart.o</file>
+            <file>$PROJ_DIR$\_build\nrf_pwr_mgmt.o</file>
+            <file>$PROJ_DIR$\_build\nrf_drv_clock.o</file>
+            <file>$PROJ_DIR$\_build\nrf_ringbuf.o</file>
+            <file>$PROJ_DIR$\_build\nrf_assert.o</file>
+            <file>$PROJ_DIR$\_build\boards.o</file>
+            <file>$PROJ_DIR$\_build\ble_nus.o</file>
+            <file>$PROJ_DIR$\_build\app_timer.o</file>
+            <file>$PROJ_DIR$\_build\ble_conn_state.o</file>
+            <file>$PROJ_DIR$\_build\ble_link_ctx_manager.o</file>
+            <file>$PROJ_DIR$\_build\ble_advertising.o</file>
+            <file>$PROJ_DIR$\_build\system_nrf52840.o</file>
+            <file>$PROJ_DIR$\_build\nrf_ble_qwr.o</file>
+            <file>$PROJ_DIR$\_build\app_util_platform.o</file>
+            <file>$PROJ_DIR$\_build\nrfx_gpiote.o</file>
+            <file>$PROJ_DIR$\_build\nrfx_power_clock.o</file>
+            <file>$PROJ_DIR$\_build\nrf_fprintf.o</file>
+            <file>$PROJ_DIR$\_build\nrf_strerror.o</file>
+            <file>$PROJ_DIR$\_build\app_button.o</file>
+            <file>$PROJ_DIR$\_build\nrf_atomic.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\soc\nrfx_irqs_nrf52840.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\nrf.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\nrfx_config.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\nrf_error_soc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\hal\nrf_gpio.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_util_platform.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\cmsis\include\core_cmSimd.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\system_nrf52840.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\cmsis\include\core_cmInstr.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\nrf_svc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\nrf_peripherals.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\nrf_soc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\nrfx_glue.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\nrfx_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\soc\nrfx_irqs.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\nrf52840_peripherals.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\nrfx.h</file>
+            <file>$PROJ_DIR$\_build\ble_conn_params.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\legacy\apply_old_config.h</file>
+            <file>$PROJ_DIR$\_build\ble_advdata.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\nrf52840.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\cmsis\include\core_cmFunc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\cmsis\include\core_cm4.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\button\app_button.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\nrf_error.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\sdk_macros.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\nrf_log_backend_interface.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\nordic_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_util.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\nrf_log_ctrl.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars\nrf_section.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\nrf_log_types.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\sdk_os.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_ctrl_internal.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_internal.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\compiler_abstraction.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\sdk_errors.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\nrf_assert.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_error_weak.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\nrf_log.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\memobj\nrf_memobj.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\strerror\nrf_strerror.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\sdk_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\nrf52840_bitfields.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\nrf_log_instance.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_error.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\_build\ble_app_uart_pca10056_s140.map</file>
+            <file>$PROJ_DIR$\ble_app_uart_iar_nRF5x.icf</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\nrf_bitmask.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mutex\nrf_mtx.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\hal\nrf_power.h</file>
+            <file>$PROJ_DIR$\_build\ble_conn_state.pbi</file>
+            <file>$PROJ_DIR$\_build\nrfx_uart.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_log_frontend.o</file>
+            <file>$PROJ_DIR$\_build\utf.o</file>
+            <file>$PROJ_DIR$\_build\nrf_sdh_ble.o</file>
+            <file>$PROJ_DIR$\_build\nrf_ble_qwr.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\include\nrfx_power_clock.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\boards\pca10056.h</file>
+            <file>$PROJ_DIR$\_build\bsp_btn_ble.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic\nrf_atomic_internal.h</file>
+            <file>$PROJ_DIR$\_build\SEGGER_RTT_Syscalls_IAR.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\legacy\nrf_drv_gpiote.h</file>
+            <file>$PROJ_DIR$\_build\nrf_sdh.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\delay\nrf_delay.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\bsp\bsp_btn_ble.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh_ble.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh.h</file>
+            <file>$PROJ_DIR$\_build\ble_nus.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\include\nrfx_clock.h</file>
+            <file>$PROJ_DIR$\_build\nrfx_uarte.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\ringbuf\nrf_ringbuf.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_gatt\nrf_ble_gatt.h</file>
+            <file>$PROJ_DIR$\_build\system_nrf52840.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\boards\boards.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\soc\nrfx_coredep.h</file>
+            <file>$PROJ_DIR$\_build\SEGGER_RTT.o</file>
+            <file>$PROJ_DIR$\_build\nrf_drv_uart.pbi</file>
+            <file>$PROJ_DIR$\_build\ble_advdata.pbi</file>
+            <file>$PROJ_DIR$\_build\ble_advertising.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_qwr\nrf_ble_qwr.h</file>
+            <file>$PROJ_DIR$\_build\nrfx_gpiote.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_log_str_formatter.o</file>
+            <file>$PROJ_DIR$\_build\nrf_pwr_mgmt.pbi</file>
+            <file>$PROJ_DIR$\_build\ble_link_ctx_manager.pbi</file>
+            <file>$PROJ_DIR$\_build\SEGGER_RTT_printf.o</file>
+            <file>$PROJ_DIR$\_build\nrfx_prs.pbi</file>
+            <file>$PROJ_DIR$\_build\app_uart_fifo.pbi</file>
+            <file>$PROJ_DIR$\_build\ble_srv_common.pbi</file>
+            <file>$PROJ_DIR$\_build\bsp.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_balloc.pbi</file>
+            <file>$PROJ_DIR$\_build\app_fifo.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_fprintf.pbi</file>
+            <file>$PROJ_DIR$\_build\main.pbi</file>
+            <file>$PROJ_DIR$\_build\app_util_platform.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_ringbuf.pbi</file>
+            <file>$PROJ_DIR$\_build\ble_conn_params.pbi</file>
+            <file>$PROJ_DIR$\_build\app_button.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_log_backend_serial.pbi</file>
+            <file>$PROJ_DIR$\_build\boards.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_log_backend_rtt.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_log_frontend.pbi</file>
+            <file>$PROJ_DIR$\_build\nrfx_power_clock.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_ble_gatt.pbi</file>
+            <file>$PROJ_DIR$\_build\app_error_weak.pbi</file>
+            <file>$PROJ_DIR$\_build\nrfx_clock.pbi</file>
+            <file>$PROJ_DIR$\_build\app_timer.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_strerror.pbi</file>
+            <file>$PROJ_DIR$\_build\iar_startup_nrf52840.o</file>
+            <file>$PROJ_DIR$\_build\nrf_sdh_soc.o</file>
+            <file>$PROJ_DIR$\_build\nrf_atomic.pbi</file>
+            <file>$PROJ_DIR$\_build\app_error_handler_iar.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_drv_clock.pbi</file>
+            <file>$PROJ_DIR$\_build\nrf_atfifo.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic\nrf_atomic.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf\nrf_fprintf.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_flags\nrf_atflags.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault\hardfault_implementation.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_str_formatter.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh_soc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\utf_converter\utf.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\nrf_assert.c</file>
+            <file>$PROJ_DIR$\_build\nrf_log_backend_rtt.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\ringbuf\nrf_ringbuf.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_backend_rtt.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_Syscalls_IAR.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\timer\app_timer.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf\nrf_fprintf_format.c</file>
+            <file>$PROJ_DIR$\_build\nrf_log_backend_serial.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\uart\app_uart_fifo.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars\nrf_section_iter.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh_ble.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\strerror\nrf_strerror.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo\nrf_atfifo.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_default_backends.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\scheduler\app_scheduler.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\memobj\nrf_memobj.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\uart\retarget.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_util_platform.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_backend_serial.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_frontend.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\balloc\nrf_balloc.c</file>
+            <file>$PROJ_DIR$\..\config\sdk_config.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_error.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_error_handler_iar.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_error_weak.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fifo\app_fifo.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\prs\nrfx_prs.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_link_ctx_manager\ble_link_ctx_manager.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\bsp\bsp.c</file>
+            <file>$PROJ_DIR$\..\..\..\main.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\iar_startup_nrf52840.s</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_advertising\ble_advertising.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\boards\boards.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_conn_params.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_conn_state.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_gatt\nrf_ble_gatt.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_srv_common.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_qwr\nrf_ble_qwr.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_nus\ble_nus.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\legacy\nrf_drv_uart.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\nrfx_clock.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\nrfx_gpiote.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\system_nrf52840.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\bsp\bsp_btn_ble.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\legacy\nrf_drv_clock.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_advdata.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\nrfx_power_clock.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\nrfx_uart.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\nrfx_uarte.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\button\app_button.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fifo\app_fifo.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\ble_l2cap.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars\nrf_section_iter.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\ble_gatt.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_advdata.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\include\nrfx_uart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_flags\nrf_atflags.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\hal\nrf_clock.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\hal\nrf_gpiote.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\nrf_sd_def.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\bsp\bsp_config.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\ble.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_advertising\ble_advertising.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\nrf_nvic.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\include\nrfx_gpiote.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\nrf_log_default_backends.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\scheduler\app_scheduler.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\balloc\nrf_balloc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\ble_ranges.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\nrfx_errors.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo\nrf_atfifo.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\ble_types.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\hal\nrf_uart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\legacy\nrf_drv_clock.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\sdk_resources.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo\nrf_atfifo_internal.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\hal\nrf_uarte.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\timer\app_timer.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\uart\app_uart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_nus\ble_nus.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh_soc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\include\nrfx_uarte.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\iar_intrinsics_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\utf_converter\utf.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\nrf_log_backend_rtt.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\ble_gatts.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ctype.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_Conf.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\nrf_log_str_formatter.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_backend_serial.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\legacy\nrf_drv_uart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\ble_gap.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic\nrf_atomic.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\nrf_error_sdm.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_link_ctx_manager\ble_link_ctx_manager.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\bsp\bsp.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\nrf_sdm.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\ble_gattc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_srv_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\ble_hci.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf\nrf_fprintf_format.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\include\nrfx_power.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf\nrf_fprintf.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\prs\nrfx_prs.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\nrfx_log.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s140\headers\ble_err.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_conn_params.h</file>
+            <file>$PROJ_DIR$\_build\nrf_log_default_backends.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_conn_state.h</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\_build\ble_app_uart_pca10056_s140.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 129</file>
+                </tool>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 27</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 130 62 22 35 17 29 36 51 33 57 86 54 84 52 53 50 39 49 41 38 14 193 42 48 43 18 63 15 34 56 46 44 60 37 209 217 321 138 167 32 45 47 148 140 194 30 61 40 58 59 23 16 21 19 161 170 146 55 139 127 128 134</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic\nrf_atomic.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 63</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 195</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 305 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 145</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 93 100 109 74 95 101 92 65 145 99 108 112 124 123 113 231 116 97 66 67 91 75 115 96 114 90 72 117 305 106 87 105 73 89 88</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf\nrf_fprintf.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 60</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 177</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 314 316</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 95 88 108 106 314 99 87 133 100 101 93 112 73 66 113 117 231 116 97 67 91 75 109 115 105 89 316 123 96 65 124 114 90 74 72 92</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_flags\nrf_atflags.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 18</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 65 87 90 95 66 93 67 91 75 74 88 92 89 72 73 124 105 114 112 305 123 113 99 109 115 231 100 108 116 96 101 106 97 117 266</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 95 93 65 114 66 89 91 101 113 266 124 73 100 115 305 123 87 105 112 90 74 72 75 92 99 108 109 96 67 88 231 116 97 106 117</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault\hardfault_implementation.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 14</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 109 87 112 75 113 97 106 95 88 231 116 66 67 91 115 93 73 99 100 108 101 105 89 123 96 65 124 114 90 74 72 92 117</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_str_formatter.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 167</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 8</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 301 316 102 107 110 98 121 120 295 277 71 78 76 69 273 126 104 118 125 103 111 299</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 316 95 105 90 116 65 108 102 99 100 117 69 109 107 66 301 299 101 93 106 87 112 89 113 125 76 123 111 231 97 67 91 75 115 96 124 114 73 74 72 88 92 110 103 295 71 78 104 98 121 120 277 273 126 118</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 161</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 1</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 310 300 100 71 95 66 93 67 91 75 112 65 87 90 74 88 92 89 72 73 124 105 114 78 76 96 69 273 117 126 104 109 113 116 118 231 297 293 99 115</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 88 293 112 92 124 100 95 65 297 273 72 93 116 115 300 231 126 114 73 74 69 66 96 99 71 78 117 67 91 75 87 105 90 89 76 113 118 109 310 104</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh_soc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 194</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 28</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 291 262 103 78 76 69 152 126 104 118 119 122 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 96 108 95 117 113 105 90 78 99 100 262 103 69 93 291 101 106 87 112 89 116 118 125 107 152 126 119 231 97 66 67 91 75 109 115 65 124 114 73 74 72 88 92 76 122 111 123 104</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\external\utf_converter\utf.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 139</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 294 106 66 93 67 91 75 109 95</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 95 66 93 294 106 109 67 91 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 170</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 4</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 310 300 100 71 95 66 93 67 91 75 112 65 87 90 74 88 92 89 72 73 124 105 114 78 76 96 69 273 117 126 104 109 113 116 118 231 297 293 120 295</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 95 75 93 87 104 133 78 112 89 66 71 65 117 67 91 105 90 76 100 300 120 231 297 273 126 124 114 73 74 72 88 92 96 69 109 295 310 113 116 118 293</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\nrf_assert.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 48</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 7</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 117 95 66 93 67 91 75 65 87 90 74 88 92 89 72 73 124 105 114 112 126 104 109 113 116 96 100 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 114 65 88 66 67 91 89 93 113 100 75 124 73 95 118 126 87 105 112 90 74 72 92 116 117 104 109 96</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\ringbuf\nrf_ringbuf.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 47</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 180</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 156 95 66 93 67 91 75 305 123 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 71 78 76 69 273 126 104 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 231 126 65 66 67 95 105 90 96 91 116 100 117 75 113 112 97 93 106 87 89 71 305 123 99 108 101 109 115 124 114 73 74 72 88 92 273 118 156 78 76 69 104</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_backend_rtt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 209</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 185</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 296 98 121 120 295 277 71 78 76 69 273 126 104 118 125 103 107 302 316 301 102 110 111 149 83 68 80 77 82 79 85 81 64 160 285 269 279 300 297 293 310</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 113 65 95 105 90 120 300 108 96 100 269 302 99 231 116 98 79 82 117 111 101 93 106 87 112 89 121 66 103 126 123 125 296 301 149 310 97 67 91 75 109 115 124 114 73 74 72 88 92 277 273 118 102 107 83 68 85 71 295 78 76 69 104 316 110 80 279 77 81 160 285 64 297 293</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_Syscalls_IAR.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 146</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 9</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 231</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 231</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\timer\app_timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 51</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 191</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 288 126 104 118 120 295 77 82 78 76 69 149 83 68 80 79 85 81 64 71 273 160 285 269 279</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 65 95 88 96 231 91 66 149 67 116 115 113 114 73 74 100 109 126 288 78 112 97 75 124 72 92 93 69 83 279 77 117 269 120 71 99 108 101 106 87 105 90 89 104 82 76 80 85 273 123 118 295 68 79 81 160 285 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 148</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 10</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 152 262 103 309 76 306 78 69 273 126 104 118 71 119 122 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 109 96 124 88 92 100 71 112 75 95 76 309 113 97 72 93 262 69 126 103 152 231 119 116 66 67 91 115 65 114 73 74 101 125 107 273 99 108 106 87 105 90 89 117 306 118 122 111 123 78 104</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 168</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 284 262 103 132 305 135 83 68 80 77 82 79 85 81 64 71 78 76 69 273 126 104 118 160 285 269 279 102 107 110 98 121 120 295 277 125 119 122 111 152</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 123 65 99 78 100 95 273 110 102 113 118 93 132 108 105 90 88 101 103 295 231 284 126 106 87 112 89 117 68 85 96 116 71 135 119 152 97 66 67 91 75 109 115 124 114 73 74 72 92 305 83 79 82 269 125 107 262 80 279 77 81 160 285 64 76 69 104 98 121 120 277 122 111</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf\nrf_fprintf_format.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 37</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 25</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 316 314</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 231 91 66 65 88 67 316 116 115 96 113 114 73 74 133 112 97 75 109 124 72 92 93 95 117 314 99 100 108 101 106 87 105 90 89 123</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\uart\app_uart_fifo.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 172</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 289 71 78 76 69 273 126 104 118 260 120 295 303 83 68 80 77 82 79 85 81 64 160 285 269 279 292 287 265 282</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 83 76 93 87 66 68 85 100 95 65 303 101 106 112 89 117 289 99 108 105 90 71 260 113 231 116 97 67 91 75 109 115 96 124 114 73 74 72 88 92 78 69 104 120 265 79 82 282 123 273 126 118 295 292 80 279 77 81 160 285 64 269 287</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars\nrf_section_iter.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 30</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 24</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 262 103</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 97 95 88 113 106 112 75 109 87 262 231 116 66 67 91 115 93 73 101 99 100 108 105 89 103 123 96 65 124 114 90 74 72 92 117</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh_ble.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 140</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 12</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 151 271 76 319 304 313 278 281 261 263 311 298 262 103 152 126 104 118 122 119 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 96 95 281 108 271 113 103 105 90 126 99 100 117 311 313 263 101 93 151 106 87 112 89 319 278 76 65 116 118 125 107 152 122 119 231 97 66 67 91 75 109 115 124 114 73 74 72 88 92 261 111 123 262 304 298 104</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\strerror\nrf_strerror.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 61</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 192</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 122</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 93 105 100 88 95 101 122 99 108 89 113 231 112 116 97 66 67 91 75 109 115 106 87 73 123 96 65 124 114 90 74 72 92 117</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo\nrf_atfifo.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 43</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 198</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 99 66 93 67 91 75 109 115 95 113 101 106 112 100 65 87 90 74 88 92 89 72 73 124 105 114 280 231 117 116 96 125 103 107 286 119 123 108 97 122 111</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 112 109 88 119 103 99 280 114 73 74 107 113 66 115 93 65 124 72 92 95 100 106 108 101 286 67 91 75 87 105 90 89 116 231 122 111 117 125 96 123 97</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_default_backends.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 321</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 5</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 275 102 107 110 98 121 120 295 277 71 78 76 69 273 126 104 118 125 103 111 296</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 95 116 100 99 296 231 111 108 105 90 123 71 78 125 275 101 93 106 87 112 89 110 103 295 76 96 69 104 66 102 117 113 97 67 91 75 109 115 65 124 114 73 74 72 88 92 107 98 121 120 277 273 126 118</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\scheduler\app_scheduler.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 36</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 2</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 276 126 104 118 120 295 78 76 69 71 273</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 66 67 71 231 91 65 88 95 116 115 96 113 114 73 74 118 76 117 276 78 112 97 75 109 124 72 92 93 101 295 120 99 100 108 106 87 105 90 89 69 123 126 104 273</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\memobj\nrf_memobj.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 3</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 121 95 66 93 67 91 75 120 109 295 116 96 277 231 71 112 65 87 90 74 88 92 89 72 73 124 105 114 78 76 69 273 117 126 104 113 100 118 101 106 125 103 107 305 123 99 115 108 97</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 97 66 231 65 93 95 96 72 103 117 124 88 92 69 104 100 113 116 109 101 78 114 73 74 76 106 112 305 120 277 67 91 75 295 71 125 273 126 87 105 90 89 107 115 121 118 123 99 108</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\uart\retarget.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 11</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 104 289 71 78 76 69 273 126 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 88 65 231 91 66 96 67 116 289 115 113 114 73 74 95 126 104 112 97 75 109 124 72 92 93 99 100 108 101 106 87 105 90 89 273 118 123 117 71 78 76 69</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_util_platform.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 57</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 179</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 71 95 66 93 67 91 75 112 65 87 90 74 88 92 89 72 73 124 105 114 78 76 96 69 273 117 126 104 109 113 116 100 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 105 90 78 104 95 66 67 91 76 65 117 75 87 112 89 100 109 273 126 93 124 114 73 74 72 88 92 69 96 71 113 116 118</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_backend_serial.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 217</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 183</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 302 98 121 120 295 277 71 78 76 69 273 126 104 118 125 103 107 316 301 102 110 111</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 95 100 76 99 117 125 111 108 105 90 106 101 302 93 87 112 89 116 65 69 109 107 316 113 301 231 97 66 67 91 75 115 96 124 114 73 74 72 88 92 98 103 295 71 78 104 110 123 121 120 277 273 126 118 102</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\log\src\nrf_log_frontend.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 138</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 186</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 71 78 76 69 273 126 104 118 119 103 122 111 125 107 102 110 98 121 120 295 277 301 316 156 305</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 93 103 110 87 65 116 301 100 126 96 66 106 119 305 95 101 112 89 111 123 121 102 156 99 108 105 90 122 231 120 71 98 113 97 67 91 75 109 115 124 114 73 74 72 88 92 117 273 118 125 107 277 316 78 76 69 104 295</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\balloc\nrf_balloc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 15</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 175</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 103 277 71 78 76 69 273 126 104 118 125 107 119 122 111</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 112 109 113 72 97 93 71 75 124 88 92 95 96 103 101 231 116 66 67 91 115 65 114 73 74 117 273 118 107 277 119 99 100 108 106 87 105 90 89 126 123 125 78 76 69 104 122 111</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_error.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 22</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 26</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 65 87 90 95 66 93 67 91 75 74 88 92 89 72 73 124 105 114 112 104 109 126 113 116 96 100 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 116 95 67 124 88 73 93 109 126 114 89 66 104 100 87 105 112 90 74 72 91 75 92 113 118 65 96</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_error_handler_iar.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 35</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 196</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 126 104 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 100 93 73 95 66 112 65 101 126 99 108 106 87 88 113 231 116 97 67 91 75 109 115 105 89 104 123 96 124 114 90 74 72 92 117 118</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_error_weak.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 189</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 126 95 66 93 67 91 75 104 109 113 65 87 90 74 88 92 89 72 73 124 105 114 112 116 96 100 118 119 123 99 115 231 108 101 106 97 117 103 122 111 125 107 102 110 98 121 120 295 277 71 78 76 69 273 309 306</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 78 91 92 88 101 104 124 95 66 67 113 125 69 122 100 93 72 103 106 65 76 102 75 114 73 74 98 116 96 119 71 309 118 109 87 105 112 90 89 111 99 108 117 107 231 123 295 306 126 97 115 110 121 120 277 273</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fifo\app_fifo.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 29</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 176</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 260 120 295</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 93 66 112 99 73 95 108 260 100 101 106 87 88 113 231 116 97 67 91 75 109 115 105 89 120 123 96 65 124 114 90 74 72 92 117 295</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\prs\nrfx_prs.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 23</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 171</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83 68 231 80 95 66 93 67 91 75 106 109 113 65 87 90 74 88 92 89 72 73 124 105 114 112 77 82 79 85 81 64 117 101 100 71 78 76 96 69 273 126 104 116 118 160 285 269 279 317 318 119 123 99 115 108 97 103 122 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 96 93 103 66 65 99 77 75 114 73 74 88 68 95 81 116 64 69 113 100 79 67 91 124 72 92 285 117 118 108 125 107 317 318 80 279 231 106 109 87 105 112 90 89 71 160 78 76 83 122 111 101 123 82 85 273 126 104 269 119 97 115</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_link_ctx_manager\ble_link_ctx_manager.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 53</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 169</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 307 95 66 93 67 91 75 322 113 271 76 96 319 304 313 278 281 261 263 311 65 87 90 74 88 92 89 72 73 124 105 114 112 298 305 123 99 109 115 231 100 108 116 101 106 97 117</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 319 322 95 76 263 313 96 88 66 67 91 281 114 73 74 99 65 75 304 298 278 124 72 92 93 108 106 123 116 113 271 305 261 311 87 105 112 90 89 100 101 117 307 231 97 109 115</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\bsp\bsp.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 174</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 308 95 66 93 67 91 75 113 159 70 83 68 231 80 106 109 65 87 90 74 88 92 89 72 73 124 105 114 112 77 82 79 85 81 64 117 101 100 71 78 76 96 69 273 126 104 116 118 160 285 269 279 143 94 270 288</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 105 95 90 113 65 159 279 93 126 112 66 67 91 70 76 104 96 94 75 80 231 106 87 89 82 117 100 109 269 270 288 143 83 68 79 77 124 114 73 74 72 88 92 85 101 273 69 308 81 71 160 116 285 64 78 118</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 42</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 178</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 95 66 93 67 91 75 99 109 115 100 65 87 90 74 88 92 89 72 73 124 105 114 112 313 264 113 271 76 96 319 304 278 281 261 263 311 298 123 231 108 116 101 106 97 117 272 320 312 152 262 103 291 78 69 151 157 165 288 126 104 118 290 307 322 305 289 71 273 150 308 159 70 83 68 80 77 82 79 85 81 64 160 285 269 279 143 94 284 282 287 119 122 111 125 107 102 110 98 121 120 295 277 275</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 271 319 77 71 311 118 122 152 102 109 87 89 95 263 231 112 103 313 165 282 93 281 101 123 104 151 78 279 113 116 100 272 290 284 287 66 115 105 90 99 96 278 76 65 262 322 70 160 83 111 110 120 264 320 291 157 288 289 150 119 275 67 91 75 124 114 73 261 97 304 69 312 126 305 117 159 80 81 285 64 125 107 121 277 74 72 88 92 298 108 106 307 273 308 94 143 68 79 82 85 269 98 295</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\iar_startup_nrf52840.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 193</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_advertising\ble_advertising.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 54</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 164</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 264 271 76 319 304 313 278 281 261 263 311 298 272 78 69 119 103 122 111 125 107 151 262 291</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 108 95 96 291 105 90 313 122 107 106 78 99 100 271 261 76 319 281 69 125 231 264 116 101 93 87 112 89 65 263 111 272 119 151 113 97 66 67 91 75 109 115 124 114 73 74 72 88 92 117 311 278 304 103 123 298 262</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\boards\boards.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 49</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 184</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 159 70 83 68 231 80 95 66 93 67 91 75 106 109 113 65 87 90 74 88 92 89 72 73 124 105 114 112 77 82 79 85 81 64 117 101 100 71 78 76 96 69 273 126 104 116 118 160 285 269 279 143</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 116 93 72 143 83 96 79 113 66 67 91 124 88 92 95 100 68 77 75 114 73 74 81 106 78 69 70 80 279 231 65 109 87 105 112 90 89 71 160 285 64 117 76 118 159 82 85 101 273 126 104 269</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_conn_params.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 84</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 181</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 120 295 313 319 320 271 76 304 278 281 261 263 311 298 312 322 305 151 262 103 288 126 104 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 115 66 113 114 73 104 74 96 65 312 116 95 76 101 231 67 91 278 313 262 120 319 151 112 97 75 109 124 72 88 92 93 263 281 304 320 322 288 99 100 108 106 87 105 90 89 298 103 126 123 117 295 271 261 311 305 118</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_conn_state.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 52</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 136</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 322 113 95 66 93 67 91 75 271 76 96 319 304 313 278 281 261 263 311 65 87 90 74 88 92 89 72 73 124 105 114 112 298 305 123 99 109 115 231 100 108 116 101 106 97 117 266 126 104 118 151 262 103 71 78 69 273</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 72 103 76 78 304 65 319 100 231 71 278 93 88 95 69 271 298 313 281 124 92 101 116 126 96 263 114 73 74 117 113 99 266 151 305 66 67 91 75 261 311 87 105 112 90 89 123 108 106 118 322 97 109 115 104 262 273</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_gatt\nrf_ble_gatt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 34</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 188</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 157 271 76 319 304 313 278 281 261 263 311 298 119 103 122 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 96 263 93 87 76 100 65 111 119 95 101 106 112 89 319 278 313 157 122 99 108 105 90 311 281 125 107 113 231 116 97 66 67 91 75 109 115 124 114 73 74 72 88 92 261 103 123 117 271 304 298</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_srv_common.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 39</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 173</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 312 95 66 93 67 91 75 113 281 101 106 109 112 100 65 87 90 74 88 92 89 72 73 124 105 114 271 76 96 319 304 313 278 261 263 311 298 99 115 126 104 116 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 112 95 311 89 96 106 93 263 271 87 281 100 66 105 90 319 278 76 65 313 116 99 126 113 101 304 67 91 75 109 124 114 73 74 72 88 92 261 118 312 298 115 104</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_qwr\nrf_ble_qwr.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 56</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 141</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 120 295 165 271 76 319 304 313 278 281 261 263 311 298 312</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 112 109 113 72 278 97 93 95 96 304 271 75 124 88 92 66 298 319 120 231 116 67 91 115 65 114 73 74 100 281 76 165 312 99 108 101 106 87 105 90 89 263 123 117 295 261 311 313</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_nus\ble_nus.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 153</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 271 76 319 304 313 278 281 261 263 311 298 290 312 151 262 103 307 322 305 119 122 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 96 116 101 95 322 119 115 113 66 114 73 74 76 312 231 67 91 65 88 304 281 278 103 271 112 97 75 109 124 72 92 93 298 319 117 125 107 290 99 100 108 106 87 105 90 89 263 307 262 305 122 111 123 261 311 313 151</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\legacy\nrf_drv_uart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 162</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 303 83 68 231 80 95 66 93 67 91 75 106 109 113 65 87 90 74 88 92 89 72 73 124 105 114 112 77 82 79 85 81 64 117 101 100 71 78 76 96 69 273 126 104 116 118 160 285 269 279 292 287 265 282</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 113 83 265 95 79 66 67 71 117 91 124 88 92 65 93 72 285 100 68 77 75 114 73 74 160 64 76 118 292 80 279 231 106 109 87 105 112 90 89 81 116 78 69 96 282 303 82 85 101 273 126 104 269 287</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\nrfx_clock.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 190</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83 68 231 80 95 66 93 67 91 75 106 109 113 65 87 90 74 88 92 89 72 73 124 105 114 112 77 82 79 85 81 64 117 101 100 71 78 76 96 69 273 126 104 116 118 160 285 269 279 154 267 142 318 119 123 99 115 108 97 103 122 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 112 96 69 103 65 66 99 109 95 279 93 105 90 85 104 267 100 80 231 106 87 89 101 273 83 108 125 107 154 318 68 79 113 77 67 91 75 124 114 73 74 72 88 92 82 117 126 76 269 122 111 116 123 81 71 160 285 64 78 118 142 119 97 115</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\nrfx_gpiote.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 58</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 166</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83 68 231 80 95 66 93 67 91 75 106 109 113 65 87 90 74 88 92 89 72 73 124 105 114 112 77 82 79 85 81 64 117 101 100 71 78 76 96 69 273 126 104 116 118 160 285 269 279 274 268 70 131 99 115 318 119 123 108 97 103 122 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 96 114 73 77 75 74 273 66 112 131 68 95 101 100 79 113 67 91 93 124 72 88 92 85 65 69 104 268 83 123 97 125 107 274 99 318 80 279 231 106 109 87 105 90 89 82 117 126 76 269 119 116 81 71 160 285 64 78 118 70 115 103 122 111 108</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\mdk\system_nrf52840.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 55</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 158</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 95 66 93 67 91 75 113 65 87 90 74 88 92 89 72 73 124 105 114 112</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 72 87 93 75 112 90 65 67 91 105 74 92 113 73 66 124 114 95 89 88</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\bsp\bsp_btn_ble.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 38</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 144</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 150 95 66 93 67 91 75 271 76 96 319 304 313 278 281 261 263 311 65 87 90 74 88 92 89 72 73 124 105 114 112 298 308 113 159 70 83 68 231 80 106 109 77 82 79 85 81 64 117 101 100 71 78 69 273 126 104 116 118 160 285 269 279 143 94 151 262 103</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 96 95 279 93 81 75 87 64 70 262 311 278 88 92 116 69 308 319 112 89 304 65 66 67 91 76 261 281 105 90 285 100 117 113 101 151 271 263 298 313 124 114 73 74 72 159 80 231 106 71 160 78 118 126 103 150 94 143 83 68 79 77 109 82 85 273 104 269</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\integration\nrfx\legacy\nrf_drv_clock.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 197</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 100 283 154 83 68 231 80 95 66 93 67 91 75 106 109 113 65 87 90 74 88 92 89 72 73 124 105 114 112 77 82 79 85 81 64 117 101 71 78 76 96 69 273 126 104 116 118 160 285 269 279 267 142 152 262 103 291 123 99 115 108 97 119 122 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 96 106 109 95 65 231 152 154 83 279 93 105 90 285 100 269 66 103 142 80 87 112 89 81 116 64 126 76 113 115 125 107 283 291 119 267 68 79 77 67 91 75 124 114 73 74 72 88 92 71 160 273 69 104 117 262 97 122 111 123 82 85 101 78 118 99 108</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_advdata.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 86</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 163</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 264 95 66 93 67 91 75 113 99 109 115 271 76 96 319 304 313 278 281 261 263 311 65 87 90 74 88 92 89 72 73 124 105 114 112 298 123 231 100 108 116 101 106 97 117 312</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 231 76 263 75 319 95 109 281 114 73 74 88 271 123 311 313 96 65 312 99 66 67 91 115 261 278 124 72 92 93 116 100 304 113 298 87 105 112 90 89 97 106 117 264 108 101</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\nrfx_power_clock.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 187</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83 68 231 80 95 66 93 67 91 75 106 109 113 65 87 90 74 88 92 89 72 73 124 105 114 112 77 82 79 85 81 64 117 101 100 71 78 76 96 69 273 126 104 116 118 160 285 269 279 315 135 142 154 267</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 95 96 68 88 77 75 66 114 73 74 160 76 83 154 79 113 67 91 93 124 72 92 71 106 78 116 315 80 279 231 65 109 87 105 112 90 89 81 285 64 100 117 69 118 142 267 82 85 101 273 126 104 269 135</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\nrfx_uart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 16</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 137</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83 68 231 80 95 66 93 67 91 75 106 109 113 65 87 90 74 88 92 89 72 73 124 105 114 112 77 82 79 85 81 64 117 101 100 71 78 76 96 69 273 126 104 116 118 160 285 269 279 265 282 317 70 318 119 123 99 115 108 97 103 122 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 100 66 112 77 75 114 73 74 101 95 122 99 96 68 273 317 79 113 67 91 93 124 72 85 65 69 104 282 111 108 125 107 265 70 318 80 279 231 106 109 87 105 90 89 82 117 126 76 269 83 103 116 123 88 92 81 71 160 285 64 78 118 119 97 115</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\modules\nrfx\drivers\src\nrfx_uarte.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 21</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 155</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83 68 231 80 95 66 93 67 91 75 106 109 113 65 87 90 74 88 92 89 72 73 124 105 114 112 77 82 79 85 81 64 117 101 100 71 78 76 96 69 273 126 104 116 118 160 285 269 279 292 287 317 70 318 119 123 99 115 108 97 103 122 111 125 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 109 95 100 118 317 285 65 122 99 96 279 93 105 90 117 80 231 106 66 87 112 89 88 92 81 116 64 69 113 83 111 108 125 107 292 70 318 68 79 77 67 91 75 124 114 73 74 72 71 160 78 76 103 101 123 82 85 273 126 104 269 287 119 97 115</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\button\app_button.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 62</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 182</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 95 66 93 67 91 75 113 99 109 115 231 100 112 108 116 96 101 106 65 87 90 74 88 92 89 72 73 124 105 114 97 117 94 126 104 118 70 83 68 80 77 82 79 85 81 64 71 78 76 69 273 160 285 269 279 288 147 274 268</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 96 116 126 279 112 115 113 66 114 73 74 88 118 285 231 67 91 65 77 71 117 269 94 97 75 109 124 72 92 93 95 160 64 76 104 83 288 147 99 100 108 101 106 87 105 90 89 80 81 78 69 70 123 68 79 82 85 273 274 268</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 31 129</file>
+                </tool>
+            </outputs>
+        </file>
+    </configuration>
+</project>
