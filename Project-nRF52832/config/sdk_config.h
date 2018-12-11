@@ -586,7 +586,7 @@
 // <e> NRF_CRYPTO_ENABLED - nrf_crypto - Cryptography library.
 //==========================================================
 #ifndef NRF_CRYPTO_ENABLED
-#define NRF_CRYPTO_ENABLED 1
+#define NRF_CRYPTO_ENABLED 0
 #endif
 // <o> NRF_CRYPTO_ALLOCATOR  - Memory allocator
  

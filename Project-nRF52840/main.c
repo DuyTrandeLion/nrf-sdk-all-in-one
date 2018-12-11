@@ -23,6 +23,8 @@ static sensorsim_cfg_t   m_battery_sim_cfg;                                     
 static sensorsim_state_t m_battery_sim_state;                                       /**< Battery Level sensor simulator state. */
 static sensorsim_cfg_t   m_temp_celcius_sim_cfg;                                    /**< Temperature simulator configuration. */
 static sensorsim_state_t m_temp_celcius_sim_state;                                  /**< Temperature simulator state. */
+static sensorsim_cfg_t   m_hrs_sim_cfg;
+static sensorsim_state_t m_hrs_sim_state;
 static bool              m_device_connected = false;
 
 static ble_date_time_t time_stamp = { 2018, 12, 9, 8, 0, 0 };
@@ -30,7 +32,7 @@ static ble_date_time_t time_stamp = { 2018, 12, 9, 8, 0, 0 };
 static ble_uuid_t m_adv_uuids[] =                                                   /**< Universally unique service identifiers. */
 {
     {BLE_UUID_HEALTH_THERMOMETER_SERVICE, BLE_UUID_TYPE_BLE},
-    {BLE_UUID_GLUCOSE_SERVICE, BLE_UUID_TYPE_BLE},
+    {BLE_UUID_HEART_RATE_SERVICE, BLE_UUID_TYPE_BLE},
     {BLE_UUID_BATTERY_SERVICE, BLE_UUID_TYPE_BLE},
     {BLE_UUID_DEVICE_INFORMATION_SERVICE, BLE_UUID_TYPE_BLE}
 };
@@ -38,6 +40,7 @@ static ble_uuid_t m_adv_uuids[] =                                               
 
 static void advertising_start(bool erase_bonds);
 static void temperature_measurement_send(void);
+static void heart_rate_measurement_send(void);
 
 
 /**@brief Callback function for asserts in the SoftDevice.
@@ -133,6 +136,7 @@ static void hts_meas_timeout_handler(void * p_context)
     if (m_device_connected == true)
     {
       temperature_measurement_send();
+      heart_rate_measurement_send();
     }
 }
 
@@ -169,30 +173,30 @@ static void hts_sim_measurement(ble_hts_meas_t * p_meas)
     }
 }
 
-static void gls_sim_measurement(ble_gls_meas_t * p_meas)
+static void hrs_sim_measurement()
 {
-    static int16_t s_mantissa = 550;
-    static int16_t s_exponent = -3;
-    static uint8_t s_secs     = 5;
-
-    // simulate the reading of a glucose measurement.
-    p_meas->flags = BLE_GLS_MEAS_FLAG_TIME_OFFSET |
-                     BLE_GLS_MEAS_FLAG_CONC_TYPE_LOC |
-                     BLE_GLS_MEAS_FLAG_UNITS_MOL_L;
-
-    p_meas->base_time                      = time_stamp;
-    p_meas->glucose_concentration.exponent = s_exponent;
-    p_meas->glucose_concentration.mantissa = s_mantissa;
-    p_meas->time_offset                    = 0;
-    p_meas->type                           = BLE_GLS_MEAS_TYPE_CAP_BLOOD;
-    p_meas->sample_location                = BLE_GLS_MEAS_LOC_FINGER;
-    p_meas->sensor_status_annunciation     = 0;
-
-    s_mantissa += 23;
-    if (s_mantissa > 939)
-    {
-        s_mantissa -= 434;
-    }
+//    static int16_t s_mantissa = 550;
+//    static int16_t s_exponent = -3;
+//    static uint8_t s_secs     = 5;
+//
+//    // simulate the reading of a glucose measurement.
+//    p_meas->flags = BLE_GLS_MEAS_FLAG_TIME_OFFSET |
+//                     BLE_GLS_MEAS_FLAG_CONC_TYPE_LOC |
+//                     BLE_GLS_MEAS_FLAG_UNITS_MOL_L;
+//
+//    p_meas->base_time                      = time_stamp;
+//    p_meas->glucose_concentration.exponent = s_exponent;
+//    p_meas->glucose_concentration.mantissa = s_mantissa;
+//    p_meas->time_offset                    = 0;
+//    p_meas->type                           = BLE_GLS_MEAS_TYPE_CAP_BLOOD;
+//    p_meas->sample_location                = BLE_GLS_MEAS_LOC_FINGER;
+//    p_meas->sensor_status_annunciation     = 0;
+//
+//    s_mantissa += 23;
+//    if (s_mantissa > 939)
+//    {
+//        s_mantissa -= 434;
+//    }
 
 }
 
@@ -263,8 +267,7 @@ static void gatt_init(void)
 static void temperature_measurement_send(void)
 {
     ble_hts_meas_t simulated_hts_meas;
-    ble_gls_meas_t simulated_gls_meas;
-
+    
     if (!m_hts_meas_ind_conf_pending)
     {
         hts_sim_measurement(&simulated_hts_meas);
@@ -275,6 +278,12 @@ static void temperature_measurement_send(void)
         }
     }
 }
+
+static void heart_rate_measurement_send(void)
+{
+
+}
+
 
 
 /**@brief Function for handling the Health Thermometer Service events.
@@ -304,20 +313,6 @@ static void on_hts_evt(ble_hts_t * p_hts, ble_hts_evt_t * p_evt)
     }
 }
 
-static void on_gls_evt(ble_gls_t * p_gls, ble_gls_evt_t * p_evt)
-{
-    switch (p_evt->evt_type)
-    {
-        case BLE_GLS_EVT_NOTIFICATION_ENABLED:
-            // Indication has been enabled, send a single temperature measurement
-            break;
-
-        default:
-            // No implementation needed.
-            break;
-    }
-}
-
 
 /**@brief Function for handling Queued Write Module errors.
  *
@@ -339,7 +334,7 @@ static void nrf_qwr_error_handler(uint32_t nrf_error)
 static void services_init(void)
 {
     ble_hts_init_t     hts_init;
-    ble_gls_init_t     gls_init;
+
     ble_bas_init_t     bas_init;
     ble_dis_init_t     dis_init;
     nrf_ble_qwr_init_t qwr_init = {0};
@@ -362,24 +357,6 @@ static void services_init(void)
     hts_init.ht_type_rd_sec      = SEC_OPEN;
 
     APP_ERROR_CHECK(ble_hts_init(&m_hts, &hts_init));
-
-    // Initialize Glucose Service - sample selection of feature bits.
-    memset(&gls_init, 0, sizeof(gls_init));
-
-    gls_init.evt_handler          = on_gls_evt;
-    gls_init.feature              = 0;
-    gls_init.feature             |= BLE_GLS_FEATURE_LOW_BATT;
-    gls_init.feature             |= BLE_GLS_FEATURE_TEMP_HIGH_LOW;
-    gls_init.feature             |= BLE_GLS_FEATURE_GENERAL_FAULT;
-    gls_init.is_context_supported = false;
-
-    // Here the sec level for the Glucose Service can be changed/increased.
-    gls_init.gl_meas_cccd_wr_sec = SEC_JUST_WORKS;
-    gls_init.gl_feature_rd_sec   = SEC_JUST_WORKS;
-    gls_init.racp_cccd_wr_sec    = SEC_JUST_WORKS;
-    gls_init.racp_wr_sec         = SEC_JUST_WORKS;
-
-    APP_ERROR_CHECK(ble_gls_init(&m_gls, &gls_init));
 
     // Initialize Battery Service.
     memset(&bas_init, 0, sizeof(bas_init));
@@ -430,6 +407,13 @@ static void sensor_simulator_init(void)
     m_temp_celcius_sim_cfg.start_at_max = false;
 
     sensorsim_init(&m_temp_celcius_sim_state, &m_temp_celcius_sim_cfg);
+
+//    m_gls_sim_cfg.min                   = MIN_SUGAR;
+//    m_gls_sim_cfg.max                   = MAX_SUGAR;
+//    m_gls_sim_cfg.incr                  = SUGAR_INCREMENT;
+//    m_gls_sim_cfg.start_at_max          = false;
+//
+//    sensorsim_init(&m_gls_sim_state, &m_gls_sim_cfg);
 }
 
 

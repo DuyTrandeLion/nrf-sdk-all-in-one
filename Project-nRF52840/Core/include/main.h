@@ -25,7 +25,7 @@
 #include "ble_bas.h"
 #include "ble_hts.h"
 #include "ble_dis.h"
-#include "ble_gls.h"
+#include "ble_hrs.h"
 #include "ble_racp.h"
 #include "ble_conn_params.h"
 #include "sensorsim.h"
@@ -74,6 +74,10 @@ extern "C" {
 #define MAX_CELCIUS_DEGRESS             4089                                        /**< Maximum temperature in celcius for use in the simulated measurement function (multiplied by 100 to avoid floating point arithmetic). */
 #define CELCIUS_DEGREES_INCREMENT       36                                          /**< Value by which temperature is incremented/decremented for each call to the simulated measurement function (multiplied by 100 to avoid floating point arithmetic). */
 
+#define MIN_HEART_RATE                  60
+#define MAX_HEART_RATE                  180
+#define HEART_RATE_INCREMENT            4
+
 #define MIN_CONN_INTERVAL               MSEC_TO_UNITS(500, UNIT_1_25_MS)            /**< Minimum acceptable connection interval (0.5 seconds) */
 #define MAX_CONN_INTERVAL               MSEC_TO_UNITS(1000, UNIT_1_25_MS)           /**< Maximum acceptable connection interval (1 second). */
 #define SLAVE_LATENCY                   0                                           /**< Slave latency. */
@@ -97,7 +101,6 @@ extern "C" {
 APP_TIMER_DEF(m_battery_timer_id);                                                  /**< Battery timer. */
 APP_TIMER_DEF(m_hts_timer_id);                                                      /**< Health Thermometer timer. */
 BLE_BAS_DEF(m_bas);                                                                 /**< Structure used to identify the battery service. */
-BLE_GLS_DEF(m_gls);                                                                 /**< Structure used to identify the glucose service. */
 BLE_HTS_DEF(m_hts);                                                                 /**< Structure used to identify the health thermometer service. */
 NRF_BLE_GATT_DEF(m_gatt);                                                           /**< GATT module instance. */
 NRF_BLE_QWR_DEF(m_qwr);                                                             /**< Context for the Queued Write module.*/
