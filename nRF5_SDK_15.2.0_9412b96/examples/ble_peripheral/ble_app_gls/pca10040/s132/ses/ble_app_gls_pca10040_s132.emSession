@@ -15,6 +15,10 @@
   <ProjectSessionItem path="ble_app_gls_pca10040_s132;ble_app_gls_pca10040_s132"/>
   <ProjectSessionItem path="ble_app_gls_pca10040_s132;ble_app_gls_pca10040_s132;Application"/>
   <ProjectSessionItem path="ble_app_gls_pca10040_s132;ble_app_gls_pca10040_s132;None"/>
+  <ProjectSessionItem path="ble_app_gls_pca10040_s132;ble_app_gls_pca10040_s132;nRF_Crypto backend nRF HW"/>
+  <ProjectSessionItem path="ble_app_gls_pca10040_s132;ble_app_gls_pca10040_s132;nRF_Crypto backend Oberon"/>
+  <ProjectSessionItem path="ble_app_gls_pca10040_s132;ble_app_gls_pca10040_s132;nRF_Libraries"/>
+  <ProjectSessionItem path="ble_app_gls_pca10040_s132;ble_app_gls_pca10040_s132;Segger Startup Files"/>
  </Project>
  <Register1/>
  <Register2/>
@@ -39,7 +43,8 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="954" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="942" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="244" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/crypto/backend/oberon/oberon_backend_ecc.c" selected="1" top="234" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="ble_app_gls_pca10040_s132" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

@@ -96,7 +96,9 @@
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/gatt_cache_manager.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/gatts_cache_manager.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/id_manager.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/nrf_ble_lesc.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/nrf_ble_lesc.c">
+          <configuration Name="Debug" build_exclude_from_build="No" />
+        </file>
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_data_storage.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_database.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_id.c" />
@@ -1017,7 +1019,7 @@
       arm_simulator_memory_simulation_parameter="RX 00000000,00080000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
       arm_target_device_name="nRF52832_xxAA"
       arm_target_interface_type="SWD"
-      c_preprocessor_definitions="BOARD_PCA10040;CONFIG_GPIO_AS_PINRESET;FLOAT_ABI_HARD;INITIALIZE_USER_SECTIONS;NO_VTOR_CONFIG;NRF52;NRF52832_XXAA;NRF52_PAN_74;NRF_SD_BLE_API_VERSION=6;S132;SOFTDEVICE_PRESENT;SWI_DISABLE0"
+      c_preprocessor_definitions="BOARD_PCA10040;CONFIG_GPIO_AS_PINRESET;FLOAT_ABI_HARD;INITIALIZE_USER_SECTIONS;MBEDTLS_CONFIG_FILE=&quot;nrf_crypto_mbedtls_config.h&quot;;NO_VTOR_CONFIG;NRF52;NRF52832_XXAA;NRF52_PAN_74;NRF_APP_VERSION=0x00000001;NRF_APP_VERSION_ADDR=0x1D000;NRF_CRYPTO_MAX_INSTANCE_COUNT=1;NRF_SD_BLE_API_VERSION=6;S132;SOFTDEVICE_PRESENT;SWI_DISABLE0;uECC_ENABLE_VLI_API=0;uECC_OPTIMIZATION_LEVEL=3;uECC_SQUARE_FUNC=0;uECC_SUPPORT_COMPRESSED_POINT=0;uECC_VLI_NATIVE_LITTLE_ENDIAN=1"
       c_user_include_directories="$(SolutionDir)/nRF5_SDK_15.2.0_9412b96/components/softdevice/s132/headers;$(SolutionDir)/nRF5_SDK_15.2.0_9412b96/components/softdevice/s132/headers/nrf52"
       debug_additional_load_file="$(SolutionDir)/nRF5_SDK_15.2.0_9412b96/components/softdevice/s132/s132_nrf52_6.1.0_softdevice.hex"
       debug_register_definition_file="$(SolutionDir)/nRF5_SDK_15.2.0_9412b96/modules/nrfx/mdk/nrf52.svd"
@@ -1031,7 +1033,7 @@
       linker_printf_width_precision_supported="Yes"
       linker_section_placement_file="$(ProjectDir)/flash_placement.xml"
       linker_section_placement_macros="FLASH_PH_START=0x0;FLASH_PH_SIZE=0x80000;RAM_PH_START=0x20000000;RAM_PH_SIZE=0x10000;FLASH_START=0x26000;FLASH_SIZE=0x5a000;RAM_START=0x20002218;RAM_SIZE=0xdde8"
-      linker_section_placements_segments="FLASH RX 0x00000000 0x00080000;RAM RWX 0x20000000 0x00010000"
+      linker_section_placements_segments="FLASH RX 0x0 0x80000;RAM RWX 0x20000000 0x10000"
       project_directory="Project-nRF52832"
       project_type="Executable" />
     <folder Name="Application">
@@ -1048,58 +1050,6 @@
       <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/bsp/bsp_btn_ble.c" />
       <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/bsp/bsp_cli.c" />
       <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/bsp/bsp_nfc.c" />
-    </folder>
-    <folder Name="components/nRF_BLE">
-      <folder Name="ble_advertising">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_advertising/ble_advertising.c" />
-        <configuration Name="Debug" build_exclude_from_build="No" />
-      </folder>
-      <folder Name="ble_db_discovery">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_db_discovery/ble_db_discovery.c" />
-        <configuration Name="Debug" build_exclude_from_build="No" />
-      </folder>
-      <folder Name="ble_dtm">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_dtm/ble_dtm.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_dtm/ble_dtm_hw_nrf52.c" />
-      </folder>
-      <folder Name="ble_link_ctx_manager">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_link_ctx_manager/ble_link_ctx_manager.c" />
-      </folder>
-      <folder Name="ble_racp">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_racp/ble_racp.c" />
-      </folder>
-      <folder Name="ble_radio_notification" />
-      <folder Name="common">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/common/ble_advdata.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/common/ble_conn_params.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/common/ble_conn_state.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/common/ble_srv_common.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_radio_notification/ble_radio_notification.c" />
-      </folder>
-      <folder Name="nrf_ble_gatt">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/nrf_ble_gatt/nrf_ble_gatt.c" />
-      </folder>
-      <folder Name="nrf_ble_qwr">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/nrf_ble_qwr/nrf_ble_qwr.c" />
-      </folder>
-      <folder Name="nrf_ble_scan">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/nrf_ble_scan/nrf_ble_scan.c" />
-      </folder>
-      <folder Name="peer_manager">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/security_manager.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/auth_status_tracker.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/gatt_cache_manager.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/gatts_cache_manager.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/id_manager.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/nrf_ble_lesc.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_data_storage.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_database.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_id.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_manager.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_manager_handler.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/pm_buffer.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/security_dispatcher.c" />
-      </folder>
     </folder>
     <folder Name="components/nRF_BLE/nRF_BLE_Services">
       <folder Name="ble_ancs_c">
@@ -1524,7 +1474,7 @@
       </folder>
       <folder Name="queue">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/queue/nrf_queue.c" />
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
       </folder>
       <folder Name="ringbuf">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/ringbuf/nrf_ringbuf.c" />
@@ -1790,7 +1740,7 @@
       <file file_name="../nRF5_SDK_15.2.0_9412b96/components/softdevice/common/nrf_sdh_soc.c" />
     </folder>
     <folder Name="external/nRF_CC310">
-      <configuration Name="Debug" build_exclude_from_build="No" />
+      <configuration Name="Debug" build_exclude_from_build="Yes" />
       <file file_name="../nRF5_SDK_15.2.0_9412b96/external/nrf_cc310/lib/libnrf_cc310_0.9.10.a" />
     </folder>
     <folder Name="external/nRF_Segger_RTT">
@@ -1908,7 +1858,7 @@
       Name="Debug"
       debug_register_definition_file="$(SolutionDir)/nRF5_SDK_15.2.0_9412b96/modules/nrfx/mdk/nrf52"
       debug_start_from_entry_point_symbol="No"
-      linker_section_placement_file="$(StudioDir)/targets/section_placement.xml" />
+      linker_section_placement_file="$(ProjectDir)/flash_placement.xml" />
     <folder Name="components/nRF_Libraries/nRF_Crypto">
       <configuration Name="Debug" build_exclude_from_build="Yes" />
       <folder Name="crypto/backend/cc310">
@@ -1954,7 +1904,9 @@
       <folder Name="crypto/backend/nrf_hw">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_init.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng_mbedtls.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng_mbedtls.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </file>
       </folder>
       <folder Name="crypto/backend/nrf_sw">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/crypto/backend/nrf_sw/nrf_sw_backend_hash.c" />
@@ -1985,6 +1937,61 @@
       <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/crypto/nrf_crypto_svc.c">
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
+    </folder>
+    <folder Name="components/nRF_BLE">
+      <folder Name="ble_advertising">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_advertising/ble_advertising.c" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
+      </folder>
+      <folder Name="ble_db_discovery">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_db_discovery/ble_db_discovery.c" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
+      </folder>
+      <folder Name="ble_dtm">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_dtm/ble_dtm.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_dtm/ble_dtm_hw_nrf52.c" />
+      </folder>
+      <folder Name="ble_link_ctx_manager">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_link_ctx_manager/ble_link_ctx_manager.c" />
+      </folder>
+      <folder Name="ble_racp">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_racp/ble_racp.c" />
+      </folder>
+      <folder Name="ble_radio_notification">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_radio_notification/ble_radio_notification.c" />
+      </folder>
+      <folder Name="common">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/common/ble_advdata.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/common/ble_conn_params.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/common/ble_conn_state.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/common/ble_srv_common.c" />
+      </folder>
+      <folder Name="nrf_ble_gatt">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/nrf_ble_gatt/nrf_ble_gatt.c" />
+      </folder>
+      <folder Name="nrf_ble_qwr">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/nrf_ble_qwr/nrf_ble_qwr.c" />
+      </folder>
+      <folder Name="nrf_ble_scan">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/nrf_ble_scan/nrf_ble_scan.c" />
+      </folder>
+      <folder Name="peer_manager">
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/security_manager.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/auth_status_tracker.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/gatt_cache_manager.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/gatts_cache_manager.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/id_manager.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/nrf_ble_lesc.c">
+          <configuration Name="Debug" build_exclude_from_build="No" />
+        </file>
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_data_storage.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_database.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_id.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_manager.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_manager_handler.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/pm_buffer.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/security_dispatcher.c" />
+      </folder>
     </folder>
   </project>
 </solution>

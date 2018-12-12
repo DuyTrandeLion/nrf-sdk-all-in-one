@@ -77,6 +77,9 @@
  <Watch4>
   <Watches active="0" update="Never"/>
  </Watch4>
- <Files/>
- <ARMCrossStudioWindow activeProject="BLE-nRF52840" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="D:/Nordic-Embedded/ble-rd/Project-nRF52832/Core/include" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="43" y="70" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52832/main.c" selected="1" top="35" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="53" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52832/Core/include/main.h" selected="0" top="21" codecName="Default"/>
+ </Files>
+ <ARMCrossStudioWindow activeProject="BLE-nRF52832" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="D:/Nordic-Embedded/ble-rd/Project-nRF52832/Core/include" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

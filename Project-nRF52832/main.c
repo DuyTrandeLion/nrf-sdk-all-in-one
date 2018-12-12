@@ -1,8 +1,8 @@
 /** @file
  *
- * @defgroup ble_template_application main.c
+ * @defgroup ble_sdk_app_hts_main main.c
  * @{
- * @ingroup ble_template_application
+ * @ingroup ble_sdk_app_hts
  * @brief Health Thermometer Service Sample Application main file.
  *
  * This file contains the source code for a sample application using the Health Thermometer service
@@ -10,8 +10,6 @@
  * This application uses the @ref srvlib_conn_params module.
  */
 
-/* Includes ==================================================================*/
-/* Standard C includes */
 #include <stdint.h>
 #include <string.h>
 
@@ -23,14 +21,10 @@ static sensorsim_cfg_t   m_battery_sim_cfg;                                     
 static sensorsim_state_t m_battery_sim_state;                                       /**< Battery Level sensor simulator state. */
 static sensorsim_cfg_t   m_temp_celcius_sim_cfg;                                    /**< Temperature simulator configuration. */
 static sensorsim_state_t m_temp_celcius_sim_state;                                  /**< Temperature simulator state. */
-static bool              m_device_connected = false;
-
-static ble_date_time_t time_stamp = { 2018, 12, 9, 8, 0, 0 };
 
 static ble_uuid_t m_adv_uuids[] =                                                   /**< Universally unique service identifiers. */
 {
     {BLE_UUID_HEALTH_THERMOMETER_SERVICE, BLE_UUID_TYPE_BLE},
-    {BLE_UUID_GLUCOSE_SERVICE, BLE_UUID_TYPE_BLE},
     {BLE_UUID_BATTERY_SERVICE, BLE_UUID_TYPE_BLE},
     {BLE_UUID_DEVICE_INFORMATION_SERVICE, BLE_UUID_TYPE_BLE}
 };
@@ -121,19 +115,10 @@ static void battery_level_update(void)
  * @param[in] p_context   Pointer used for passing some arbitrary information (context) from the
  *                        app_start_timer() call to the timeout handler.
  */
-static void battery_meas_timeout_handler(void * p_context)
+static void battery_level_meas_timeout_handler(void * p_context)
 {
     UNUSED_PARAMETER(p_context);
     battery_level_update();
-}
-
-static void hts_meas_timeout_handler(void * p_context)
-{
-    UNUSED_PARAMETER(p_context);
-    if (m_device_connected == true)
-    {
-      temperature_measurement_send();
-    }
 }
 
 
@@ -141,6 +126,8 @@ static void hts_meas_timeout_handler(void * p_context)
  */
 static void hts_sim_measurement(ble_hts_meas_t * p_meas)
 {
+    static ble_date_time_t time_stamp = { 2012, 12, 5, 11, 50, 0 };
+
     uint32_t celciusX100;
 
     p_meas->temp_in_fahr_units = false;
@@ -169,33 +156,6 @@ static void hts_sim_measurement(ble_hts_meas_t * p_meas)
     }
 }
 
-static void gls_sim_measurement(ble_gls_meas_t * p_meas)
-{
-    static int16_t s_mantissa = 550;
-    static int16_t s_exponent = -3;
-    static uint8_t s_secs     = 5;
-
-    // simulate the reading of a glucose measurement.
-    p_meas->flags = BLE_GLS_MEAS_FLAG_TIME_OFFSET |
-                     BLE_GLS_MEAS_FLAG_CONC_TYPE_LOC |
-                     BLE_GLS_MEAS_FLAG_UNITS_MOL_L;
-
-    p_meas->base_time                      = time_stamp;
-    p_meas->glucose_concentration.exponent = s_exponent;
-    p_meas->glucose_concentration.mantissa = s_mantissa;
-    p_meas->time_offset                    = 0;
-    p_meas->type                           = BLE_GLS_MEAS_TYPE_CAP_BLOOD;
-    p_meas->sample_location                = BLE_GLS_MEAS_LOC_FINGER;
-    p_meas->sensor_status_annunciation     = 0;
-
-    s_mantissa += 23;
-    if (s_mantissa > 939)
-    {
-        s_mantissa -= 434;
-    }
-
-}
-
 
 /**@brief Function for the Timer initialization.
  *
@@ -203,16 +163,17 @@ static void gls_sim_measurement(ble_gls_meas_t * p_meas)
  */
 static void timers_init(void)
 {
+    ret_code_t err_code;
+
     // Initialize timer module.
-    APP_ERROR_CHECK(app_timer_init());
+    err_code = app_timer_init();
+    APP_ERROR_CHECK(err_code);
 
     // Create timers.
-    APP_ERROR_CHECK(app_timer_create(&m_battery_timer_id,
+    err_code = app_timer_create(&m_battery_timer_id,
                                 APP_TIMER_MODE_REPEATED,
-                                battery_meas_timeout_handler));
-    APP_ERROR_CHECK(app_timer_create(&m_hts_timer_id,
-                                APP_TIMER_MODE_REPEATED,
-                                hts_meas_timeout_handler));
+                                battery_level_meas_timeout_handler);
+    APP_ERROR_CHECK(err_code);
 }
 
 
@@ -262,16 +223,29 @@ static void gatt_init(void)
  */
 static void temperature_measurement_send(void)
 {
-    ble_hts_meas_t simulated_hts_meas;
-    ble_gls_meas_t simulated_gls_meas;
+    ble_hts_meas_t simulated_meas;
+    ret_code_t     err_code;
 
     if (!m_hts_meas_ind_conf_pending)
     {
-        hts_sim_measurement(&simulated_hts_meas);
+        hts_sim_measurement(&simulated_meas);
 
-        if (!ble_hts_measurement_send(&m_hts, &simulated_hts_meas))
+        err_code = ble_hts_measurement_send(&m_hts, &simulated_meas);
+
+        switch (err_code)
         {
-          m_hts_meas_ind_conf_pending = true;
+            case NRF_SUCCESS:
+                // Measurement was successfully sent, wait for confirmation.
+                m_hts_meas_ind_conf_pending = true;
+                break;
+
+            case NRF_ERROR_INVALID_STATE:
+                // Ignore error.
+                break;
+
+            default:
+                APP_ERROR_HANDLER(err_code);
+                break;
         }
     }
 }
@@ -304,24 +278,6 @@ static void on_hts_evt(ble_hts_t * p_hts, ble_hts_evt_t * p_evt)
     }
 }
 
-static void on_gls_evt(ble_gls_t * p_gls, ble_gls_evt_t * p_evt)
-{
-    switch (p_evt->evt_type)
-    {
-//        case BLE_GLS_EVT_INDICATION_ENABLED:
-//            // Indication has been enabled, send a single temperature measurement
-//            break;
-//
-//        case BLE_GLS_EVT_INDICATION_CONFIRMED:
-//            m_gls_meas_ind_conf_pending = false;
-//            break;
-//
-//        default:
-//            // No implementation needed.
-//            break;
-    }
-}
-
 
 /**@brief Function for handling Queued Write Module errors.
  *
@@ -342,8 +298,8 @@ static void nrf_qwr_error_handler(uint32_t nrf_error)
  */
 static void services_init(void)
 {
+    ret_code_t         err_code;
     ble_hts_init_t     hts_init;
-    ble_gls_init_t     gls_init;
     ble_bas_init_t     bas_init;
     ble_dis_init_t     dis_init;
     nrf_ble_qwr_init_t qwr_init = {0};
@@ -352,7 +308,8 @@ static void services_init(void)
     // Initialize Queued Write Module.
     qwr_init.error_handler = nrf_qwr_error_handler;
 
-    APP_ERROR_CHECK(nrf_ble_qwr_init(&m_qwr, &qwr_init));
+    err_code = nrf_ble_qwr_init(&m_qwr, &qwr_init);
+    APP_ERROR_CHECK(err_code);
 
     // Initialize Health Thermometer Service
     memset(&hts_init, 0, sizeof(hts_init));
@@ -365,25 +322,8 @@ static void services_init(void)
     hts_init.ht_meas_cccd_wr_sec = SEC_JUST_WORKS;
     hts_init.ht_type_rd_sec      = SEC_OPEN;
 
-    APP_ERROR_CHECK(ble_hts_init(&m_hts, &hts_init));
-
-    // Initialize Glucose Service - sample selection of feature bits.
-    memset(&gls_init, 0, sizeof(gls_init));
-
-    gls_init.evt_handler          = on_gls_evt;
-    gls_init.feature              = 0;
-    gls_init.feature             |= BLE_GLS_FEATURE_LOW_BATT;
-    gls_init.feature             |= BLE_GLS_FEATURE_TEMP_HIGH_LOW;
-    gls_init.feature             |= BLE_GLS_FEATURE_GENERAL_FAULT;
-    gls_init.is_context_supported = false;
-
-    // Here the sec level for the Glucose Service can be changed/increased.
-    gls_init.gl_meas_cccd_wr_sec = SEC_JUST_WORKS;
-    gls_init.gl_feature_rd_sec   = SEC_JUST_WORKS;
-    gls_init.racp_cccd_wr_sec    = SEC_JUST_WORKS;
-    gls_init.racp_wr_sec         = SEC_JUST_WORKS;
-
-    APP_ERROR_CHECK(ble_gls_init(&m_gls, &gls_init));
+    err_code = ble_hts_init(&m_hts, &hts_init);
+    APP_ERROR_CHECK(err_code);
 
     // Initialize Battery Service.
     memset(&bas_init, 0, sizeof(bas_init));
@@ -398,7 +338,8 @@ static void services_init(void)
     bas_init.p_report_ref         = NULL;
     bas_init.initial_batt_level   = 100;
 
-    APP_ERROR_CHECK(ble_bas_init(&m_bas, &bas_init));
+    err_code = ble_bas_init(&m_bas, &bas_init);
+    APP_ERROR_CHECK(err_code);
 
     // Initialize Device Information Service.
     memset(&dis_init, 0, sizeof(dis_init));
@@ -412,7 +353,8 @@ static void services_init(void)
 
     dis_init.dis_char_rd_sec = SEC_OPEN;
 
-    APP_ERROR_CHECK(ble_dis_init(&dis_init));
+    err_code = ble_dis_init(&dis_init);
+    APP_ERROR_CHECK(err_code);
 }
 
 
@@ -441,9 +383,11 @@ static void sensor_simulator_init(void)
  */
 static void application_timers_start(void)
 {
+    ret_code_t err_code;
+
     // Start application timers.
-    APP_ERROR_CHECK(app_timer_start(m_battery_timer_id, APP_TIMER_TICKS(2000), NULL));
-    APP_ERROR_CHECK(app_timer_start(m_hts_timer_id, APP_TIMER_TICKS(1000), NULL));
+    err_code = app_timer_start(m_battery_timer_id, BATTERY_LEVEL_MEAS_INTERVAL, NULL);
+    APP_ERROR_CHECK(err_code);
 }
 
 
@@ -558,21 +502,23 @@ static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
  */
 static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
 {
+    uint32_t err_code = NRF_SUCCESS;
+
     switch (p_ble_evt->header.evt_id)
     {
         case BLE_GAP_EVT_CONNECTED:
             NRF_LOG_INFO("Connected.");
-            APP_ERROR_CHECK(bsp_indication_set(BSP_INDICATE_CONNECTED));
+            err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
+            APP_ERROR_CHECK(err_code);
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
-            APP_ERROR_CHECK(nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle));
-            m_device_connected = true;
+            err_code = nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle);
+            APP_ERROR_CHECK(err_code);
             break;
 
         case BLE_GAP_EVT_DISCONNECTED:
             NRF_LOG_INFO("Disconnected.");
             m_conn_handle               = BLE_CONN_HANDLE_INVALID;
             m_hts_meas_ind_conf_pending = false;
-            m_device_connected = false;
             break;
 
         case BLE_GAP_EVT_PHY_UPDATE_REQUEST:
@@ -583,21 +529,24 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
                 .rx_phys = BLE_GAP_PHY_AUTO,
                 .tx_phys = BLE_GAP_PHY_AUTO,
             };
-            APP_ERROR_CHECK(sd_ble_gap_phy_update(p_ble_evt->evt.gap_evt.conn_handle, &phys));
+            err_code = sd_ble_gap_phy_update(p_ble_evt->evt.gap_evt.conn_handle, &phys);
+            APP_ERROR_CHECK(err_code);
         } break;
 
         case BLE_GATTC_EVT_TIMEOUT:
             // Disconnect on GATT Client timeout event.
             NRF_LOG_DEBUG("GATT Client Timeout.");
-            APP_ERROR_CHECK(sd_ble_gap_disconnect(p_ble_evt->evt.gattc_evt.conn_handle,
-                                             BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION));
+            err_code = sd_ble_gap_disconnect(p_ble_evt->evt.gattc_evt.conn_handle,
+                                             BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+            APP_ERROR_CHECK(err_code);
             break;
 
         case BLE_GATTS_EVT_TIMEOUT:
             // Disconnect on GATT Server timeout event.
             NRF_LOG_DEBUG("GATT Server Timeout.");
-            APP_ERROR_CHECK(sd_ble_gap_disconnect(p_ble_evt->evt.gatts_evt.conn_handle,
-                                             BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION));
+            err_code = sd_ble_gap_disconnect(p_ble_evt->evt.gatts_evt.conn_handle,
+                                             BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+            APP_ERROR_CHECK(err_code);
             break;
 
         default:
@@ -613,15 +562,20 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
  */
 static void ble_stack_init(void)
 {
-    APP_ERROR_CHECK(nrf_sdh_enable_request());
+    ret_code_t err_code;
+
+    err_code = nrf_sdh_enable_request();
+    APP_ERROR_CHECK(err_code);
 
     // Configure the BLE stack using the default settings.
     // Fetch the start address of the application RAM.
     uint32_t ram_start = 0;
-    APP_ERROR_CHECK(nrf_sdh_ble_default_cfg_set(APP_BLE_CONN_CFG_TAG, &ram_start));
+    err_code = nrf_sdh_ble_default_cfg_set(APP_BLE_CONN_CFG_TAG, &ram_start);
+    APP_ERROR_CHECK(err_code);
 
     // Enable BLE stack.
-    APP_ERROR_CHECK(nrf_sdh_ble_enable(&ram_start));
+    err_code = nrf_sdh_ble_enable(&ram_start);
+    APP_ERROR_CHECK(err_code);
 
     // Register a handler for BLE events.
     NRF_SDH_BLE_OBSERVER(m_ble_observer, APP_BLE_OBSERVER_PRIO, ble_evt_handler, NULL);
@@ -643,7 +597,6 @@ static void bsp_event_handler(bsp_event_t event)
             break;
 
         case BSP_EVENT_DISCONNECT:
-            NRF_LOG_INFO("BSP Disconnected.");
             err_code = sd_ble_gap_disconnect(m_conn_handle,
                                              BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
             if (err_code != NRF_ERROR_INVALID_STATE)
@@ -663,6 +616,13 @@ static void bsp_event_handler(bsp_event_t event)
             }
             break;
 
+        case BSP_EVENT_KEY_0:
+            if (m_conn_handle != BLE_CONN_HANDLE_INVALID)
+            {
+                temperature_measurement_send();
+            }
+            break;
+
         default:
             break;
     }
@@ -674,7 +634,10 @@ static void bsp_event_handler(bsp_event_t event)
 static void peer_manager_init(void)
 {
     ble_gap_sec_params_t sec_param;
-    APP_ERROR_CHECK(pm_init());
+    ret_code_t           err_code;
+
+    err_code = pm_init();
+    APP_ERROR_CHECK(err_code);
 
     memset(&sec_param, 0, sizeof(ble_gap_sec_params_t));
 
@@ -692,9 +655,11 @@ static void peer_manager_init(void)
     sec_param.kdist_peer.enc = 1;
     sec_param.kdist_peer.id  = 1;
 
-    APP_ERROR_CHECK(pm_sec_params_set(&sec_param));
+    err_code = pm_sec_params_set(&sec_param);
+    APP_ERROR_CHECK(err_code);
 
-    APP_ERROR_CHECK(pm_register(pm_evt_handler));
+    err_code = pm_register(pm_evt_handler);
+    APP_ERROR_CHECK(err_code);
 }
 
 
@@ -702,9 +667,12 @@ static void peer_manager_init(void)
  */
 static void delete_bonds(void)
 {
+    ret_code_t err_code;
+
     NRF_LOG_INFO("Erase bonds!");
 
-    APP_ERROR_CHECK(pm_peers_delete());
+    err_code = pm_peers_delete();
+    APP_ERROR_CHECK(err_code);
 }
 
 
@@ -715,6 +683,7 @@ static void delete_bonds(void)
  */
 static void advertising_init(void)
 {
+    ret_code_t             err_code;
     ble_advertising_init_t init;
 
     memset(&init, 0, sizeof(init));
@@ -731,7 +700,8 @@ static void advertising_init(void)
 
     init.evt_handler = on_adv_evt;
 
-    APP_ERROR_CHECK(ble_advertising_init(&m_advertising, &init));
+    err_code = ble_advertising_init(&m_advertising, &init);
+    APP_ERROR_CHECK(err_code);
 
     ble_advertising_conn_cfg_tag_set(&m_advertising, APP_BLE_CONN_CFG_TAG);
 }
@@ -743,11 +713,14 @@ static void advertising_init(void)
  */
 static void buttons_leds_init(bool * p_erase_bonds)
 {
+    ret_code_t err_code;
     bsp_event_t startup_event;
 
-    APP_ERROR_CHECK(bsp_init(BSP_INIT_LEDS | BSP_INIT_BUTTONS, bsp_event_handler));
+    err_code = bsp_init(BSP_INIT_LEDS | BSP_INIT_BUTTONS, bsp_event_handler);
+    APP_ERROR_CHECK(err_code);
 
-    APP_ERROR_CHECK(bsp_btn_ble_init(NULL, &startup_event));
+    err_code = bsp_btn_ble_init(NULL, &startup_event);
+    APP_ERROR_CHECK(err_code);
 
     *p_erase_bonds = (startup_event == BSP_EVENT_CLEAR_BONDING_DATA);
 }
@@ -757,7 +730,8 @@ static void buttons_leds_init(bool * p_erase_bonds)
  */
 static void log_init(void)
 {
-    APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
+    ret_code_t err_code = NRF_LOG_INIT(NULL);
+    APP_ERROR_CHECK(err_code);
 
     NRF_LOG_DEFAULT_BACKENDS_INIT();
 }
@@ -767,7 +741,9 @@ static void log_init(void)
  */
 static void power_management_init(void)
 {
-    APP_ERROR_CHECK(nrf_pwr_mgmt_init());
+    ret_code_t err_code;
+    err_code = nrf_pwr_mgmt_init();
+    APP_ERROR_CHECK(err_code);
 }
 
 
@@ -795,7 +771,8 @@ static void advertising_start(bool erase_bonds)
     }
     else
     {
-        APP_ERROR_CHECK(ble_advertising_start(&m_advertising, BLE_ADV_MODE_FAST));
+        uint32_t err_code = ble_advertising_start(&m_advertising, BLE_ADV_MODE_FAST);
+        APP_ERROR_CHECK(err_code);
     }
 }
 
