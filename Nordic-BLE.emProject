@@ -1063,6 +1063,7 @@
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/nfc/t4t_parser/hl_detection_procedure/nfc_t4t_hl_detection_procedures.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/nfc/t4t_parser/tlv/nfc_t4t_tlv_block.c" />
       </folder>
+      <configuration Name="Debug" build_exclude_from_build="Yes" />
     </folder>
   </project>
   <configuration
@@ -2126,6 +2127,7 @@
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/nfc/t4t_parser/hl_detection_procedure/nfc_t4t_hl_detection_procedures.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/nfc/t4t_parser/tlv/nfc_t4t_tlv_block.c" />
       </folder>
+      <configuration Name="Debug" build_exclude_from_build="Yes" />
     </folder>
     <folder Name="external/nRF_Oberon">
       <configuration Name="Debug" build_exclude_from_build="No" />
