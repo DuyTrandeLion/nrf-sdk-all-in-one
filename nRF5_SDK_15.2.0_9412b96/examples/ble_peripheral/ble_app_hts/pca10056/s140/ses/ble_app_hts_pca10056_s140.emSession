@@ -60,13 +60,13 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="902" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="889" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="902" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="889" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="12817" useTextEdit="1" useBinaryEdit="0" left="0" path="../config/sdk_config.h" selected="0" top="12806" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="226" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/ble/common/ble_conn_state.c" selected="0" top="216" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="144" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error.h" selected="0" top="131" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="97" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/log/src/nrf_log_str_formatter.c" selected="0" top="72" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="61" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/fprintf/nrf_fprintf.c" selected="0" top="57" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="104" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error_weak.c" selected="1" top="86" codecName=""/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="99" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error_weak.c" selected="0" top="86" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="ble_app_hts_pca10056_s140" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
