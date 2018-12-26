@@ -58,7 +58,7 @@
 // <4=> NFC_PAIRING_MODE_GENERIC_OOB 
 
 #ifndef NFC_PAIRING_MODE
-#define NFC_PAIRING_MODE 4
+#define NFC_PAIRING_MODE 0
 #endif
 
 // </h> 
