@@ -34,10 +34,10 @@
  </Memory4>
  <Project>
   <ProjectSessionItem path="Nordic-BLE"/>
-  <ProjectSessionItem path="Nordic-BLE;BLE-nRF52832"/>
-  <ProjectSessionItem path="Nordic-BLE;BLE-nRF52832;external/nRF_Oberon"/>
   <ProjectSessionItem path="Nordic-BLE;BLE-nRF52840"/>
   <ProjectSessionItem path="Nordic-BLE;BLE-nRF52840;Application"/>
+  <ProjectSessionItem path="Nordic-BLE;BLE-nRF52840;components/nRF_BLE"/>
+  <ProjectSessionItem path="Nordic-BLE;BLE-nRF52840;components/nRF_BLE;peer_manager"/>
  </Project>
  <Register1>
   <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/msp;CPU/psp;CPU/cfbp" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="Nordic-Mesh-Client" decimalNodes="" octalNodes="" unsignedNodes=""/>
@@ -82,8 +82,11 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="928" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52840/main.c" selected="1" top="915" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="144" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/nrf_ble_lesc.c" selected="0" top="119" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="928" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52840/main.c" selected="0" top="915" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="49" y="144" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/nrf_ble_lesc.c" selected="0" top="122" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="8354" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52832/config/sdk_config.h" selected="0" top="8346" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52840/Core/include/main.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="10" y="7067" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52840/config/sdk_config.h" selected="1" top="7003" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="BLE-nRF52840" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="D:/Nordic-Embedded/ble-rd/nRF5_SDK_15.2.0_9412b96/external/nrf_oberon/lib/nrf51" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

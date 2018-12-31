@@ -46,6 +46,711 @@
 #ifdef USE_APP_CONFIG
 #include "app_config.h"
 #endif
+// <h> Application 
+
+//==========================================================
+// <o> ADV_INTERVAL - Advertising interval (in units of 0.625 ms) 
+#ifndef ADV_INTERVAL
+#define ADV_INTERVAL 300
+#endif
+
+// <h> BLE_PAIR_SECURITY_PARAMETERS - BLE Security Parameters (all connections).
+
+//==========================================================
+// <e> BLE_SEC_PARAM_BOND - Enables device bonding.
+
+// <i> If bonding is enabled, at least one of the BLE_NFC_SEC_PARAM_KDIST options must be enabled.
+//==========================================================
+#ifndef BLE_SEC_PARAM_BOND
+#define BLE_SEC_PARAM_BOND 1
+#endif
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ENC  - Enables Long Term Key and Master Identification distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ENC
+#define BLE_SEC_PARAM_KDIST_OWN_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_OWN_ID  - Enables Identity Resolving Key and Identity Address Information distribution by device.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_OWN_ID
+#define BLE_SEC_PARAM_KDIST_OWN_ID 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ENC  - Enables Long Term Key and Master Identification distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ENC
+#define BLE_SEC_PARAM_KDIST_PEER_ENC 1
+#endif
+
+// <q> BLE_SEC_PARAM_KDIST_PEER_ID  - Enables Identity Resolving Key and Identity Address Information distribution by peer.
+ 
+
+#ifndef BLE_SEC_PARAM_KDIST_PEER_ID
+#define BLE_SEC_PARAM_KDIST_PEER_ID 1
+#endif
+
+// </e>
+
+// <q> BLE_SEC_PARAM_LESC  - Enable LE Secure Connection.
+ 
+
+#ifndef BLE_SEC_PARAM_LESC
+#define BLE_SEC_PARAM_LESC 1
+#endif
+
+// <q> BLE_SEC_PARAM_MITM  - Enable Man In The Middle protection.
+ 
+
+#ifndef BLE_SEC_PARAM_MITM
+#define BLE_SEC_PARAM_MITM 1
+#endif
+
+// <q> BLE_SEC_PARAM_OOB  - Enable OOB.
+ 
+
+#ifndef BLE_SEC_PARAM_OOB
+#define BLE_SEC_PARAM_OOB 0
+#endif
+
+// <q> BLE_SEC_PARAM_KEYPRESS  - Enable keypress notifications.
+ 
+
+#ifndef BLE_SEC_PARAM_KEYPRESS
+#define BLE_SEC_PARAM_KEYPRESS 0
+#endif
+
+// <o> BLE_SEC_PARAM_IO_CAPS  - IO Capabilities settings.
+ 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+// <0=> BLE_GAP_IO_CAPS_DISPLAY_ONLY 
+// <1=> BLE_GAP_IO_CAPS_DISPLAY_YESNO 
+// <2=> BLE_GAP_IO_CAPS_KEYBOARD_ONLY 
+// <3=> BLE_GAP_IO_CAPS_NONE 
+// <4=> BLE_GAP_IO_CAPS_KEYBOARD_DISPLAY 
+
+#ifndef BLE_SEC_PARAM_IO_CAPS
+#define BLE_SEC_PARAM_IO_CAPS 1
+#endif
+
+// <o> BLE_SEC_PARAM_MIN_KEY_SIZE  - Minimum size of a security key.
+ 
+// <7=> 7 
+// <8=> 8 
+// <9=> 9 
+// <10=> 10 
+// <11=> 11 
+// <12=> 12 
+// <13=> 13 
+// <14=> 14 
+// <15=> 15 
+// <16=> 16 
+
+#ifndef BLE_SEC_PARAM_MIN_KEY_SIZE
+#define BLE_SEC_PARAM_MIN_KEY_SIZE 7
+#endif
+
+// <o> BLE_SEC_PARAM_MAX_KEY_SIZE  - Maximum size of a security key.
+ 
+// <7=> 7 
+// <8=> 8 
+// <9=> 9 
+// <10=> 10 
+// <11=> 11 
+// <12=> 12 
+// <13=> 13 
+// <14=> 14 
+// <15=> 15 
+// <16=> 16 
+
+#ifndef BLE_SEC_PARAM_MAX_KEY_SIZE
+#define BLE_SEC_PARAM_MAX_KEY_SIZE 16
+#endif
+
+// </h> 
+//==========================================================
+
+// <o> BOND_DEVICE_MAX - Maximum number of paired devices. 
+#ifndef BOND_DEVICE_MAX
+#define BOND_DEVICE_MAX 10
+#endif
+
+// <o> CLI_LOG_QUEUE_SIZE - Command line interface log queue size. 
+#ifndef CLI_LOG_QUEUE_SIZE
+#define CLI_LOG_QUEUE_SIZE 6
+#endif
+
+// <o> CLI_MAX_CMD_LEN - Command max length. 
+#ifndef CLI_MAX_CMD_LEN
+#define CLI_MAX_CMD_LEN 21
+#endif
+
+// <q> CLI_RTT_ENABLE  - Enable CLI RTT backend.
+ 
+
+#ifndef CLI_RTT_ENABLE
+#define CLI_RTT_ENABLE 0
+#endif
+
+// <o> CONNECTION_SLAVE_LATENCY - Slave latency in terms of connection events. 
+#ifndef CONNECTION_SLAVE_LATENCY
+#define CONNECTION_SLAVE_LATENCY 5
+#endif
+
+// <o> CONNECTION_SUPERVISION_TIMEOUT - Supervision timeout in units of 10 milliseconds. 
+#ifndef CONNECTION_SUPERVISION_TIMEOUT
+#define CONNECTION_SUPERVISION_TIMEOUT 6200
+#endif
+
+// <s> DEVICE_NAME - Name of the device. Will be included in the advertising data.
+#ifndef DEVICE_NAME
+#define DEVICE_NAME "Nordic_ble_interactive"
+#endif
+
+// <o> DEVICE_NAME_MAX_SIZE - Max device name length. 
+#ifndef DEVICE_NAME_MAX_SIZE
+#define DEVICE_NAME_MAX_SIZE 20
+#endif
+
+// <o> DEVICE_TO_FIND_MAX - Maximum number of devices that will be found during the scan. 
+#ifndef DEVICE_TO_FIND_MAX
+#define DEVICE_TO_FIND_MAX 20
+#endif
+
+// <o> GATT_DATA_WRITE_SIZE - Maximum size of GATT data to write. 
+#ifndef GATT_DATA_WRITE_SIZE
+#define GATT_DATA_WRITE_SIZE 20
+#endif
+
+// <o> LESC_DEBUG_MODE - Set to 1 to use LESC debug keys, allows you to use a sniffer to inspect traffic. 
+#ifndef LESC_DEBUG_MODE
+#define LESC_DEBUG_MODE 0
+#endif
+
+// <o> MAXIMUM_CONNECTION_INTERVAL - Maximum connection interval in milliseconds. 
+#ifndef MAXIMUM_CONNECTION_INTERVAL
+#define MAXIMUM_CONNECTION_INTERVAL 500
+#endif
+
+// <o> MAX_CHARACTERISTIC_COUNT - Maximum count of characteristics to find. 
+#ifndef MAX_CHARACTERISTIC_COUNT
+#define MAX_CHARACTERISTIC_COUNT 6
+#endif
+
+// <o> MAX_SERVICE_COUNT - Maximum count of services to find. 
+#ifndef MAX_SERVICE_COUNT
+#define MAX_SERVICE_COUNT 6
+#endif
+
+// <o> MINIMUM_CONNECTION_INTERVAL - Minimum connection interval in milliseconds. 
+#ifndef MINIMUM_CONNECTION_INTERVAL
+#define MINIMUM_CONNECTION_INTERVAL 100
+#endif
+
+// <e> NFC_PAIR_LIB_M_LOG_ENABLED - Enables logging in the module.
+//==========================================================
+#ifndef NFC_PAIR_LIB_M_LOG_ENABLED
+#define NFC_PAIR_LIB_M_LOG_ENABLED 0
+#endif
+// <o> NFC_PAIR_LIB_M_LOG_LEVEL  - Default Severity level
+ 
+// <0=> Off 
+// <1=> Error 
+// <2=> Warning 
+// <3=> Info 
+// <4=> Debug 
+
+#ifndef NFC_PAIR_LIB_M_LOG_LEVEL
+#define NFC_PAIR_LIB_M_LOG_LEVEL 3
+#endif
+
+// <o> NFC_PAIR_LIB_M_INFO_COLOR  - ANSI escape code prefix.
+ 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
+
+#ifndef NFC_PAIR_LIB_M_INFO_COLOR
+#define NFC_PAIR_LIB_M_INFO_COLOR 0
+#endif
+
+// <o> NFC_PAIR_LIB_M_DEBUG_COLOR  - ANSI escape code prefix.
+ 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
+
+#ifndef NFC_PAIR_LIB_M_DEBUG_COLOR
+#define NFC_PAIR_LIB_M_DEBUG_COLOR 0
+#endif
+
+// </e>
+
+// <o> PRIVATE_ADDRESS_INTERVAL - Time in seconds after which the device address is changed if privacy is used. 
+#ifndef PRIVATE_ADDRESS_INTERVAL
+#define PRIVATE_ADDRESS_INTERVAL 30
+#endif
+
+// <o> SCAN_INTERVAL - Scanning interval, determines scan interval in units of 0.625 millisecond. 
+#ifndef SCAN_INTERVAL
+#define SCAN_INTERVAL 160
+#endif
+
+// <o> SCAN_LIST_REFRESH_INTERVAL - Time after which the device scan list will be cleaned and refreshed. 
+#ifndef SCAN_LIST_REFRESH_INTERVAL
+#define SCAN_LIST_REFRESH_INTERVAL 10000
+#endif
+
+// <o> SCAN_WINDOW - Scanning window, determines scan window in units of 0.625 millisecond. 
+#ifndef SCAN_WINDOW
+#define SCAN_WINDOW 80
+#endif
+
+// </h> 
+//==========================================================
+
 // <h> Board Support 
 
 //==========================================================
@@ -69,6 +774,13 @@
 #define BLE_ADVERTISING_ENABLED 1
 #endif
 
+// <q> BLE_DB_DISCOVERY_ENABLED  - ble_db_discovery - Database discovery module
+ 
+
+#ifndef BLE_DB_DISCOVERY_ENABLED
+#define BLE_DB_DISCOVERY_ENABLED 0
+#endif
+
 // <q> BLE_DTM_ENABLED  - ble_dtm - Module for testing RF/PHY using DTM commands
  
 
@@ -80,7 +792,7 @@
  
 
 #ifndef BLE_RACP_ENABLED
-#define BLE_RACP_ENABLED 0
+#define BLE_RACP_ENABLED 1
 #endif
 
 // <e> NRF_BLE_CONN_PARAMS_ENABLED - ble_conn_params - Initiating and executing a connection parameters negotiation procedure
@@ -111,6 +823,13 @@
 #define NRF_BLE_GATT_ENABLED 1
 #endif
 
+// <q> NRF_BLE_LESC_ENABLED  - nrf_ble_lesc - Le Secure Connection
+ 
+
+#ifndef NRF_BLE_LESC_ENABLED
+#define NRF_BLE_LESC_ENABLED 1
+#endif
+
 // <e> NRF_BLE_QWR_ENABLED - nrf_ble_qwr - Queued writes support module (prepare/execute write)
 //==========================================================
 #ifndef NRF_BLE_QWR_ENABLED
@@ -123,6 +842,107 @@
 
 // </e>
 
+// <e> NRF_BLE_SCAN_ENABLED - nrf_ble_scan - Scanning Module
+//==========================================================
+#ifndef NRF_BLE_SCAN_ENABLED
+#define NRF_BLE_SCAN_ENABLED 0
+#endif
+// <o> NRF_BLE_SCAN_BUFFER - Data length for an advertising set. 
+#ifndef NRF_BLE_SCAN_BUFFER
+#define NRF_BLE_SCAN_BUFFER 31
+#endif
+
+// <o> NRF_BLE_SCAN_NAME_MAX_LEN - Maximum size for the name to search in the advertisement report. 
+#ifndef NRF_BLE_SCAN_NAME_MAX_LEN
+#define NRF_BLE_SCAN_NAME_MAX_LEN 32
+#endif
+
+// <o> NRF_BLE_SCAN_SHORT_NAME_MAX_LEN - Maximum size of the short name to search for in the advertisement report. 
+#ifndef NRF_BLE_SCAN_SHORT_NAME_MAX_LEN
+#define NRF_BLE_SCAN_SHORT_NAME_MAX_LEN 32
+#endif
+
+// <o> NRF_BLE_SCAN_SCAN_INTERVAL - Scanning interval. Determines the scan interval in units of 0.625 millisecond. 
+#ifndef NRF_BLE_SCAN_SCAN_INTERVAL
+#define NRF_BLE_SCAN_SCAN_INTERVAL 160
+#endif
+
+// <o> NRF_BLE_SCAN_SCAN_DURATION - Duration of a scanning session in units of 10 ms. Range: 0x0001 - 0xFFFF (10 ms to 10.9225 ms). If set to 0x0000, the scanning continues until it is explicitly disabled. 
+#ifndef NRF_BLE_SCAN_SCAN_DURATION
+#define NRF_BLE_SCAN_SCAN_DURATION 0
+#endif
+
+// <o> NRF_BLE_SCAN_SCAN_WINDOW - Scanning window. Determines the scanning window in units of 0.625 millisecond. 
+#ifndef NRF_BLE_SCAN_SCAN_WINDOW
+#define NRF_BLE_SCAN_SCAN_WINDOW 80
+#endif
+
+// <o> NRF_BLE_SCAN_MIN_CONNECTION_INTERVAL - Determines minimum connection interval in milliseconds. 
+#ifndef NRF_BLE_SCAN_MIN_CONNECTION_INTERVAL
+#define NRF_BLE_SCAN_MIN_CONNECTION_INTERVAL 7.5
+#endif
+
+// <o> NRF_BLE_SCAN_MAX_CONNECTION_INTERVAL - Determines maximum connection interval in milliseconds. 
+#ifndef NRF_BLE_SCAN_MAX_CONNECTION_INTERVAL
+#define NRF_BLE_SCAN_MAX_CONNECTION_INTERVAL 30
+#endif
+
+// <o> NRF_BLE_SCAN_SLAVE_LATENCY - Determines the slave latency in counts of connection events. 
+#ifndef NRF_BLE_SCAN_SLAVE_LATENCY
+#define NRF_BLE_SCAN_SLAVE_LATENCY 0
+#endif
+
+// <o> NRF_BLE_SCAN_SUPERVISION_TIMEOUT - Determines the supervision time-out in units of 10 millisecond. 
+#ifndef NRF_BLE_SCAN_SUPERVISION_TIMEOUT
+#define NRF_BLE_SCAN_SUPERVISION_TIMEOUT 4000
+#endif
+
+// <o> NRF_BLE_SCAN_SCAN_PHY  - PHY to scan on.
+ 
+// <0=> BLE_GAP_PHY_AUTO 
+// <1=> BLE_GAP_PHY_1MBPS 
+// <2=> BLE_GAP_PHY_2MBPS 
+// <4=> BLE_GAP_PHY_CODED 
+// <255=> BLE_GAP_PHY_NOT_SET 
+
+#ifndef NRF_BLE_SCAN_SCAN_PHY
+#define NRF_BLE_SCAN_SCAN_PHY 1
+#endif
+
+// <e> NRF_BLE_SCAN_FILTER_ENABLE - Enabling filters for the Scanning Module.
+//==========================================================
+#ifndef NRF_BLE_SCAN_FILTER_ENABLE
+#define NRF_BLE_SCAN_FILTER_ENABLE 1
+#endif
+// <o> NRF_BLE_SCAN_UUID_CNT - Number of filters for UUIDs. 
+#ifndef NRF_BLE_SCAN_UUID_CNT
+#define NRF_BLE_SCAN_UUID_CNT 0
+#endif
+
+// <o> NRF_BLE_SCAN_NAME_CNT - Number of name filters. 
+#ifndef NRF_BLE_SCAN_NAME_CNT
+#define NRF_BLE_SCAN_NAME_CNT 1
+#endif
+
+// <o> NRF_BLE_SCAN_SHORT_NAME_CNT - Number of short name filters. 
+#ifndef NRF_BLE_SCAN_SHORT_NAME_CNT
+#define NRF_BLE_SCAN_SHORT_NAME_CNT 0
+#endif
+
+// <o> NRF_BLE_SCAN_ADDRESS_CNT - Number of address filters. 
+#ifndef NRF_BLE_SCAN_ADDRESS_CNT
+#define NRF_BLE_SCAN_ADDRESS_CNT 0
+#endif
+
+// <o> NRF_BLE_SCAN_APPEARANCE_CNT - Number of appearance filters. 
+#ifndef NRF_BLE_SCAN_APPEARANCE_CNT
+#define NRF_BLE_SCAN_APPEARANCE_CNT 0
+#endif
+
+// </e>
+
+// </e>
+
 // <e> PEER_MANAGER_ENABLED - peer_manager - Peer Manager
 //==========================================================
 #ifndef PEER_MANAGER_ENABLED
@@ -130,7 +950,7 @@
 #endif
 // <o> PM_MAX_REGISTRANTS - Number of event handlers that can be registered. 
 #ifndef PM_MAX_REGISTRANTS
-#define PM_MAX_REGISTRANTS 3
+#define PM_MAX_REGISTRANTS 4
 #endif
 
 // <o> PM_FLASH_BUFFERS - Number of internal buffers for flash operations. 
@@ -180,7 +1000,7 @@
 // <e> PM_RA_PROTECTION_ENABLED - Enable/disable protection against repeated pairing attempts in Peer Manager.
 //==========================================================
 #ifndef PM_RA_PROTECTION_ENABLED
-#define PM_RA_PROTECTION_ENABLED 0
+#define PM_RA_PROTECTION_ENABLED 1
 #endif
 // <o> PM_RA_PROTECTION_TRACKED_PEERS_NUM - Maximum number of peers whose authorization status can be tracked. 
 #ifndef PM_RA_PROTECTION_TRACKED_PEERS_NUM
@@ -311,7 +1131,7 @@
  
 
 #ifndef BLE_CTS_C_ENABLED
-#define BLE_CTS_C_ENABLED 0
+#define BLE_CTS_C_ENABLED 1
 #endif
 
 // <q> BLE_DIS_ENABLED  - ble_dis - Device Information Service
@@ -353,7 +1173,7 @@
  
 
 #ifndef BLE_HTS_ENABLED
-#define BLE_HTS_ENABLED 1
+#define BLE_HTS_ENABLED 0
 #endif
 
 // <q> BLE_IAS_C_ENABLED  - ble_ias_c - Immediate Alert Service Client
@@ -528,6 +1348,13 @@
 #define BLE_TPS_ENABLED 0
 #endif
 
+// <q> NRF_BLE_GATTS_C_ENABLED  - nrf_ble_gatts_c - GATT Service Client
+ 
+
+#ifndef NRF_BLE_GATTS_C_ENABLED
+#define NRF_BLE_GATTS_C_ENABLED 0
+#endif
+
 // </h> 
 //==========================================================
 
@@ -623,6 +1450,15 @@
 
 #ifndef NRF_CRYPTO_BACKEND_CC310_BL_HASH_SHA256_ENABLED
 #define NRF_CRYPTO_BACKEND_CC310_BL_HASH_SHA256_ENABLED 1
+#endif
+
+// <q> NRF_CRYPTO_BACKEND_CC310_BL_HASH_LITTLE_ENDIAN_DIGEST_ENABLED  - nrf_cc310_bl hash outputs digests in little endian
+
+
+// <i> Makes the nRF SH hash functions output digests in little endian format. Only for use in nRF SDK DFU!
+
+#ifndef NRF_CRYPTO_BACKEND_CC310_BL_HASH_LITTLE_ENDIAN_DIGEST_ENABLED
+#define NRF_CRYPTO_BACKEND_CC310_BL_HASH_LITTLE_ENDIAN_DIGEST_ENABLED 0
 #endif
 
 // <q> NRF_CRYPTO_BACKEND_CC310_BL_HASH_AUTOMATIC_RAM_BUFFER_ENABLED  - nrf_cc310_bl buffers to RAM before running hash operation
@@ -1231,6 +2067,29 @@
 #endif
 
 // </e>
+
+// <h> nrf_crypto_rng - RNG Configuration
+
+//==========================================================
+// <q> NRF_CRYPTO_RNG_STATIC_MEMORY_BUFFERS_ENABLED  - Use static memory buffers for context and temporary init buffer.
+ 
+
+// <i> Always recommended when using the nRF HW RNG as the context and temporary buffers are small. Consider disabling if using the CC310 RNG in a RAM constrained application. In this case, memory must be provided to nrf_crypto_rng_init, or it can be allocated internally provided that NRF_CRYPTO_ALLOCATOR does not allocate memory on the stack.
+
+#ifndef NRF_CRYPTO_RNG_STATIC_MEMORY_BUFFERS_ENABLED
+#define NRF_CRYPTO_RNG_STATIC_MEMORY_BUFFERS_ENABLED 1
+#endif
+
+// <q> NRF_CRYPTO_RNG_AUTO_INIT_ENABLED  - Initialize the RNG module automatically when nrf_crypto is initialized.
+ 
+
+// <i> Automatic initialization is only supported with static or internally allocated context and temporary memory.
+
+#ifndef NRF_CRYPTO_RNG_AUTO_INIT_ENABLED
+#define NRF_CRYPTO_RNG_AUTO_INIT_ENABLED 1
+#endif
+
+// </h> 
 
 // </h> 
 //==========================================================
@@ -2437,7 +3296,7 @@
 // <e> NRFX_PPI_ENABLED - nrfx_ppi - PPI peripheral allocator
 //==========================================================
 #ifndef NRFX_PPI_ENABLED
-#define NRFX_PPI_ENABLED 0
+#define NRFX_PPI_ENABLED 1
 #endif
 // <e> NRFX_PPI_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
@@ -2585,6 +3444,134 @@
 
 // </e>
 
+// <e> NRFX_QSPI_ENABLED - nrfx_qspi - QSPI peripheral driver
+//==========================================================
+#ifndef NRFX_QSPI_ENABLED
+#define NRFX_QSPI_ENABLED 1
+#endif
+// <o> NRFX_QSPI_CONFIG_SCK_DELAY - tSHSL, tWHSL and tSHWL in number of 16 MHz periods (62.5 ns).  <0-255> 
+
+
+#ifndef NRFX_QSPI_CONFIG_SCK_DELAY
+#define NRFX_QSPI_CONFIG_SCK_DELAY 1
+#endif
+
+// <o> NRFX_QSPI_CONFIG_XIP_OFFSET - Address offset in the external memory for Execute in Place operation. 
+#ifndef NRFX_QSPI_CONFIG_XIP_OFFSET
+#define NRFX_QSPI_CONFIG_XIP_OFFSET 0
+#endif
+
+// <o> NRFX_QSPI_CONFIG_READOC  - Number of data lines and opcode used for reading.
+ 
+// <0=> FastRead 
+// <1=> Read2O 
+// <2=> Read2IO 
+// <3=> Read4O 
+// <4=> Read4IO 
+
+#ifndef NRFX_QSPI_CONFIG_READOC
+#define NRFX_QSPI_CONFIG_READOC 0
+#endif
+
+// <o> NRFX_QSPI_CONFIG_WRITEOC  - Number of data lines and opcode used for writing.
+ 
+// <0=> PP 
+// <1=> PP2O 
+// <2=> PP4O 
+// <3=> PP4IO 
+
+#ifndef NRFX_QSPI_CONFIG_WRITEOC
+#define NRFX_QSPI_CONFIG_WRITEOC 0
+#endif
+
+// <o> NRFX_QSPI_CONFIG_ADDRMODE  - Addressing mode.
+ 
+// <0=> 24bit 
+// <1=> 32bit 
+
+#ifndef NRFX_QSPI_CONFIG_ADDRMODE
+#define NRFX_QSPI_CONFIG_ADDRMODE 0
+#endif
+
+// <o> NRFX_QSPI_CONFIG_MODE  - SPI mode.
+ 
+// <0=> Mode 0 
+// <1=> Mode 1 
+
+#ifndef NRFX_QSPI_CONFIG_MODE
+#define NRFX_QSPI_CONFIG_MODE 0
+#endif
+
+// <o> NRFX_QSPI_CONFIG_FREQUENCY  - Frequency divider.
+ 
+// <0=> 32MHz/1 
+// <1=> 32MHz/2 
+// <2=> 32MHz/3 
+// <3=> 32MHz/4 
+// <4=> 32MHz/5 
+// <5=> 32MHz/6 
+// <6=> 32MHz/7 
+// <7=> 32MHz/8 
+// <8=> 32MHz/9 
+// <9=> 32MHz/10 
+// <10=> 32MHz/11 
+// <11=> 32MHz/12 
+// <12=> 32MHz/13 
+// <13=> 32MHz/14 
+// <14=> 32MHz/15 
+// <15=> 32MHz/16 
+
+#ifndef NRFX_QSPI_CONFIG_FREQUENCY
+#define NRFX_QSPI_CONFIG_FREQUENCY 15
+#endif
+
+// <s> NRFX_QSPI_PIN_SCK - SCK pin value.
+#ifndef NRFX_QSPI_PIN_SCK
+#define NRFX_QSPI_PIN_SCK NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <s> NRFX_QSPI_PIN_CSN - CSN pin value.
+#ifndef NRFX_QSPI_PIN_CSN
+#define NRFX_QSPI_PIN_CSN NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <s> NRFX_QSPI_PIN_IO0 - IO0 pin value.
+#ifndef NRFX_QSPI_PIN_IO0
+#define NRFX_QSPI_PIN_IO0 NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <s> NRFX_QSPI_PIN_IO1 - IO1 pin value.
+#ifndef NRFX_QSPI_PIN_IO1
+#define NRFX_QSPI_PIN_IO1 NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <s> NRFX_QSPI_PIN_IO2 - IO2 pin value.
+#ifndef NRFX_QSPI_PIN_IO2
+#define NRFX_QSPI_PIN_IO2 NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <s> NRFX_QSPI_PIN_IO3 - IO3 pin value.
+#ifndef NRFX_QSPI_PIN_IO3
+#define NRFX_QSPI_PIN_IO3 NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <o> NRFX_QSPI_CONFIG_IRQ_PRIORITY  - Interrupt priority
+ 
+// <0=> 0 (highest) 
+// <1=> 1 
+// <2=> 2 
+// <3=> 3 
+// <4=> 4 
+// <5=> 5 
+// <6=> 6 
+// <7=> 7 
+
+#ifndef NRFX_QSPI_CONFIG_IRQ_PRIORITY
+#define NRFX_QSPI_CONFIG_IRQ_PRIORITY 6
+#endif
+
+// </e>
+
 // <e> NRFX_PWM_ENABLED - nrfx_pwm - PWM peripheral driver
 //==========================================================
 #ifndef NRFX_PWM_ENABLED
@@ -2609,6 +3596,13 @@
 
 #ifndef NRFX_PWM2_ENABLED
 #define NRFX_PWM2_ENABLED 0
+#endif
+
+// <q> NRFX_PWM3_ENABLED  - Enable PWM3 instance
+ 
+
+#ifndef NRFX_PWM3_ENABLED
+#define NRFX_PWM3_ENABLED 0
 #endif
 
 // <o> NRFX_PWM_DEFAULT_CONFIG_OUT0_PIN - Out0 pin  <0-31> 
@@ -2936,6 +3930,134 @@
 
 // </e>
 
+// <e> NRFX_QSPI_ENABLED - nrfx_qspi - QSPI peripheral driver
+//==========================================================
+#ifndef NRFX_QSPI_ENABLED
+#define NRFX_QSPI_ENABLED 0
+#endif
+// <o> NRFX_QSPI_CONFIG_SCK_DELAY - tSHSL, tWHSL and tSHWL in number of 16 MHz periods (62.5 ns).  <0-255> 
+
+
+#ifndef NRFX_QSPI_CONFIG_SCK_DELAY
+#define NRFX_QSPI_CONFIG_SCK_DELAY 1
+#endif
+
+// <o> NRFX_QSPI_CONFIG_XIP_OFFSET - Address offset in the external memory for Execute in Place operation. 
+#ifndef NRFX_QSPI_CONFIG_XIP_OFFSET
+#define NRFX_QSPI_CONFIG_XIP_OFFSET 0
+#endif
+
+// <o> NRFX_QSPI_CONFIG_READOC  - Number of data lines and opcode used for reading.
+ 
+// <0=> FastRead 
+// <1=> Read2O 
+// <2=> Read2IO 
+// <3=> Read4O 
+// <4=> Read4IO 
+
+#ifndef NRFX_QSPI_CONFIG_READOC
+#define NRFX_QSPI_CONFIG_READOC 0
+#endif
+
+// <o> NRFX_QSPI_CONFIG_WRITEOC  - Number of data lines and opcode used for writing.
+ 
+// <0=> PP 
+// <1=> PP2O 
+// <2=> PP4O 
+// <3=> PP4IO 
+
+#ifndef NRFX_QSPI_CONFIG_WRITEOC
+#define NRFX_QSPI_CONFIG_WRITEOC 0
+#endif
+
+// <o> NRFX_QSPI_CONFIG_ADDRMODE  - Addressing mode.
+ 
+// <0=> 24bit 
+// <1=> 32bit 
+
+#ifndef NRFX_QSPI_CONFIG_ADDRMODE
+#define NRFX_QSPI_CONFIG_ADDRMODE 0
+#endif
+
+// <o> NRFX_QSPI_CONFIG_MODE  - SPI mode.
+ 
+// <0=> Mode 0 
+// <1=> Mode 1 
+
+#ifndef NRFX_QSPI_CONFIG_MODE
+#define NRFX_QSPI_CONFIG_MODE 0
+#endif
+
+// <o> NRFX_QSPI_CONFIG_FREQUENCY  - Frequency divider.
+ 
+// <0=> 32MHz/1 
+// <1=> 32MHz/2 
+// <2=> 32MHz/3 
+// <3=> 32MHz/4 
+// <4=> 32MHz/5 
+// <5=> 32MHz/6 
+// <6=> 32MHz/7 
+// <7=> 32MHz/8 
+// <8=> 32MHz/9 
+// <9=> 32MHz/10 
+// <10=> 32MHz/11 
+// <11=> 32MHz/12 
+// <12=> 32MHz/13 
+// <13=> 32MHz/14 
+// <14=> 32MHz/15 
+// <15=> 32MHz/16 
+
+#ifndef NRFX_QSPI_CONFIG_FREQUENCY
+#define NRFX_QSPI_CONFIG_FREQUENCY 15
+#endif
+
+// <s> NRFX_QSPI_PIN_SCK - SCK pin value.
+#ifndef NRFX_QSPI_PIN_SCK
+#define NRFX_QSPI_PIN_SCK NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <s> NRFX_QSPI_PIN_CSN - CSN pin value.
+#ifndef NRFX_QSPI_PIN_CSN
+#define NRFX_QSPI_PIN_CSN NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <s> NRFX_QSPI_PIN_IO0 - IO0 pin value.
+#ifndef NRFX_QSPI_PIN_IO0
+#define NRFX_QSPI_PIN_IO0 NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <s> NRFX_QSPI_PIN_IO1 - IO1 pin value.
+#ifndef NRFX_QSPI_PIN_IO1
+#define NRFX_QSPI_PIN_IO1 NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <s> NRFX_QSPI_PIN_IO2 - IO2 pin value.
+#ifndef NRFX_QSPI_PIN_IO2
+#define NRFX_QSPI_PIN_IO2 NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <s> NRFX_QSPI_PIN_IO3 - IO3 pin value.
+#ifndef NRFX_QSPI_PIN_IO3
+#define NRFX_QSPI_PIN_IO3 NRF_QSPI_PIN_NOT_CONNECTED
+#endif
+
+// <o> NRFX_QSPI_CONFIG_IRQ_PRIORITY  - Interrupt priority
+ 
+// <0=> 0 (highest) 
+// <1=> 1 
+// <2=> 2 
+// <3=> 3 
+// <4=> 4 
+// <5=> 5 
+// <6=> 6 
+// <7=> 7 
+
+#ifndef NRFX_QSPI_CONFIG_IRQ_PRIORITY
+#define NRFX_QSPI_CONFIG_IRQ_PRIORITY 6
+#endif
+
+// </e>
+
 // <e> NRFX_RNG_ENABLED - nrfx_rng - RNG peripheral driver
 //==========================================================
 #ifndef NRFX_RNG_ENABLED
@@ -3260,6 +4382,20 @@
 
 #ifndef NRFX_SPIM2_ENABLED
 #define NRFX_SPIM2_ENABLED 0
+#endif
+
+// <q> NRFX_SPIM3_ENABLED  - Enable SPIM3 instance
+ 
+
+#ifndef NRFX_SPIM3_ENABLED
+#define NRFX_SPIM3_ENABLED 0
+#endif
+
+// <q> NRFX_SPIM_EXTENDED_ENABLED  - Enable extended SPIM features
+ 
+
+#ifndef NRFX_SPIM_EXTENDED_ENABLED
+#define NRFX_SPIM_EXTENDED_ENABLED 0
 #endif
 
 // <o> NRFX_SPIM_MISO_PULL_CFG  - MISO pin pull configuration.
@@ -4198,6 +5334,11 @@
 #define NRFX_UARTE0_ENABLED 0
 #endif
 
+// <o> NRFX_UARTE1_ENABLED - Enable UARTE1 instance 
+#ifndef NRFX_UARTE1_ENABLED
+#define NRFX_UARTE1_ENABLED 0
+#endif
+
 // <o> NRFX_UARTE_DEFAULT_CONFIG_HWFC  - Hardware Flow Control
  
 // <0=> Disabled 
@@ -4238,7 +5379,7 @@
 // <268435456=> 1000000 baud 
 
 #ifndef NRFX_UARTE_DEFAULT_CONFIG_BAUDRATE
-#define NRFX_UARTE_DEFAULT_CONFIG_BAUDRATE 30801920
+#define NRFX_UARTE_DEFAULT_CONFIG_BAUDRATE 2576384
 #endif
 
 // <o> NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -4253,7 +5394,7 @@
 // <7=> 7 
 
 #ifndef NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY
-#define NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY 6
+#define NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY 5
 #endif
 
 // <e> NRFX_UARTE_CONFIG_LOG_ENABLED - Enables logging in the module.
@@ -4316,7 +5457,7 @@
 #endif
 // <o> NRFX_UART0_ENABLED - Enable UART0 instance 
 #ifndef NRFX_UART0_ENABLED
-#define NRFX_UART0_ENABLED 0
+#define NRFX_UART0_ENABLED 1
 #endif
 
 // <o> NRFX_UART_DEFAULT_CONFIG_HWFC  - Hardware Flow Control
@@ -4359,7 +5500,7 @@
 // <268435456=> 1000000 baud 
 
 #ifndef NRFX_UART_DEFAULT_CONFIG_BAUDRATE
-#define NRFX_UART_DEFAULT_CONFIG_BAUDRATE 30924800
+#define NRFX_UART_DEFAULT_CONFIG_BAUDRATE 2576384
 #endif
 
 // <o> NRFX_UART_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -4655,7 +5796,7 @@
  
 
 #ifndef PPI_ENABLED
-#define PPI_ENABLED 0
+#define PPI_ENABLED 1
 #endif
 
 // <e> PWM_ENABLED - nrf_drv_pwm - PWM peripheral driver - legacy layer
@@ -4776,6 +5917,13 @@
 
 #ifndef PWM2_ENABLED
 #define PWM2_ENABLED 0
+#endif
+
+// <q> PWM3_ENABLED  - Enable PWM3 instance
+ 
+
+#ifndef PWM3_ENABLED
+#define PWM3_ENABLED 0
 #endif
 
 // <e> PWM_NRF52_ANOMALY_109_WORKAROUND_ENABLED - Enables nRF52 Anomaly 109 workaround for PWM.
@@ -5696,7 +6844,7 @@
 // <268435456=> 1000000 baud 
 
 #ifndef UART_DEFAULT_CONFIG_BAUDRATE
-#define UART_DEFAULT_CONFIG_BAUDRATE 30801920
+#define UART_DEFAULT_CONFIG_BAUDRATE 2576384
 #endif
 
 // <o> UART_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -5742,6 +6890,13 @@
 #define UART0_CONFIG_USE_EASY_DMA 1
 #endif
 
+// </e>
+
+// <e> UART1_ENABLED - Enable UART1 instance
+//==========================================================
+#ifndef UART1_ENABLED
+#define UART1_ENABLED 0
+#endif
 // </e>
 
 // </e>
@@ -5844,12 +6999,6 @@
 
 // </e>
 
-// <h> nrfx_qspi - QSPI peripheral driver
-
-//==========================================================
-// </h> 
-//==========================================================
-
 // </h> 
 //==========================================================
 
@@ -5869,11 +7018,39 @@
 // <h> nRF_Libraries 
 
 //==========================================================
+// <e> APP_SCHEDULER_ENABLED - app_scheduler - Events scheduler
+//==========================================================
+#ifndef APP_SCHEDULER_ENABLED
+#define APP_SCHEDULER_ENABLED 1
+#endif
+// <q> APP_SCHEDULER_WITH_PAUSE  - Enabling pause feature
+ 
+
+#ifndef APP_SCHEDULER_WITH_PAUSE
+#define APP_SCHEDULER_WITH_PAUSE 0
+#endif
+
+// <q> APP_SCHEDULER_WITH_PROFILER  - Enabling scheduler profiling
+ 
+
+#ifndef APP_SCHEDULER_WITH_PROFILER
+#define APP_SCHEDULER_WITH_PROFILER 0
+#endif
+
+// </e>
+
+// <q> APP_FIFO_ENABLED  - app_fifo - Software FIFO implementation
+ 
+
+#ifndef APP_FIFO_ENABLED
+#define APP_FIFO_ENABLED 1
+#endif
+
 // <q> APP_GPIOTE_ENABLED  - app_gpiote - GPIOTE events dispatcher
  
 
 #ifndef APP_GPIOTE_ENABLED
-#define APP_GPIOTE_ENABLED 0
+#define APP_GPIOTE_ENABLED 1
 #endif
 
 // <q> APP_PWM_ENABLED  - app_pwm - PWM functionality
@@ -6041,6 +7218,21 @@
 
 // </h> 
 //==========================================================
+
+// </e>
+
+// <e> APP_UART_ENABLED - app_uart - UART driver
+//==========================================================
+#ifndef APP_UART_ENABLED
+#define APP_UART_ENABLED 1
+#endif
+// <o> APP_UART_DRIVER_INSTANCE  - UART instance used
+ 
+// <0=> 0 
+
+#ifndef APP_UART_DRIVER_INSTANCE
+#define APP_UART_DRIVER_INSTANCE 0
+#endif
 
 // </e>
 
@@ -6380,7 +7572,7 @@
  
 
 #ifndef CRC32_ENABLED
-#define CRC32_ENABLED 0
+#define CRC32_ENABLED 1
 #endif
 
 // <q> ECC_ENABLED  - ecc - Elliptic Curve Cryptography Library
@@ -6615,7 +7807,7 @@
 // <e> MEM_MANAGER_ENABLED - mem_manager - Dynamic memory allocator
 //==========================================================
 #ifndef MEM_MANAGER_ENABLED
-#define MEM_MANAGER_ENABLED 0
+#define MEM_MANAGER_ENABLED 1
 #endif
 // <o> MEMORY_MANAGER_SMALL_BLOCK_COUNT - Size of each memory blocks identified as 'small' block.  <0-255> 
 
@@ -6831,6 +8023,48 @@
 
 // </e>
 
+// <e> NRF_CLI_RTT_ENABLED - nrf_cli_rtt - RTT command line interface transport
+//==========================================================
+#ifndef NRF_CLI_RTT_ENABLED
+#define NRF_CLI_RTT_ENABLED 0
+#endif
+// <o> NRF_CLI_RTT_TERMINAL_ID - RTT terminal ID for CLI. 
+#ifndef NRF_CLI_RTT_TERMINAL_ID
+#define NRF_CLI_RTT_TERMINAL_ID 0
+#endif
+
+// <o> NRF_CLI_RTT_TX_RETRY_DELAY_MS - Period before retrying writing to RTT 
+#ifndef NRF_CLI_RTT_TX_RETRY_DELAY_MS
+#define NRF_CLI_RTT_TX_RETRY_DELAY_MS 10
+#endif
+
+// <o> NRF_CLI_RTT_TX_RETRY_CNT - Writing to RTT retries. 
+// <i> If RTT fails to accept any new data after retries
+// <i> module assumes that host is not active and on next
+// <i> request it will perform only one write attempt.
+// <i> On successful writing, module assumes that host is active
+// <i> and scheme with retry is applied again.
+
+#ifndef NRF_CLI_RTT_TX_RETRY_CNT
+#define NRF_CLI_RTT_TX_RETRY_CNT 5
+#endif
+
+// </e>
+
+// <q> NRF_CLI_UART_ENABLED  - nrf_cli_uart - UART command line interface transport
+ 
+
+#ifndef NRF_CLI_UART_ENABLED
+#define NRF_CLI_UART_ENABLED 0
+#endif
+
+// <q> NRF_FPRINTF_ENABLED  - nrf_fprintf - fprintf function.
+ 
+
+#ifndef NRF_FPRINTF_ENABLED
+#define NRF_FPRINTF_ENABLED 1
+#endif
+
 // <e> NRF_CSENSE_ENABLED - nrf_csense - Capacitive sensor module
 //==========================================================
 #ifndef NRF_CSENSE_ENABLED
@@ -7029,6 +8263,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef NRF_PWR_MGMT_SLEEP_DEBUG_PIN
@@ -7043,7 +8293,7 @@
 // <i> Module will trace percentage of CPU usage in one second intervals.
 
 #ifndef NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED
-#define NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED 0
+#define NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED 1
 #endif
 
 // <e> NRF_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_ENABLED - Enable standby timeout.
@@ -7093,8 +8343,9 @@
 // <e> NRF_QUEUE_ENABLED - nrf_queue - Queue module
 //==========================================================
 #ifndef NRF_QUEUE_ENABLED
-#define NRF_QUEUE_ENABLED 0
+#define NRF_QUEUE_ENABLED 1
 #endif
+
 // <q> NRF_QUEUE_CLI_CMDS  - Enable CLI commands specific to the module
  
 
@@ -7103,6 +8354,13 @@
 #endif
 
 // </e>
+
+// <q> NRF_SERIAL_ENABLED  - nrf_serial - Serial port interface
+ 
+
+#ifndef NRF_SERIAL_ENABLED
+#define NRF_SERIAL_ENABLED 0
+#endif
 
 // <q> NRF_SECTION_ITER_ENABLED  - nrf_section_iter - Section iterator
  
@@ -7137,6 +8395,13 @@
 
 #ifndef NRF_TWI_MNGR_ENABLED
 #define NRF_TWI_MNGR_ENABLED 0
+#endif
+
+// <q> RETARGET_ENABLED  - retarget - Retargeting stdio functions
+ 
+
+#ifndef RETARGET_ENABLED
+#define RETARGET_ENABLED 1
 #endif
 
 // <q> SLIP_ENABLED  - slip - SLIP encoding and decoding
@@ -7227,7 +8492,7 @@
 // <i> This may limit throughput if a lot of binary data is sent, but in terminal mode operation it makes sure that the data is always displayed right after it is sent.
 
 #ifndef APP_USBD_CDC_ACM_ZLP_ON_EPSIZE_WRITE
-#define APP_USBD_CDC_ACM_ZLP_ON_EPSIZE_WRITE 1
+#define APP_USBD_CDC_ACM_ZLP_ON_EPSIZE_WRITE 0
 #endif
 
 // </h> 
@@ -7343,7 +8608,7 @@
 // <e> NRF_LOG_BACKEND_RTT_ENABLED - nrf_log_backend_rtt - Log RTT backend
 //==========================================================
 #ifndef NRF_LOG_BACKEND_RTT_ENABLED
-#define NRF_LOG_BACKEND_RTT_ENABLED 0
+#define NRF_LOG_BACKEND_RTT_ENABLED 1
 #endif
 // <o> NRF_LOG_BACKEND_RTT_TEMP_BUFFER_SIZE - Size of buffer for partially processed strings. 
 // <i> Size of the buffer is a trade-off between RAM usage and processing.
@@ -7376,7 +8641,7 @@
 // <e> NRF_LOG_BACKEND_UART_ENABLED - nrf_log_backend_uart - Log UART backend
 //==========================================================
 #ifndef NRF_LOG_BACKEND_UART_ENABLED
-#define NRF_LOG_BACKEND_UART_ENABLED 1
+#define NRF_LOG_BACKEND_UART_ENABLED 0
 #endif
 // <o> NRF_LOG_BACKEND_UART_TX_PIN - UART TX pin 
 #ifndef NRF_LOG_BACKEND_UART_TX_PIN
@@ -10764,6 +12029,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_HCLOCK_ON_DEBUG_PIN
@@ -10804,6 +12085,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_HCLOCK_OFF_DEBUG_PIN
@@ -10844,6 +12141,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_NFC_EVENT_DEBUG_PIN
@@ -10884,6 +12197,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_DETECT_EVENT_DEBUG_PIN
@@ -10924,6 +12253,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_TIMER4_EVENT_DEBUG_PIN
@@ -10964,6 +12309,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_HCLOCK_ON_DEBUG_PIN
@@ -11004,6 +12365,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_HCLOCK_OFF_DEBUG_PIN
@@ -11044,6 +12421,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_NFC_EVENT_DEBUG_PIN
@@ -11084,6 +12477,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_DETECT_EVENT_DEBUG_PIN
@@ -11124,6 +12533,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_TIMER4_EVENT_DEBUG_PIN
@@ -11131,16 +12556,6 @@
 #endif
 
 // </e>
-
-// <o> HAL_NFC_FIELD_TIMER_PERIOD - TIMER4 period in us (used for workaround).  <100-10000> 
-
-
-// <i> This value is used as a timeout for polling NFC field to detect FIELDLOST event.
-// <i> This value can affect Tag behavior.
-
-#ifndef HAL_NFC_FIELD_TIMER_PERIOD
-#define HAL_NFC_FIELD_TIMER_PERIOD 100
-#endif
 
 // </e>
 
@@ -11426,6 +12841,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_HCLOCK_ON_DEBUG_PIN
@@ -11466,6 +12897,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_HCLOCK_OFF_DEBUG_PIN
@@ -11506,6 +12953,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_NFC_EVENT_DEBUG_PIN
@@ -11546,6 +13009,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_DETECT_EVENT_DEBUG_PIN
@@ -11586,6 +13065,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_TIMER4_EVENT_DEBUG_PIN
@@ -11626,6 +13121,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_HCLOCK_ON_DEBUG_PIN
@@ -11666,6 +13177,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_HCLOCK_OFF_DEBUG_PIN
@@ -11706,6 +13233,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_NFC_EVENT_DEBUG_PIN
@@ -11746,6 +13289,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_DETECT_EVENT_DEBUG_PIN
@@ -11786,6 +13345,22 @@
 // <29=> 29 (P0.29) 
 // <30=> 30 (P0.30) 
 // <31=> 31 (P0.31) 
+// <32=> 32 (P1.0) 
+// <33=> 33 (P1.1) 
+// <34=> 34 (P1.2) 
+// <35=> 35 (P1.3) 
+// <36=> 36 (P1.4) 
+// <37=> 37 (P1.5) 
+// <38=> 38 (P1.6) 
+// <39=> 39 (P1.7) 
+// <40=> 40 (P1.8) 
+// <41=> 41 (P1.9) 
+// <42=> 42 (P1.10) 
+// <43=> 43 (P1.11) 
+// <44=> 44 (P1.12) 
+// <45=> 45 (P1.13) 
+// <46=> 46 (P1.14) 
+// <47=> 47 (P1.15) 
 // <4294967295=> Not connected 
 
 #ifndef HAL_NFC_TIMER4_EVENT_DEBUG_PIN
@@ -11793,16 +13368,6 @@
 #endif
 
 // </e>
-
-// <o> HAL_NFC_FIELD_TIMER_PERIOD - TIMER4 period in us (used for workaround).  <100-10000> 
-
-
-// <i> This value is used as a timeout for polling NFC field to detect FIELDLOST event.
-// <i> This value can affect Tag behavior.
-
-#ifndef HAL_NFC_FIELD_TIMER_PERIOD
-#define HAL_NFC_FIELD_TIMER_PERIOD 100
-#endif
 
 // </e>
 
@@ -12018,7 +13583,7 @@
  
 
 #ifndef NRF_SDH_BLE_SERVICE_CHANGED
-#define NRF_SDH_BLE_SERVICE_CHANGED 0
+#define NRF_SDH_BLE_SERVICE_CHANGED 1
 #endif
 
 // </h> 

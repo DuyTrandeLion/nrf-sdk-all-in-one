@@ -7060,23 +7060,11 @@
 #define APP_PWM_ENABLED 0
 #endif
 
-// <e> APP_SCHEDULER_ENABLED - app_scheduler - Events scheduler
-//==========================================================
-#ifndef APP_SCHEDULER_ENABLED
-#define APP_SCHEDULER_ENABLED 1
-#endif
-// <q> APP_SCHEDULER_WITH_PAUSE  - Enabling pause feature
+// <q> NRF_SERIAL_ENABLED  - nrf_serial - Serial port interface
  
 
-#ifndef APP_SCHEDULER_WITH_PAUSE
-#define APP_SCHEDULER_WITH_PAUSE 0
-#endif
-
-// <q> APP_SCHEDULER_WITH_PROFILER  - Enabling scheduler profiling
- 
-
-#ifndef APP_SCHEDULER_WITH_PROFILER
-#define APP_SCHEDULER_WITH_PROFILER 0
+#ifndef NRF_SERIAL_ENABLED
+#define NRF_SERIAL_ENABLED 1
 #endif
 
 // </e>
