@@ -7060,14 +7060,6 @@
 #define APP_PWM_ENABLED 0
 #endif
 
-// <q> NRF_SERIAL_ENABLED  - nrf_serial - Serial port interface
- 
-
-#ifndef NRF_SERIAL_ENABLED
-#define NRF_SERIAL_ENABLED 1
-#endif
-
-// </e>
 
 // <e> APP_SDCARD_ENABLED - app_sdcard - SD/MMC card support using SPI
 //==========================================================
@@ -8347,6 +8339,13 @@
 
 #ifndef NRF_SECTION_ITER_ENABLED
 #define NRF_SECTION_ITER_ENABLED 1
+#endif
+
+// <q> NRF_SERIAL_ENABLED  - nrf_serial - Serial port interface
+ 
+
+#ifndef NRF_SERIAL_ENABLED
+#define NRF_SERIAL_ENABLED 0
 #endif
 
 // <q> NRF_SORTLIST_ENABLED  - nrf_sortlist - Sorted list
