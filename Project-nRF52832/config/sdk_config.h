@@ -778,7 +778,7 @@
  
 
 #ifndef BLE_DB_DISCOVERY_ENABLED
-#define BLE_DB_DISCOVERY_ENABLED 0
+#define BLE_DB_DISCOVERY_ENABLED 1
 #endif
 
 // <q> BLE_DTM_ENABLED  - ble_dtm - Module for testing RF/PHY using DTM commands
@@ -845,7 +845,7 @@
 // <e> NRF_BLE_SCAN_ENABLED - nrf_ble_scan - Scanning Module
 //==========================================================
 #ifndef NRF_BLE_SCAN_ENABLED
-#define NRF_BLE_SCAN_ENABLED 0
+#define NRF_BLE_SCAN_ENABLED 1
 #endif
 // <o> NRF_BLE_SCAN_BUFFER - Data length for an advertising set. 
 #ifndef NRF_BLE_SCAN_BUFFER
@@ -994,7 +994,7 @@
 // <i> If set to true, you need to call nrf_ble_lesc_request_handler() in the main loop to respond to LESC-related BLE events. If LESC support is not required, set this to false to save code space.
 
 #ifndef PM_LESC_ENABLED
-#define PM_LESC_ENABLED 0
+#define PM_LESC_ENABLED 1
 #endif
 
 // <e> PM_RA_PROTECTION_ENABLED - Enable/disable protection against repeated pairing attempts in Peer Manager.
@@ -1145,7 +1145,7 @@
  
 
 #ifndef BLE_GLS_ENABLED
-#define BLE_GLS_ENABLED 0
+#define BLE_GLS_ENABLED 1
 #endif
 
 // <q> BLE_HIDS_ENABLED  - ble_hids - Human Interface Device Service
@@ -1166,7 +1166,7 @@
  
 
 #ifndef BLE_HRS_ENABLED
-#define BLE_HRS_ENABLED 0
+#define BLE_HRS_ENABLED 1
 #endif
 
 // <q> BLE_HTS_ENABLED  - ble_hts - Health Thermometer Service
@@ -1484,7 +1484,7 @@
 // <i> The CC310 hardware-accelerated cryptography backend (only available on nRF52840).
 //==========================================================
 #ifndef NRF_CRYPTO_BACKEND_CC310_ENABLED
-#define NRF_CRYPTO_BACKEND_CC310_ENABLED 0
+#define NRF_CRYPTO_BACKEND_CC310_ENABLED 1
 #endif
 // <q> NRF_CRYPTO_BACKEND_CC310_AES_CBC_ENABLED  - Enable the AES CBC mode using CC310.
  
@@ -3296,7 +3296,7 @@
 // <e> NRFX_PPI_ENABLED - nrfx_ppi - PPI peripheral allocator
 //==========================================================
 #ifndef NRFX_PPI_ENABLED
-#define NRFX_PPI_ENABLED 1
+#define NRFX_PPI_ENABLED 0
 #endif
 // <e> NRFX_PPI_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
@@ -5379,7 +5379,7 @@
 // <268435456=> 1000000 baud 
 
 #ifndef NRFX_UARTE_DEFAULT_CONFIG_BAUDRATE
-#define NRFX_UARTE_DEFAULT_CONFIG_BAUDRATE 2576384
+#define NRFX_UARTE_DEFAULT_CONFIG_BAUDRATE 30801920
 #endif
 
 // <o> NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -5394,7 +5394,7 @@
 // <7=> 7 
 
 #ifndef NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY
-#define NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY 5
+#define NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY 6
 #endif
 
 // <e> NRFX_UARTE_CONFIG_LOG_ENABLED - Enables logging in the module.
@@ -5457,7 +5457,7 @@
 #endif
 // <o> NRFX_UART0_ENABLED - Enable UART0 instance 
 #ifndef NRFX_UART0_ENABLED
-#define NRFX_UART0_ENABLED 1
+#define NRFX_UART0_ENABLED 0
 #endif
 
 // <o> NRFX_UART_DEFAULT_CONFIG_HWFC  - Hardware Flow Control
@@ -5500,7 +5500,7 @@
 // <268435456=> 1000000 baud 
 
 #ifndef NRFX_UART_DEFAULT_CONFIG_BAUDRATE
-#define NRFX_UART_DEFAULT_CONFIG_BAUDRATE 2576384
+#define NRFX_UART_DEFAULT_CONFIG_BAUDRATE 30924800
 #endif
 
 // <o> NRFX_UART_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -5796,7 +5796,7 @@
  
 
 #ifndef PPI_ENABLED
-#define PPI_ENABLED 1
+#define PPI_ENABLED 0
 #endif
 
 // <e> PWM_ENABLED - nrf_drv_pwm - PWM peripheral driver - legacy layer
@@ -6844,7 +6844,7 @@
 // <268435456=> 1000000 baud 
 
 #ifndef UART_DEFAULT_CONFIG_BAUDRATE
-#define UART_DEFAULT_CONFIG_BAUDRATE 2576384
+#define UART_DEFAULT_CONFIG_BAUDRATE 30801920
 #endif
 
 // <o> UART_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -7050,7 +7050,7 @@
  
 
 #ifndef APP_GPIOTE_ENABLED
-#define APP_GPIOTE_ENABLED 1
+#define APP_GPIOTE_ENABLED 0
 #endif
 
 // <q> APP_PWM_ENABLED  - app_pwm - PWM functionality
@@ -7060,26 +7060,6 @@
 #define APP_PWM_ENABLED 0
 #endif
 
-// <e> APP_SCHEDULER_ENABLED - app_scheduler - Events scheduler
-//==========================================================
-#ifndef APP_SCHEDULER_ENABLED
-#define APP_SCHEDULER_ENABLED 1
-#endif
-// <q> APP_SCHEDULER_WITH_PAUSE  - Enabling pause feature
- 
-
-#ifndef APP_SCHEDULER_WITH_PAUSE
-#define APP_SCHEDULER_WITH_PAUSE 0
-#endif
-
-// <q> APP_SCHEDULER_WITH_PROFILER  - Enabling scheduler profiling
- 
-
-#ifndef APP_SCHEDULER_WITH_PROFILER
-#define APP_SCHEDULER_WITH_PROFILER 0
-#endif
-
-// </e>
 
 // <e> APP_SDCARD_ENABLED - app_sdcard - SD/MMC card support using SPI
 //==========================================================
@@ -7572,7 +7552,7 @@
  
 
 #ifndef CRC32_ENABLED
-#define CRC32_ENABLED 1
+#define CRC32_ENABLED 0
 #endif
 
 // <q> ECC_ENABLED  - ecc - Elliptic Curve Cryptography Library
@@ -7807,7 +7787,7 @@
 // <e> MEM_MANAGER_ENABLED - mem_manager - Dynamic memory allocator
 //==========================================================
 #ifndef MEM_MANAGER_ENABLED
-#define MEM_MANAGER_ENABLED 1
+#define MEM_MANAGER_ENABLED 0
 #endif
 // <o> MEMORY_MANAGER_SMALL_BLOCK_COUNT - Size of each memory blocks identified as 'small' block.  <0-255> 
 
@@ -8026,7 +8006,7 @@
 // <e> NRF_CLI_RTT_ENABLED - nrf_cli_rtt - RTT command line interface transport
 //==========================================================
 #ifndef NRF_CLI_RTT_ENABLED
-#define NRF_CLI_RTT_ENABLED 0
+#define NRF_CLI_RTT_ENABLED 1
 #endif
 // <o> NRF_CLI_RTT_TERMINAL_ID - RTT terminal ID for CLI. 
 #ifndef NRF_CLI_RTT_TERMINAL_ID
@@ -8055,7 +8035,7 @@
  
 
 #ifndef NRF_CLI_UART_ENABLED
-#define NRF_CLI_UART_ENABLED 0
+#define NRF_CLI_UART_ENABLED 1
 #endif
 
 // <q> NRF_FPRINTF_ENABLED  - nrf_fprintf - fprintf function.
@@ -8293,7 +8273,7 @@
 // <i> Module will trace percentage of CPU usage in one second intervals.
 
 #ifndef NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED
-#define NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED 1
+#define NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED 0
 #endif
 
 // <e> NRF_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_ENABLED - Enable standby timeout.
@@ -8343,9 +8323,8 @@
 // <e> NRF_QUEUE_ENABLED - nrf_queue - Queue module
 //==========================================================
 #ifndef NRF_QUEUE_ENABLED
-#define NRF_QUEUE_ENABLED 1
+#define NRF_QUEUE_ENABLED 0
 #endif
-
 // <q> NRF_QUEUE_CLI_CMDS  - Enable CLI commands specific to the module
  
 
@@ -8355,18 +8334,18 @@
 
 // </e>
 
-// <q> NRF_SERIAL_ENABLED  - nrf_serial - Serial port interface
- 
-
-#ifndef NRF_SERIAL_ENABLED
-#define NRF_SERIAL_ENABLED 0
-#endif
-
 // <q> NRF_SECTION_ITER_ENABLED  - nrf_section_iter - Section iterator
  
 
 #ifndef NRF_SECTION_ITER_ENABLED
 #define NRF_SECTION_ITER_ENABLED 1
+#endif
+
+// <q> NRF_SERIAL_ENABLED  - nrf_serial - Serial port interface
+ 
+
+#ifndef NRF_SERIAL_ENABLED
+#define NRF_SERIAL_ENABLED 0
 #endif
 
 // <q> NRF_SORTLIST_ENABLED  - nrf_sortlist - Sorted list
@@ -8492,7 +8471,7 @@
 // <i> This may limit throughput if a lot of binary data is sent, but in terminal mode operation it makes sure that the data is always displayed right after it is sent.
 
 #ifndef APP_USBD_CDC_ACM_ZLP_ON_EPSIZE_WRITE
-#define APP_USBD_CDC_ACM_ZLP_ON_EPSIZE_WRITE 0
+#define APP_USBD_CDC_ACM_ZLP_ON_EPSIZE_WRITE 1
 #endif
 
 // </h> 
@@ -13537,7 +13516,7 @@
 // <i> Requested BLE GAP data length to be negotiated.
 
 #ifndef NRF_SDH_BLE_GAP_DATA_LENGTH
-#define NRF_SDH_BLE_GAP_DATA_LENGTH 27
+#define NRF_SDH_BLE_GAP_DATA_LENGTH 251
 #endif
 
 // <o> NRF_SDH_BLE_PERIPHERAL_LINK_COUNT - Maximum number of peripheral links. 
@@ -13566,7 +13545,7 @@
 
 // <o> NRF_SDH_BLE_GATT_MAX_MTU_SIZE - Static maximum MTU size. 
 #ifndef NRF_SDH_BLE_GATT_MAX_MTU_SIZE
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 23
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 #endif
 
 // <o> NRF_SDH_BLE_GATTS_ATTR_TAB_SIZE - Attribute Table size in bytes. The size must be a multiple of 4. 
@@ -13576,14 +13555,14 @@
 
 // <o> NRF_SDH_BLE_VS_UUID_COUNT - The number of vendor-specific UUIDs. 
 #ifndef NRF_SDH_BLE_VS_UUID_COUNT
-#define NRF_SDH_BLE_VS_UUID_COUNT 0
+#define NRF_SDH_BLE_VS_UUID_COUNT 1
 #endif
 
 // <q> NRF_SDH_BLE_SERVICE_CHANGED  - Include the Service Changed characteristic in the Attribute Table.
  
 
 #ifndef NRF_SDH_BLE_SERVICE_CHANGED
-#define NRF_SDH_BLE_SERVICE_CHANGED 1
+#define NRF_SDH_BLE_SERVICE_CHANGED 0
 #endif
 
 // </h> 
