@@ -1141,6 +1141,13 @@
 #define BLE_DIS_ENABLED 1
 #endif
 
+// <q> BLE_ECS_ENABLED  - nrf_ble_escs - Eddystone Configuration Service
+ 
+
+#ifndef BLE_ECS_ENABLED
+#define BLE_ECS_ENABLED 1
+#endif
+
 // <q> BLE_GLS_ENABLED  - ble_gls - Glucose Service
  
 
