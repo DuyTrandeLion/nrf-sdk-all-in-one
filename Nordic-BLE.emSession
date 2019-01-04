@@ -34,8 +34,6 @@
  </Memory4>
  <Project>
   <ProjectSessionItem path="Nordic-BLE"/>
-  <ProjectSessionItem path="Nordic-BLE;BLE-nRF52832"/>
-  <ProjectSessionItem path="Nordic-BLE;BLE-nRF52832;Application"/>
   <ProjectSessionItem path="Nordic-BLE;BLE-nRF52840"/>
   <ProjectSessionItem path="Nordic-BLE;BLE-nRF52840;Application"/>
  </Project>
@@ -82,11 +80,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="928" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52840/main.c" selected="0" top="915" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="144" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/nrf_ble_lesc.c" selected="0" top="122" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="61" y="12612" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52832/config/sdk_config.h" selected="1" top="12593" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52840/Core/include/main.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="12603" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52840/config/sdk_config.h" selected="0" top="12593" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="130" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52840/config/sdk_config.h" selected="1" top="119" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="BLE-nRF52840" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="D:/Nordic-Embedded/ble-rd/nRF5_SDK_15.2.0_9412b96/external/fatfs/src/option" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
