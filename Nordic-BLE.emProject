@@ -1090,7 +1090,7 @@
       <file file_name="../nRF5_SDK_15.2.0_9412b96/external/cifra_AES128-EAX/eax.c" />
       <file file_name="../nRF5_SDK_15.2.0_9412b96/external/cifra_AES128-EAX/gf128.c" />
       <file file_name="../nRF5_SDK_15.2.0_9412b96/external/cifra_AES128-EAX/modes.c" />
-      <configuration Name="Debug" build_exclude_from_build="Yes" />
+      <configuration Name="Debug" build_exclude_from_build="No" />
     </folder>
   </project>
   <configuration
