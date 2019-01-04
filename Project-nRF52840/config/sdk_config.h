@@ -1286,18 +1286,7 @@
 #define NRF_CRYPTO_BACKEND_CC310_HASH_SHA256_ENABLED 1
 #endif
 
-<<<<<<< HEAD
-// <q> BLE_ECS_ENABLED  - nrf_ble_escs - Eddystone Configuration Service
- 
-
-#ifndef BLE_ECS_ENABLED
-#define BLE_ECS_ENABLED 1
-#endif
-
-// <q> BLE_GLS_ENABLED  - ble_gls - Glucose Service
-=======
 // <q> NRF_CRYPTO_BACKEND_CC310_HASH_SHA512_ENABLED  - CC310 SHA-512 hash functionality
->>>>>>> 9c4ddb6303bfd3f607670d313ce1d68bc2bc0692
  
 
 // <i> CC310 backend implementation for SHA-512 (in software).
