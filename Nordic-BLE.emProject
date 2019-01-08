@@ -1122,12 +1122,12 @@
       arm_linker_stack_size="8192"
       arm_linker_treat_warnings_as_errors="No"
       arm_linker_variant="GNU"
-      arm_simulator_memory_simulation_parameter="RX 00000000,00080000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
+      arm_simulator_memory_simulation_parameter="RWX 00000000,00100000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
       arm_target_device_name="nRF52832_xxAA"
       arm_target_interface_type="SWD"
-      c_preprocessor_definitions="BOARD_PCA10040;CONFIG_GPIO_AS_PINRESET;FLOAT_ABI_HARD;INITIALIZE_USER_SECTIONS;MBEDTLS_CONFIG_FILE=&quot;nrf_crypto_mbedtls_config.h&quot;;NO_VTOR_CONFIG;NRF52;NRF52832_XXAA;NRF52_PAN_74;NRF_APP_VERSION=0x00000001;NRF_APP_VERSION_ADDR=0x1D000;NRF_CRYPTO_MAX_INSTANCE_COUNT=1;NRF_SD_BLE_API_VERSION=6;S132;SOFTDEVICE_PRESENT;SWI_DISABLE0;uECC_ENABLE_VLI_API=0;uECC_OPTIMIZATION_LEVEL=3;uECC_SQUARE_FUNC=0;uECC_SUPPORT_COMPRESSED_POINT=0;uECC_VLI_NATIVE_LITTLE_ENDIAN=1"
+      c_preprocessor_definitions="BOARD_PCA10040 ;CONFIG_GPIO_AS_PINRESET;FLOAT_ABI_HARD;INITIALIZE_USER_SECTIONS;NO_VTOR_CONFIG;NRF52;NRF52832_XXAA;NRF52_PAN_74;NRF_SD_BLE_API_VERSION=6;S132;SOFTDEVICE_PRESENT;SWI_DISABLE0"
       c_user_include_directories="$(SolutionDir)/nRF5_SDK_15.2.0_9412b96/components/softdevice/s132/headers;$(SolutionDir)/nRF5_SDK_15.2.0_9412b96/components/softdevice/s132/headers/nrf52"
-      debug_additional_load_file="$(SolutionDir)/nRF5_SDK_15.2.0_9412b96/components/softdevice/s132/s132_nrf52_6.1.0_softdevice.hex"
+      debug_additional_load_file="$(SolutionDir)/nRF5_SDK_15.2.0_9412b96/components/softdevice/s132/hex/s132_nrf52_6.1.0_softdevice.hex"
       debug_register_definition_file="$(SolutionDir)/nRF5_SDK_15.2.0_9412b96/modules/nrfx/mdk/nrf52.svd"
       debug_start_from_entry_point_symbol="No"
       debug_target_connection="J-Link"
@@ -1147,7 +1147,9 @@
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
       <file file_name="main.c" />
       <file file_name="config/sdk_config.h" />
-      <file file_name="Core/include/main.h" />
+      <file file_name="Core/include/main.h">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
     </folder>
     <folder Name="Board Definition">
       <file file_name="../nRF5_SDK_15.2.0_9412b96/components/boards/boards.c" />
@@ -1155,8 +1157,12 @@
     <folder Name="Board Support">
       <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/bsp/bsp.c" />
       <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/bsp/bsp_btn_ble.c" />
-      <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/bsp/bsp_cli.c" />
-      <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/bsp/bsp_nfc.c" />
+      <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/bsp/bsp_cli.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/bsp/bsp_nfc.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
     </folder>
     <folder Name="components/nRF_BLE/nRF_BLE_Services">
       <folder Name="ble_ancs_c">
@@ -1203,7 +1209,7 @@
       </folder>
       <folder Name="ble_dis_c">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_services/ble_dis_c/ble_dis_c.c" />
-        <configuration Name="Debug" build_exclude_from_build="No" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="ble_escs">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_services/ble_escs/nrf_ble_escs.c" />
@@ -1212,7 +1218,7 @@
       <folder Name="ble_gls">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_services/ble_gls/ble_gls.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_services/ble_gls/ble_gls_db.c" />
-        <configuration Name="Debug" build_exclude_from_build="No" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="ble_hids">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_services/ble_hids/ble_hids.c" />
@@ -1256,7 +1262,7 @@
       </folder>
       <folder Name="ble_nus">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_services/ble_nus/ble_nus.c" />
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
       </folder>
       <folder Name="ble_nus_c">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_services/ble_nus_c/ble_nus_c.c" />
@@ -1428,11 +1434,11 @@
       </folder>
       <folder Name="csense">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/csense/nrf_csense.c" />
-        <configuration Name="Debug" build_exclude_from_build="No" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="csense_drv">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/csense_drv/nrf_drv_csense.c" />
-        <configuration Name="Debug" build_exclude_from_build="No" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="ecc">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/ecc/ecc.c" />
@@ -1464,6 +1470,7 @@
       </folder>
       <folder Name="gfx">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/gfx/nrf_gfx.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="gpiote">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/gpiote/app_gpiote.c" />
@@ -1480,9 +1487,11 @@
       </folder>
       <folder Name="led_softblink">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/led_softblink/led_softblink.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="low_power_pwm">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/low_power_pwm/low_power_pwm.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="mem_manager">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/mem_manager/mem_manager.c" />
@@ -1517,14 +1526,21 @@
       </folder>
       <folder Name="twi_mngr">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/twi_mngr/nrf_twi_mngr.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="twi_sensor">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/twi_sensor/nrf_twi_sensor.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="uart">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/uart/app_uart.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/uart/app_uart_fifo.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/uart/app_uart.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/uart/app_uart_fifo.c">
+          <configuration Name="Debug" build_exclude_from_build="No" />
+        </file>
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/uart/retarget.c" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
       </folder>
       <folder Name="usbd">
         <folder Name="class/audio">
@@ -1601,6 +1617,7 @@
       </folder>
       <folder Name="serial">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/serial/nrf_serial.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="simple_timer">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/simple_timer/app_simple_timer.c" />
@@ -1610,6 +1627,7 @@
       </folder>
       <folder Name="spi_mngr">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/spi_mngr/nrf_spi_mngr.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="stack_guard">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/libraries/stack_guard/nrf_stack_guard.c" />
@@ -2052,11 +2070,12 @@
       </folder>
       <folder Name="ble_db_discovery">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_db_discovery/ble_db_discovery.c" />
-        <configuration Name="Debug" build_exclude_from_build="No" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="ble_dtm">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_dtm/ble_dtm.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_dtm/ble_dtm_hw_nrf52.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="ble_link_ctx_manager">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_link_ctx_manager/ble_link_ctx_manager.c" />
@@ -2066,6 +2085,7 @@
       </folder>
       <folder Name="ble_radio_notification">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/ble_radio_notification/ble_radio_notification.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="common">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/common/ble_advdata.c" />
@@ -2081,23 +2101,33 @@
       </folder>
       <folder Name="nrf_ble_scan">
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/nrf_ble_scan/nrf_ble_scan.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="peer_manager">
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/security_manager.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/security_manager.c">
+          <configuration Name="Debug" build_exclude_from_build="No" />
+        </file>
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/auth_status_tracker.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/gatt_cache_manager.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/gatts_cache_manager.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/id_manager.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/nrf_ble_lesc.c">
-          <configuration Name="Debug" build_exclude_from_build="No" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
         </file>
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_data_storage.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_database.c" />
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_id.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_manager.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_manager_handler.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_manager.c">
+          <configuration Name="Debug" build_exclude_from_build="No" />
+        </file>
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/peer_manager_handler.c">
+          <configuration Name="Debug" build_exclude_from_build="No" />
+        </file>
         <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/pm_buffer.c" />
-        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/security_dispatcher.c" />
+        <file file_name="../nRF5_SDK_15.2.0_9412b96/components/ble/peer_manager/security_dispatcher.c">
+          <configuration Name="Debug" build_exclude_from_build="No" />
+        </file>
+        <configuration Name="Debug" build_exclude_from_build="No" />
       </folder>
     </folder>
     <folder Name="components/nRF_NFC">
@@ -2158,7 +2188,7 @@
       <configuration Name="Debug" build_exclude_from_build="Yes" />
     </folder>
     <folder Name="external/nRF_Oberon">
-      <configuration Name="Debug" build_exclude_from_build="No" />
+      <configuration Name="Debug" build_exclude_from_build="Yes" />
       <file file_name="../nRF5_SDK_15.2.0_9412b96/external/nrf_oberon/lib/nrf51/liboberon_no_fp_2.0.5.a" />
     </folder>
     <folder Name="external/cifra_AES128-EAX">
