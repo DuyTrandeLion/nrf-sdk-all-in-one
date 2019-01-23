@@ -54,6 +54,16 @@
 #define ADV_INTERVAL 300
 #endif
 
+// <o> BLE_DIS_C_STRING_MAX_LEN - Maximal length of the string retrieved from the Device Information Client module. 
+#ifndef BLE_DIS_C_STRING_MAX_LEN
+#define BLE_DIS_C_STRING_MAX_LEN 30
+#endif
+
+// <o> BLE_GATT_DB_MAX_CHARS - The maximum number of characteristics present in a service record. 
+#ifndef BLE_GATT_DB_MAX_CHARS
+#define BLE_GATT_DB_MAX_CHARS 9
+#endif
+
 // <h> BLE_PAIR_SECURITY_PARAMETERS - BLE Security Parameters (all connections).
 
 //==========================================================
@@ -777,6 +787,29 @@
 #ifndef BLE_DIS_ENABLED
 #define BLE_DIS_ENABLED 1
 #endif
+
+// <e> BLE_DIS_C_ENABLED - ble_dis_c - Device Information Client
+//==========================================================
+#ifndef BLE_DIS_C_ENABLED
+#define BLE_DIS_C_ENABLED 1
+#endif
+
+// <o> BLE_DIS_C_QUEUE_SIZE - Size of the queue used for processing pending read requests. 
+
+
+#ifndef BLE_DIS_C_QUEUE_SIZE
+#define BLE_DIS_C_QUEUE_SIZE 16
+#endif
+
+
+// <o> BLE_DIS_C_STRING_MAX_LEN - Maximal length of the string retrieved from the Device Information Client module. 
+
+
+#ifndef BLE_DIS_C_STRING_MAX_LEN
+#define BLE_DIS_C_STRING_MAX_LEN 30
+#endif
+
+// </e>
 
 // <q> BLE_ECS_ENABLED  - nrf_ble_escs - Eddystone Configuration Service
  
