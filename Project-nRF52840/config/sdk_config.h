@@ -801,14 +801,6 @@
 #define BLE_DIS_C_QUEUE_SIZE 16
 #endif
 
-
-// <o> BLE_DIS_C_STRING_MAX_LEN - Maximal length of the string retrieved from the Device Information Client module. 
-
-
-#ifndef BLE_DIS_C_STRING_MAX_LEN
-#define BLE_DIS_C_STRING_MAX_LEN 30
-#endif
-
 // </e>
 
 // <q> BLE_ECS_ENABLED  - nrf_ble_escs - Eddystone Configuration Service
