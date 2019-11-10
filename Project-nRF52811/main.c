@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014 - 2019, Nordic Semiconductor ASA
+ * Copyright (c) 2014 - 2018, Nordic Semiconductor ASA
  *
  * All rights reserved.
  *
@@ -39,14 +39,14 @@
  */
 /** @file
  *
- * @defgroup ble_sdk_app_gls_main main.c
+ * @defgroup ble_sdk_app_hts_main main.c
  * @{
- * @ingroup ble_sdk_app_gls
- * @brief Glucose Meter service Sample Application
+ * @ingroup ble_sdk_app_hts
+ * @brief Health Thermometer Service Sample Application main file.
  *
- * This file contains the source code for a sample application using the Glucose Meter service
- * (and also Battery and Device Information services). This application uses the
- * @ref srvlib_conn_params module.
+ * This file contains the source code for a sample application using the Health Thermometer service
+ * It also includes the sample code for Battery and Device Information services.
+ * This application uses the @ref srvlib_conn_params module.
  */
 
 #include <stdint.h>
@@ -60,10 +60,9 @@
 #include "ble_srv_common.h"
 #include "ble_advdata.h"
 #include "ble_advertising.h"
-#include "ble_dis.h"
 #include "ble_bas.h"
-#include "ble_gls.h"
-#include "ble_racp.h"
+#include "ble_hts.h"
+#include "ble_dis.h"
 #include "ble_conn_params.h"
 #include "sensorsim.h"
 #include "nrf_sdh.h"
@@ -76,7 +75,6 @@
 #include "fds.h"
 #include "ble_conn_state.h"
 #include "nrf_ble_gatt.h"
-#include "nrf_ble_lesc.h"
 #include "nrf_ble_qwr.h"
 #include "nrf_pwr_mgmt.h"
 
@@ -85,72 +83,75 @@
 #include "nrf_log_default_backends.h"
 
 
-#define DEVICE_NAME                     "Nordic_Glucose"                            /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME                     "Nordic_HTS"                                /**< Name of device. Will be included in the advertising data. */
 #define MANUFACTURER_NAME               "NordicSemiconductor"                       /**< Manufacturer. Will be passed to Device Information Service. */
-#define MODEL_NUMBER                    "nRF51"                                     /**< Model Number string. Will be passed to Device Information Service. */
-#define MANUFACTURER_ID                 0x55AA55AA55                                /**< DUMMY Manufacturer ID. Will be passed to Device Information Service. You shall use the ID for your Company*/
-#define ORG_UNIQUE_ID                   0xEEBBEE                                    /**< DUMMY Organisation Unique ID. Will be passed to Device Information Service. You shall use the Organisation Unique ID relevant for your Company */
+#define MODEL_NUM                       "NS-HTS-EXAMPLE"                            /**< Model number. Will be passed to Device Information Service. */
+#define MANUFACTURER_ID                 0x1122334455                                /**< Manufacturer ID, part of System ID. Will be passed to Device Information Service. */
+#define ORG_UNIQUE_ID                   0x667788                                    /**< Organizational Unique ID, part of System ID. Will be passed to Device Information Service. */
 
 #define APP_BLE_OBSERVER_PRIO           3                                           /**< Application's BLE observer priority. You shouldn't need to modify this value. */
 #define APP_BLE_CONN_CFG_TAG            1                                           /**< A tag identifying the SoftDevice BLE configuration. */
 
 #define APP_ADV_INTERVAL                40                                          /**< The advertising interval (in units of 0.625 ms. This value corresponds to 25 ms). */
+
 #define APP_ADV_DURATION                18000                                       /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
 
-#define BATTERY_LEVEL_MEAS_INTERVAL     APP_TIMER_TICKS(10000)                      /**< Battery level measurement interval (ticks). */
+#define BATTERY_LEVEL_MEAS_INTERVAL     APP_TIMER_TICKS(2000)                       /**< Battery level measurement interval (ticks). */
 #define MIN_BATTERY_LEVEL               81                                          /**< Minimum battery level as returned by the simulated measurement function. */
 #define MAX_BATTERY_LEVEL               100                                         /**< Maximum battery level as returned by the simulated measurement function. */
 #define BATTERY_LEVEL_INCREMENT         1                                           /**< Value by which the battery level is incremented/decremented for each call to the simulated measurement function. */
 
-#define MIN_CONN_INTERVAL               MSEC_TO_UNITS(10, UNIT_1_25_MS)             /**< Minimum acceptable connection interval (10 ms). */
-#define MAX_CONN_INTERVAL               MSEC_TO_UNITS(100, UNIT_1_25_MS)            /**< Maximum acceptable connection interval (100 ms) */
+#define TEMP_TYPE_AS_CHARACTERISTIC     0                                           /**< Determines if temperature type is given as characteristic (1) or as a field of measurement (0). */
+
+#define MIN_CELCIUS_DEGREES             3688                                        /**< Minimum temperature in celcius for use in the simulated measurement function (multiplied by 100 to avoid floating point arithmetic). */
+#define MAX_CELCIUS_DEGRESS             3972                                        /**< Maximum temperature in celcius for use in the simulated measurement function (multiplied by 100 to avoid floating point arithmetic). */
+#define CELCIUS_DEGREES_INCREMENT       36                                          /**< Value by which temperature is incremented/decremented for each call to the simulated measurement function (multiplied by 100 to avoid floating point arithmetic). */
+
+#define MIN_CONN_INTERVAL               MSEC_TO_UNITS(500, UNIT_1_25_MS)            /**< Minimum acceptable connection interval (0.5 seconds) */
+#define MAX_CONN_INTERVAL               MSEC_TO_UNITS(1000, UNIT_1_25_MS)           /**< Maximum acceptable connection interval (1 second). */
 #define SLAVE_LATENCY                   0                                           /**< Slave latency. */
 #define CONN_SUP_TIMEOUT                MSEC_TO_UNITS(4000, UNIT_10_MS)             /**< Connection supervisory timeout (4 seconds). */
-#define FIRST_CONN_PARAMS_UPDATE_DELAY  APP_TIMER_TICKS(5000)                       /**< Time from initiating event (connect or start of notification) to first time sd_ble_gap_conn_param_update is called (5 seconds). */
-#define NEXT_CONN_PARAMS_UPDATE_DELAY   APP_TIMER_TICKS(30000)                      /**< Time between each call to sd_ble_gap_conn_param_update after the first call (30 seconds). */
-#define MAX_CONN_PARAM_UPDATE_COUNT     3                                           /**< Number of attempts before giving up the connection parameter negotiation. */
 
-#define LESC_DEBUG_MODE                 0                                           /**< Set to 1 to use LESC debug keys, allows you to use a sniffer to inspect traffic. */
+#define FIRST_CONN_PARAMS_UPDATE_DELAY  APP_TIMER_TICKS(5000)                       /**< Time from initiating event (connect or start of indication) to first time sd_ble_gap_conn_param_update is called (5 seconds). */
+#define NEXT_CONN_PARAMS_UPDATE_DELAY   APP_TIMER_TICKS(30000)                      /**< Time between each call to sd_ble_gap_conn_param_update after the first call (30 seconds). */
+#define MAX_CONN_PARAMS_UPDATE_COUNT    3                                           /**< Number of attempts before giving up the connection parameter negotiation. */
 
 #define SEC_PARAM_BOND                  1                                           /**< Perform bonding. */
-#define SEC_PARAM_MITM                  1                                           /**< Man In The Middle protection required (applicable when display module is detected). */
-#define SEC_PARAM_LESC                  1                                           /**< LE Secure Connections enabled. */
+#define SEC_PARAM_MITM                  0                                           /**< Man In The Middle protection not required. */
+#define SEC_PARAM_LESC                  0                                           /**< LE Secure Connections not enabled. */
 #define SEC_PARAM_KEYPRESS              0                                           /**< Keypress notifications not enabled. */
-#define SEC_PARAM_IO_CAPABILITIES       BLE_GAP_IO_CAPS_DISPLAY_ONLY                /**< Display I/O capabilities. */
+#define SEC_PARAM_IO_CAPABILITIES       BLE_GAP_IO_CAPS_NONE                        /**< No I/O capabilities. */
 #define SEC_PARAM_OOB                   0                                           /**< Out Of Band data not available. */
 #define SEC_PARAM_MIN_KEY_SIZE          7                                           /**< Minimum encryption key size. */
 #define SEC_PARAM_MAX_KEY_SIZE          16                                          /**< Maximum encryption key size. */
 
-#define PASSKEY_TXT                     "Passkey:"                                  /**< Message to be displayed together with the pass-key. */
-#define PASSKEY_TXT_LENGTH              8                                           /**< Length of message to be displayed together with the pass-key. */
-#define PASSKEY_LENGTH                  6                                           /**< Length of pass-key received by the stack for display. */
-
 #define DEAD_BEEF                       0xDEADBEEF                                  /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
 
 
+APP_TIMER_DEF(m_battery_timer_id);                                                  /**< Battery timer. */
 BLE_BAS_DEF(m_bas);                                                                 /**< Structure used to identify the battery service. */
-BLE_GLS_DEF(m_gls);                                                                 /**< Structure used to identify the glucose service. */
+BLE_HTS_DEF(m_hts);                                                                 /**< Structure used to identify the health thermometer service. */
 NRF_BLE_GATT_DEF(m_gatt);                                                           /**< GATT module instance. */
 NRF_BLE_QWR_DEF(m_qwr);                                                             /**< Context for the Queued Write module.*/
 BLE_ADVERTISING_DEF(m_advertising);                                                 /**< Advertising module instance. */
-APP_TIMER_DEF(m_battery_timer_id);                                                  /**< Battery timer. */
-NRF_BLE_GQ_DEF(m_ble_gatt_queue,                                                    /**< BLE GATT Queue instance. */
-               NRF_SDH_BLE_PERIPHERAL_LINK_COUNT,
-               NRF_BLE_GQ_QUEUE_SIZE);
 
-static pm_peer_id_t m_peer_to_be_deleted = PM_PEER_ID_INVALID;
-static uint16_t     m_conn_handle        = BLE_CONN_HANDLE_INVALID;                 /**< Handle of the current connection. */
-static ble_uuid_t   m_adv_uuids[] =                                                 /**< Universally unique service identifiers. */
+static uint16_t          m_conn_handle = BLE_CONN_HANDLE_INVALID;                   /**< Handle of the current connection. */
+static bool              m_hts_meas_ind_conf_pending = false;                       /**< Flag to keep track of when an indication confirmation is pending. */
+static sensorsim_cfg_t   m_battery_sim_cfg;                                         /**< Battery Level sensor simulator configuration. */
+static sensorsim_state_t m_battery_sim_state;                                       /**< Battery Level sensor simulator state. */
+static sensorsim_cfg_t   m_temp_celcius_sim_cfg;                                    /**< Temperature simulator configuration. */
+static sensorsim_state_t m_temp_celcius_sim_state;                                  /**< Temperature simulator state. */
+
+static ble_uuid_t m_adv_uuids[] =                                                   /**< Universally unique service identifiers. */
 {
-    {BLE_UUID_GLUCOSE_SERVICE, BLE_UUID_TYPE_BLE},
+    {BLE_UUID_HEALTH_THERMOMETER_SERVICE, BLE_UUID_TYPE_BLE},
     {BLE_UUID_BATTERY_SERVICE, BLE_UUID_TYPE_BLE},
     {BLE_UUID_DEVICE_INFORMATION_SERVICE, BLE_UUID_TYPE_BLE}
 };
-static sensorsim_cfg_t   m_battery_sim_cfg;                                         /**< Battery Level sensor simulator configuration. */
-static sensorsim_state_t m_battery_sim_state;                                       /**< Battery Level sensor simulator state. */
 
 
 static void advertising_start(bool erase_bonds);
+static void temperature_measurement_send(void);
 
 
 /**@brief Callback function for asserts in the SoftDevice.
@@ -176,42 +177,23 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t * p_file_name)
 static void pm_evt_handler(pm_evt_t const * p_evt)
 {
     ret_code_t err_code;
+    bool       is_indication_enabled;
 
     pm_handler_on_pm_evt(p_evt);
-    pm_handler_disconnect_on_sec_failure(p_evt);
     pm_handler_flash_clean(p_evt);
 
     switch (p_evt->evt_id)
     {
         case PM_EVT_CONN_SEC_SUCCEEDED:
-        {
-            pm_conn_sec_status_t conn_sec_status;
-
-            // Check if the link is authenticated (meaning at least MITM).
-            err_code = pm_conn_sec_status_get(p_evt->conn_handle, &conn_sec_status);
+            // Send a single temperature measurement if indication is enabled.
+            // NOTE: For this to work, make sure ble_hts_on_ble_evt() is called before
+            // pm_evt_handler() in ble_evt_dispatch().
+            err_code = ble_hts_is_indication_enabled(&m_hts, &is_indication_enabled);
             APP_ERROR_CHECK(err_code);
-
-            if (conn_sec_status.mitm_protected)
+            if (is_indication_enabled)
             {
-                NRF_LOG_INFO("Link secured. Role: %d. conn_handle: %d, Procedure: %d",
-                             ble_conn_state_role(p_evt->conn_handle),
-                             p_evt->conn_handle,
-                             p_evt->params.conn_sec_succeeded.procedure);
+                temperature_measurement_send();
             }
-            else
-            {
-                // The peer did not use MITM, disconnect.
-                NRF_LOG_INFO("Collector did not use MITM, disconnecting");
-                err_code = pm_peer_id_get(m_conn_handle, &m_peer_to_be_deleted);
-                APP_ERROR_CHECK(err_code);
-                err_code = sd_ble_gap_disconnect(m_conn_handle,
-                                                 BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
-                APP_ERROR_CHECK(err_code);
-            }
-        } break;
-
-        case PM_EVT_CONN_SEC_FAILED:
-            m_conn_handle = BLE_CONN_HANDLE_INVALID;
             break;
 
         case PM_EVT_PEERS_DELETE_SUCCEEDED:
@@ -224,21 +206,7 @@ static void pm_evt_handler(pm_evt_t const * p_evt)
 }
 
 
-/**@brief Function for handling Service errors.
- *
- * @details A pointer to this function will be passed to each service which may need to inform the
- *          application about an error.
- *
- * @param[in] nrf_error  Error code containing information about what went wrong.
- */
-static void service_error_handler(uint32_t nrf_error)
-{
-    APP_ERROR_HANDLER(nrf_error);
-}
-
-
-/**@brief Function for performing battery measurement and updating the Battery Level characteristic
- *        in Battery Service.
+/**@brief Function for performing a battery measurement, and update the Battery Level characteristic in the Battery Service.
  */
 static void battery_level_update(void)
 {
@@ -264,8 +232,8 @@ static void battery_level_update(void)
  *
  * @details This function will be called each time the battery level measurement timer expires.
  *
- * @param[in] p_context  Pointer used for passing some arbitrary information (context) from the
- *                       app_start_timer() call to the timeout handler.
+ * @param[in] p_context   Pointer used for passing some arbitrary information (context) from the
+ *                        app_start_timer() call to the timeout handler.
  */
 static void battery_level_meas_timeout_handler(void * p_context)
 {
@@ -274,52 +242,37 @@ static void battery_level_meas_timeout_handler(void * p_context)
 }
 
 
-/**@brief Function for updating glucose measurement and updating glucose characteristic in Glucose.
-          Service.
+/**@brief Function for populating simulated health thermometer measurement.
  */
-static void read_glucose_measurement(void)
+static void hts_sim_measurement(ble_hts_meas_t * p_meas)
 {
-    ble_gls_rec_t rec;
-    uint32_t      err_code;
+    static ble_date_time_t time_stamp = { 2012, 12, 5, 11, 50, 0 };
 
-    static int16_t s_mantissa = 550;
-    static int16_t s_exponent = -3;
-    static uint8_t s_secs     = 5;
+    uint32_t celciusX100;
 
-    // simulate the reading of a glucose measurement.
-    rec.meas.flags = BLE_GLS_MEAS_FLAG_TIME_OFFSET |
-                     BLE_GLS_MEAS_FLAG_CONC_TYPE_LOC |
-                     BLE_GLS_MEAS_FLAG_UNITS_MOL_L;
-    rec.meas.base_time.year                 = 2012;
-    rec.meas.base_time.month                = 1;
-    rec.meas.base_time.day                  = 1;
-    rec.meas.base_time.hours                = 12;
-    rec.meas.base_time.minutes              = 30;
-    rec.meas.base_time.seconds              = s_secs;
-    rec.meas.glucose_concentration.exponent = s_exponent;
-    rec.meas.glucose_concentration.mantissa = s_mantissa;
-    rec.meas.time_offset                    = 0;
-    rec.meas.type                           = BLE_GLS_MEAS_TYPE_CAP_BLOOD;
-    rec.meas.sample_location                = BLE_GLS_MEAS_LOC_FINGER;
-    rec.meas.sensor_status_annunciation     = 0;
+    p_meas->temp_in_fahr_units = false;
+    p_meas->time_stamp_present = true;
+    p_meas->temp_type_present  = (TEMP_TYPE_AS_CHARACTERISTIC ? false : true);
 
-    // change values for next read.
-    s_mantissa += 23;
-    if (s_mantissa > 939)
+    celciusX100 = sensorsim_measure(&m_temp_celcius_sim_state, &m_temp_celcius_sim_cfg);
+
+    p_meas->temp_in_celcius.exponent = -2;
+    p_meas->temp_in_celcius.mantissa = celciusX100;
+    p_meas->temp_in_fahr.exponent    = -2;
+    p_meas->temp_in_fahr.mantissa    = (32 * 100) + ((celciusX100 * 9) / 5);
+    p_meas->time_stamp               = time_stamp;
+    p_meas->temp_type                = BLE_HTS_TEMP_TYPE_FINGER;
+
+    // update simulated time stamp
+    time_stamp.seconds += 27;
+    if (time_stamp.seconds > 59)
     {
-        s_mantissa -= 434;
-    }
-
-    s_secs += 3;
-    if (s_secs > 59)
-    {
-        s_secs = 0;
-    }
-
-    err_code = ble_gls_glucose_new_meas(&m_gls, &rec);
-    if (err_code != NRF_SUCCESS)
-    {
-        // Do nothing.
+        time_stamp.seconds -= 60;
+        time_stamp.minutes++;
+        if (time_stamp.minutes > 59)
+        {
+            time_stamp.minutes = 0;
+        }
     }
 }
 
@@ -359,10 +312,10 @@ static void gap_params_init(void)
 
     err_code = sd_ble_gap_device_name_set(&sec_mode,
                                           (const uint8_t *)DEVICE_NAME,
-                                          strlen(DEVICE_NAME));
+                                           strlen(DEVICE_NAME));
     APP_ERROR_CHECK(err_code);
 
-    err_code = sd_ble_gap_appearance_set(BLE_APPEARANCE_GENERIC_GLUCOSE_METER);
+    err_code = sd_ble_gap_appearance_set(BLE_APPEARANCE_GENERIC_THERMOMETER);
     APP_ERROR_CHECK(err_code);
 
     memset(&gap_conn_params, 0, sizeof(gap_conn_params));
@@ -386,6 +339,66 @@ static void gatt_init(void)
 }
 
 
+/**@brief Function for simulating and sending one Temperature Measurement.
+ */
+static void temperature_measurement_send(void)
+{
+    ble_hts_meas_t simulated_meas;
+    ret_code_t     err_code;
+
+    if (!m_hts_meas_ind_conf_pending)
+    {
+        hts_sim_measurement(&simulated_meas);
+
+        err_code = ble_hts_measurement_send(&m_hts, &simulated_meas);
+
+        switch (err_code)
+        {
+            case NRF_SUCCESS:
+                // Measurement was successfully sent, wait for confirmation.
+                m_hts_meas_ind_conf_pending = true;
+                break;
+
+            case NRF_ERROR_INVALID_STATE:
+                // Ignore error.
+                break;
+
+            default:
+                APP_ERROR_HANDLER(err_code);
+                break;
+        }
+    }
+}
+
+
+/**@brief Function for handling the Health Thermometer Service events.
+ *
+ * @details This function will be called for all Health Thermometer Service events which are passed
+ *          to the application.
+ *
+ * @param[in] p_hts  Health Thermometer Service structure.
+ * @param[in] p_evt  Event received from the Health Thermometer Service.
+ */
+static void on_hts_evt(ble_hts_t * p_hts, ble_hts_evt_t * p_evt)
+{
+    switch (p_evt->evt_type)
+    {
+        case BLE_HTS_EVT_INDICATION_ENABLED:
+            // Indication has been enabled, send a single temperature measurement
+            temperature_measurement_send();
+            break;
+
+        case BLE_HTS_EVT_INDICATION_CONFIRMED:
+            m_hts_meas_ind_conf_pending = false;
+            break;
+
+        default:
+            // No implementation needed.
+            break;
+    }
+}
+
+
 /**@brief Function for handling Queued Write Module errors.
  *
  * @details A pointer to this function will be passed to each service which may need to inform the
@@ -401,15 +414,16 @@ static void nrf_qwr_error_handler(uint32_t nrf_error)
 
 /**@brief Function for initializing services that will be used by the application.
  *
- * @details Initialize the Glucose, Battery and Device Information services.
+ * @details Initialize the Health Thermometer, Battery and Device Information services.
  */
 static void services_init(void)
 {
     ret_code_t         err_code;
-    ble_gls_init_t     gls_init;
-    ble_dis_init_t     dis_init;
+    ble_hts_init_t     hts_init;
     ble_bas_init_t     bas_init;
+    ble_dis_init_t     dis_init;
     nrf_ble_qwr_init_t qwr_init = {0};
+    ble_dis_sys_id_t   sys_id;
 
     // Initialize Queued Write Module.
     qwr_init.error_handler = nrf_qwr_error_handler;
@@ -417,25 +431,18 @@ static void services_init(void)
     err_code = nrf_ble_qwr_init(&m_qwr, &qwr_init);
     APP_ERROR_CHECK(err_code);
 
-    // Initialize Glucose Service - sample selection of feature bits.
-    memset(&gls_init, 0, sizeof(gls_init));
+    // Initialize Health Thermometer Service
+    memset(&hts_init, 0, sizeof(hts_init));
 
-    gls_init.evt_handler          = NULL;
-    gls_init.p_gatt_queue         = &m_ble_gatt_queue;
-    gls_init.error_handler        = service_error_handler;
-    gls_init.feature              = 0;
-    gls_init.feature             |= BLE_GLS_FEATURE_LOW_BATT;
-    gls_init.feature             |= BLE_GLS_FEATURE_TEMP_HIGH_LOW;
-    gls_init.feature             |= BLE_GLS_FEATURE_GENERAL_FAULT;
-    gls_init.is_context_supported = false;
+    hts_init.evt_handler                 = on_hts_evt;
+    hts_init.temp_type_as_characteristic = TEMP_TYPE_AS_CHARACTERISTIC;
+    hts_init.temp_type                   = BLE_HTS_TEMP_TYPE_BODY;
 
-    // Here the sec level for the Glucose Service can be changed/increased.
-    gls_init.gl_meas_cccd_wr_sec = SEC_JUST_WORKS;
-    gls_init.gl_feature_rd_sec   = SEC_JUST_WORKS;
-    gls_init.racp_cccd_wr_sec    = SEC_JUST_WORKS;
-    gls_init.racp_wr_sec         = SEC_JUST_WORKS;
+    // Here the sec level for the Health Thermometer Service can be changed/increased.
+    hts_init.ht_meas_cccd_wr_sec = SEC_JUST_WORKS;
+    hts_init.ht_type_rd_sec      = SEC_OPEN;
 
-    err_code = ble_gls_init(&m_gls, &gls_init);
+    err_code = ble_hts_init(&m_hts, &hts_init);
     APP_ERROR_CHECK(err_code);
 
     // Initialize Battery Service.
@@ -458,13 +465,11 @@ static void services_init(void)
     memset(&dis_init, 0, sizeof(dis_init));
 
     ble_srv_ascii_to_utf8(&dis_init.manufact_name_str, MANUFACTURER_NAME);
+    ble_srv_ascii_to_utf8(&dis_init.model_num_str, MODEL_NUM);
 
-    ble_srv_ascii_to_utf8(&dis_init.serial_num_str, MODEL_NUMBER);
-
-    ble_dis_sys_id_t system_id;
-    system_id.manufacturer_id            = MANUFACTURER_ID;
-    system_id.organizationally_unique_id = ORG_UNIQUE_ID;
-    dis_init.p_sys_id                    = &system_id;
+    sys_id.manufacturer_id            = MANUFACTURER_ID;
+    sys_id.organizationally_unique_id = ORG_UNIQUE_ID;
+    dis_init.p_sys_id                 = &sys_id;
 
     dis_init.dis_char_rd_sec = SEC_OPEN;
 
@@ -483,6 +488,14 @@ static void sensor_simulator_init(void)
     m_battery_sim_cfg.start_at_max = true;
 
     sensorsim_init(&m_battery_sim_state, &m_battery_sim_cfg);
+
+    // Temperature is in celcius (it is multiplied by 100 to avoid floating point arithmetic).
+    m_temp_celcius_sim_cfg.min          = MIN_CELCIUS_DEGREES;
+    m_temp_celcius_sim_cfg.max          = MAX_CELCIUS_DEGRESS;
+    m_temp_celcius_sim_cfg.incr         = CELCIUS_DEGREES_INCREMENT;
+    m_temp_celcius_sim_cfg.start_at_max = false;
+
+    sensorsim_init(&m_temp_celcius_sim_state, &m_temp_celcius_sim_cfg);
 }
 
 
@@ -498,13 +511,13 @@ static void application_timers_start(void)
 }
 
 
-/**@brief Function for handling the Connection Parameter events.
+/**@brief Function for handling the Connection Parameters Module.
  *
  * @details This function will be called for all events in the Connection Parameters Module which
  *          are passed to the application.
  *          @note All this function does is to disconnect. This could have been done by simply
- *                setting the disconnect_on_fail configuration parameter, but instead we use the
- *                event handler mechanism to demonstrate its use.
+ *                setting the disconnect_on_fail config parameter, but instead we use the event
+ *                handler mechanism to demonstrate its use.
  *
  * @param[in] p_evt  Event received from the Connection Parameters Module.
  */
@@ -542,7 +555,7 @@ static void conn_params_init(void)
     cp_init.p_conn_params                  = NULL;
     cp_init.first_conn_params_update_delay = FIRST_CONN_PARAMS_UPDATE_DELAY;
     cp_init.next_conn_params_update_delay  = NEXT_CONN_PARAMS_UPDATE_DELAY;
-    cp_init.max_conn_params_update_count   = MAX_CONN_PARAM_UPDATE_COUNT;
+    cp_init.max_conn_params_update_count   = MAX_CONN_PARAMS_UPDATE_COUNT;
     cp_init.start_on_notify_cccd_handle    = BLE_GATT_HANDLE_INVALID;
     cp_init.disconnect_on_fail             = false;
     cp_init.evt_handler                    = on_conn_params_evt;
@@ -559,7 +572,8 @@ static void conn_params_init(void)
  */
 static void sleep_mode_enter(void)
 {
-    ret_code_t err_code;;
+    ret_code_t err_code;
+
     err_code = bsp_indication_set(BSP_INDICATE_IDLE);
     APP_ERROR_CHECK(err_code);
 
@@ -575,6 +589,8 @@ static void sleep_mode_enter(void)
 
 /**@brief Function for handling advertising events.
  *
+ * @details This function will be called for advertising events which are passed to the application.
+ *
  * @param[in] ble_adv_evt  Advertising event.
  */
 static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
@@ -584,14 +600,14 @@ static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
     switch (ble_adv_evt)
     {
         case BLE_ADV_EVT_FAST:
-            NRF_LOG_INFO("Fast advertising");
+            NRF_LOG_INFO("Fast advertising.");
             err_code = bsp_indication_set(BSP_INDICATE_ADVERTISING);
             APP_ERROR_CHECK(err_code);
-            break; // BLE_ADV_EVT_FAST
+            break;
 
         case BLE_ADV_EVT_IDLE:
             sleep_mode_enter();
-            break; // BLE_ADV_EVT_IDLE
+            break;
 
         default:
             break;
@@ -606,37 +622,24 @@ static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
  */
 static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
 {
-    ret_code_t err_code;
-
-    pm_handler_secure_on_connection(p_ble_evt);
+    uint32_t err_code = NRF_SUCCESS;
 
     switch (p_ble_evt->header.evt_id)
     {
-        case BLE_GAP_EVT_DISCONNECTED:
-        {
-            NRF_LOG_INFO("Disconnected");
-            m_conn_handle = BLE_CONN_HANDLE_INVALID;
-            // Check if the last connected peer had not used MITM, if so, delete its bond information.
-            if (m_peer_to_be_deleted != PM_PEER_ID_INVALID)
-            {
-                err_code = pm_peer_delete(m_peer_to_be_deleted);
-                APP_ERROR_CHECK(err_code);
-                NRF_LOG_DEBUG("Collector's bond deleted");
-                m_peer_to_be_deleted = PM_PEER_ID_INVALID;
-            }
-        } break;
-
         case BLE_GAP_EVT_CONNECTED:
-        {
-            NRF_LOG_INFO("Connected");
-            m_peer_to_be_deleted = PM_PEER_ID_INVALID;
+            NRF_LOG_INFO("Connected.");
             err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
             APP_ERROR_CHECK(err_code);
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
             err_code = nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle);
             APP_ERROR_CHECK(err_code);
-            // Start Security Request timer.
-        } break;
+            break;
+
+        case BLE_GAP_EVT_DISCONNECTED:
+            NRF_LOG_INFO("Disconnected.");
+            m_conn_handle               = BLE_CONN_HANDLE_INVALID;
+            m_hts_meas_ind_conf_pending = false;
+            break;
 
         case BLE_GAP_EVT_PHY_UPDATE_REQUEST:
         {
@@ -664,36 +667,6 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
             err_code = sd_ble_gap_disconnect(p_ble_evt->evt.gatts_evt.conn_handle,
                                              BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
             APP_ERROR_CHECK(err_code);
-            break;
-
-        case BLE_GAP_EVT_SEC_PARAMS_REQUEST:
-            NRF_LOG_DEBUG("BLE_GAP_EVT_SEC_PARAMS_REQUEST");
-            break;
-
-        case BLE_GAP_EVT_PASSKEY_DISPLAY:
-        {
-            char passkey[PASSKEY_LENGTH + 1];
-            memcpy(passkey, p_ble_evt->evt.gap_evt.params.passkey_display.passkey, PASSKEY_LENGTH);
-            passkey[PASSKEY_LENGTH] = 0;
-
-            NRF_LOG_INFO("Passkey: %s", nrf_log_push(passkey));
-        } break;
-        
-        case BLE_GAP_EVT_AUTH_KEY_REQUEST:
-            NRF_LOG_INFO("BLE_GAP_EVT_AUTH_KEY_REQUEST");
-            break;
-
-        case BLE_GAP_EVT_LESC_DHKEY_REQUEST:
-            NRF_LOG_INFO("BLE_GAP_EVT_LESC_DHKEY_REQUEST");
-            break;
-
-         case BLE_GAP_EVT_AUTH_STATUS:
-             NRF_LOG_INFO("BLE_GAP_EVT_AUTH_STATUS: status=0x%x bond=0x%x lv4: %d kdist_own:0x%x kdist_peer:0x%x",
-                          p_ble_evt->evt.gap_evt.params.auth_status.auth_status,
-                          p_ble_evt->evt.gap_evt.params.auth_status.bonded,
-                          p_ble_evt->evt.gap_evt.params.auth_status.sm1_levels.lv4,
-                          *((uint8_t *)&p_ble_evt->evt.gap_evt.params.auth_status.kdist_own),
-                          *((uint8_t *)&p_ble_evt->evt.gap_evt.params.auth_status.kdist_peer));
             break;
 
         default:
@@ -741,7 +714,7 @@ static void bsp_event_handler(bsp_event_t event)
     {
         case BSP_EVENT_SLEEP:
             sleep_mode_enter();
-            break; // BSP_EVENT_SLEEP
+            break;
 
         case BSP_EVENT_DISCONNECT:
             err_code = sd_ble_gap_disconnect(m_conn_handle,
@@ -750,7 +723,7 @@ static void bsp_event_handler(bsp_event_t event)
             {
                 APP_ERROR_CHECK(err_code);
             }
-            break; // BSP_EVENT_DISCONNECT
+            break;
 
         case BSP_EVENT_WHITELIST_OFF:
             if (m_conn_handle == BLE_CONN_HANDLE_INVALID)
@@ -761,11 +734,14 @@ static void bsp_event_handler(bsp_event_t event)
                     APP_ERROR_CHECK(err_code);
                 }
             }
-            break; // BSP_EVENT_WHITELIST_OFF
+            break;
 
-        case BSP_EVENT_KEY_1:
-            read_glucose_measurement();
-            break; // BSP_EVENT_KEY_1
+        case BSP_EVENT_KEY_0:
+            if (m_conn_handle != BLE_CONN_HANDLE_INVALID)
+            {
+                temperature_measurement_send();
+            }
+            break;
 
         default:
             break;
@@ -827,14 +803,14 @@ static void delete_bonds(void)
  */
 static void advertising_init(void)
 {
-    uint32_t               err_code;
+    ret_code_t             err_code;
     ble_advertising_init_t init;
 
     memset(&init, 0, sizeof(init));
 
     init.advdata.name_type               = BLE_ADVDATA_FULL_NAME;
     init.advdata.include_appearance      = true;
-    init.advdata.flags                   = BLE_GAP_ADV_FLAGS_LE_ONLY_LIMITED_DISC_MODE;
+    init.advdata.flags                   = BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE;
     init.advdata.uuids_complete.uuid_cnt = sizeof(m_adv_uuids) / sizeof(m_adv_uuids[0]);
     init.advdata.uuids_complete.p_uuids  = m_adv_uuids;
 
@@ -897,11 +873,6 @@ static void power_management_init(void)
  */
 static void idle_state_handle(void)
 {
-    ret_code_t err_code;
-
-    err_code = nrf_ble_lesc_request_handler();
-    APP_ERROR_CHECK(err_code);
-
     if (NRF_LOG_PROCESS() == false)
     {
         nrf_pwr_mgmt_run();
@@ -920,8 +891,7 @@ static void advertising_start(bool erase_bonds)
     }
     else
     {
-        ret_code_t err_code = ble_advertising_start(&m_advertising, BLE_ADV_MODE_FAST);
-
+        uint32_t err_code = ble_advertising_start(&m_advertising, BLE_ADV_MODE_FAST);
         APP_ERROR_CHECK(err_code);
     }
 }
@@ -948,7 +918,7 @@ int main(void)
     peer_manager_init();
 
     // Start execution.
-    NRF_LOG_INFO("Glucose example started.");
+    NRF_LOG_INFO("Health Thermometer example started.");
     application_timers_start();
     advertising_start(erase_bonds);
 

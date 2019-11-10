@@ -38,6 +38,7 @@
  </Memory4>
  <Project>
   <ProjectSessionItem path="Nordic-BLE"/>
+  <ProjectSessionItem path="Nordic-BLE;BLE-nRF52811"/>
   <ProjectSessionItem path="Nordic-BLE;BLE-nRF52832"/>
   <ProjectSessionItem path="Nordic-BLE;BLE-nRF52832;Application"/>
  </Project>
@@ -88,7 +89,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="13" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52832/main.c" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="932" useTextEdit="1" useBinaryEdit="0" left="0" path="Project-nRF52840/main.c" selected="0" top="913" codecName=""/>
  </Files>
- <ARMCrossStudioWindow activeProject="BLE-nRF52832" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="D:/Nordic-Embedded/nRF5_SDK_15.3.0_59ac345/external/nrf_oberon/lib/cortex-m4/hard-float" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="BLE-nRF52832" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="D:/Nordic-Embedded/ble-rd/nRF5_SDK_16.0.0_98a08e2/external/nrf_cc310/lib/cortex-m4/hard-float" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

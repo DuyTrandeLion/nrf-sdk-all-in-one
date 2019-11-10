@@ -49,6 +49,11 @@
 // <h> Application 
 
 //==========================================================
+// <o> NRF_BLE_GQ_QUEUE_SIZE - Queue size for BLE GATT Queue module. 
+#ifndef NRF_BLE_GQ_QUEUE_SIZE
+#define NRF_BLE_GQ_QUEUE_SIZE 4
+#endif
+
 // <o> ADV_INTERVAL - Advertising interval (in units of 0.625 ms) 
 #ifndef ADV_INTERVAL
 #define ADV_INTERVAL 300
@@ -425,7 +430,7 @@
  
 
 #ifndef BLE_DB_DISCOVERY_ENABLED
-#define BLE_DB_DISCOVERY_ENABLED 1
+#define BLE_DB_DISCOVERY_ENABLED 0
 #endif
 
 // <q> BLE_DTM_ENABLED  - ble_dtm - Module for testing RF/PHY using DTM commands
@@ -470,6 +475,33 @@
 #define NRF_BLE_GATT_ENABLED 1
 #endif
 
+// <e> NRF_BLE_GQ_ENABLED - nrf_ble_gq - BLE GATT Queue Module
+//==========================================================
+#ifndef NRF_BLE_GQ_ENABLED
+#define NRF_BLE_GQ_ENABLED 1
+#endif
+// <o> NRF_BLE_GQ_DATAPOOL_ELEMENT_SIZE - Default size of a single element in the pool of memory objects. 
+#ifndef NRF_BLE_GQ_DATAPOOL_ELEMENT_SIZE
+#define NRF_BLE_GQ_DATAPOOL_ELEMENT_SIZE 20
+#endif
+
+// <o> NRF_BLE_GQ_DATAPOOL_ELEMENT_COUNT - Default number of elements in the pool of memory objects. 
+#ifndef NRF_BLE_GQ_DATAPOOL_ELEMENT_COUNT
+#define NRF_BLE_GQ_DATAPOOL_ELEMENT_COUNT 8
+#endif
+
+// <o> NRF_BLE_GQ_GATTC_WRITE_MAX_DATA_LEN - Maximal size of the data inside GATTC write request (in bytes). 
+#ifndef NRF_BLE_GQ_GATTC_WRITE_MAX_DATA_LEN
+#define NRF_BLE_GQ_GATTC_WRITE_MAX_DATA_LEN 16
+#endif
+
+// <o> NRF_BLE_GQ_GATTS_HVX_MAX_DATA_LEN - Maximal size of the data inside GATTC notification or indication request (in bytes). 
+#ifndef NRF_BLE_GQ_GATTS_HVX_MAX_DATA_LEN
+#define NRF_BLE_GQ_GATTS_HVX_MAX_DATA_LEN 16
+#endif
+
+// </e>
+
 // <q> NRF_BLE_LESC_ENABLED  - nrf_ble_lesc - Le Secure Connection
  
 
@@ -492,7 +524,7 @@
 // <e> NRF_BLE_SCAN_ENABLED - nrf_ble_scan - Scanning Module
 //==========================================================
 #ifndef NRF_BLE_SCAN_ENABLED
-#define NRF_BLE_SCAN_ENABLED 1
+#define NRF_BLE_SCAN_ENABLED 0
 #endif
 // <o> NRF_BLE_SCAN_BUFFER - Data length for an advertising set. 
 #ifndef NRF_BLE_SCAN_BUFFER
@@ -597,7 +629,7 @@
 #endif
 // <o> PM_MAX_REGISTRANTS - Number of event handlers that can be registered. 
 #ifndef PM_MAX_REGISTRANTS
-#define PM_MAX_REGISTRANTS 4
+#define PM_MAX_REGISTRANTS 3
 #endif
 
 // <o> PM_FLASH_BUFFERS - Number of internal buffers for flash operations. 
@@ -647,7 +679,7 @@
 // <e> PM_RA_PROTECTION_ENABLED - Enable/disable protection against repeated pairing attempts in Peer Manager.
 //==========================================================
 #ifndef PM_RA_PROTECTION_ENABLED
-#define PM_RA_PROTECTION_ENABLED 1
+#define PM_RA_PROTECTION_ENABLED 0
 #endif
 // <o> PM_RA_PROTECTION_TRACKED_PEERS_NUM - Maximum number of peers whose authorization status can be tracked. 
 #ifndef PM_RA_PROTECTION_TRACKED_PEERS_NUM
@@ -677,7 +709,7 @@
 // <i>  This might be necessary for interoperability reasons, especially as peripheral.
 
 #ifndef PM_HANDLER_SEC_DELAY_MS
-#define PM_HANDLER_SEC_DELAY_MS 0
+#define PM_HANDLER_SEC_DELAY_MS 400
 #endif
 
 // </e>
@@ -778,7 +810,7 @@
  
 
 #ifndef BLE_CTS_C_ENABLED
-#define BLE_CTS_C_ENABLED 1
+#define BLE_CTS_C_ENABLED 0
 #endif
 
 // <q> BLE_DIS_ENABLED  - ble_dis - Device Information Service
@@ -791,7 +823,7 @@
 // <e> BLE_DIS_C_ENABLED - ble_dis_c - Device Information Client
 //==========================================================
 #ifndef BLE_DIS_C_ENABLED
-#define BLE_DIS_C_ENABLED 1
+#define BLE_DIS_C_ENABLED 0
 #endif
 
 // <o> BLE_DIS_C_QUEUE_SIZE - Size of the queue used for processing pending read requests. 
@@ -807,7 +839,7 @@
  
 
 #ifndef BLE_ECS_ENABLED
-#define BLE_ECS_ENABLED 1
+#define BLE_ECS_ENABLED 0
 #endif
 
 // <q> BLE_GLS_ENABLED  - ble_gls - Glucose Service
@@ -835,14 +867,14 @@
  
 
 #ifndef BLE_HRS_ENABLED
-#define BLE_HRS_ENABLED 1
+#define BLE_HRS_ENABLED 0
 #endif
 
 // <q> BLE_HTS_ENABLED  - ble_hts - Health Thermometer Service
  
 
 #ifndef BLE_HTS_ENABLED
-#define BLE_HTS_ENABLED 1
+#define BLE_HTS_ENABLED 0
 #endif
 
 // <q> BLE_IAS_C_ENABLED  - ble_ias_c - Immediate Alert Service Client
@@ -941,7 +973,7 @@
 // <e> BLE_NUS_ENABLED - ble_nus - Nordic UART Service
 //==========================================================
 #ifndef BLE_NUS_ENABLED
-#define BLE_NUS_ENABLED 1
+#define BLE_NUS_ENABLED 0
 #endif
 // <e> BLE_NUS_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
@@ -2479,7 +2511,7 @@
 #endif
 // <o> NRFX_GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS - Number of lower power input pins 
 #ifndef NRFX_GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS
-#define NRFX_GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS 1
+#define NRFX_GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS 4
 #endif
 
 // <o> NRFX_GPIOTE_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -2874,6 +2906,79 @@
 
 // </e>
 
+// <e> NRFX_NFCT_ENABLED - nrfx_nfct - NFCT peripheral driver
+//==========================================================
+#ifndef NRFX_NFCT_ENABLED
+#define NRFX_NFCT_ENABLED 0
+#endif
+// <o> NRFX_NFCT_CONFIG_IRQ_PRIORITY  - Interrupt priority
+ 
+// <0=> 0 (highest) 
+// <1=> 1 
+// <2=> 2 
+// <3=> 3 
+// <4=> 4 
+// <5=> 5 
+// <6=> 6 
+// <7=> 7 
+
+#ifndef NRFX_NFCT_CONFIG_IRQ_PRIORITY
+#define NRFX_NFCT_CONFIG_IRQ_PRIORITY 6
+#endif
+
+// <e> NRFX_NFCT_CONFIG_LOG_ENABLED - Enables logging in the module.
+//==========================================================
+#ifndef NRFX_NFCT_CONFIG_LOG_ENABLED
+#define NRFX_NFCT_CONFIG_LOG_ENABLED 0
+#endif
+// <o> NRFX_NFCT_CONFIG_LOG_LEVEL  - Default Severity level
+ 
+// <0=> Off 
+// <1=> Error 
+// <2=> Warning 
+// <3=> Info 
+// <4=> Debug 
+
+#ifndef NRFX_NFCT_CONFIG_LOG_LEVEL
+#define NRFX_NFCT_CONFIG_LOG_LEVEL 3
+#endif
+
+// <o> NRFX_NFCT_CONFIG_INFO_COLOR  - ANSI escape code prefix.
+ 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
+
+#ifndef NRFX_NFCT_CONFIG_INFO_COLOR
+#define NRFX_NFCT_CONFIG_INFO_COLOR 0
+#endif
+
+// <o> NRFX_NFCT_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
+ 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
+
+#ifndef NRFX_NFCT_CONFIG_DEBUG_COLOR
+#define NRFX_NFCT_CONFIG_DEBUG_COLOR 0
+#endif
+
+// </e>
+
+// </e>
+
 // <e> NRFX_PDM_ENABLED - nrfx_pdm - PDM peripheral driver
 //==========================================================
 #ifndef NRFX_PDM_ENABLED
@@ -3169,7 +3274,7 @@
 // <e> NRFX_QSPI_ENABLED - nrfx_qspi - QSPI peripheral driver
 //==========================================================
 #ifndef NRFX_QSPI_ENABLED
-#define NRFX_QSPI_ENABLED 1
+#define NRFX_QSPI_ENABLED 0
 #endif
 // <o> NRFX_QSPI_CONFIG_SCK_DELAY - tSHSL, tWHSL and tSHWL in number of 16 MHz periods (62.5 ns).  <0-255> 
 
@@ -3656,7 +3761,7 @@
 // <e> NRFX_RNG_ENABLED - nrfx_rng - RNG peripheral driver
 //==========================================================
 #ifndef NRFX_RNG_ENABLED
-#define NRFX_RNG_ENABLED 0
+#define NRFX_RNG_ENABLED 1
 #endif
 // <q> NRFX_RNG_CONFIG_ERROR_CORRECTION  - Error correction
  
@@ -5213,6 +5318,7 @@
 
 // <i> If set, ISO IN endpoint will respond to an IN token with ZLP when no data is ready to be sent.
 // <i> Else, there will be no response.
+// <i> NOTE: This option does not work on Engineering A chip.
 
 #ifndef NRFX_USBD_CONFIG_ISO_IN_ZLP
 #define NRFX_USBD_CONFIG_ISO_IN_ZLP 0
@@ -5335,6 +5441,13 @@
 
 #ifndef CLOCK_CONFIG_LF_SRC
 #define CLOCK_CONFIG_LF_SRC 1
+#endif
+
+// <q> CLOCK_CONFIG_LF_CAL_ENABLED  - Calibration enable for LF Clock Source
+ 
+
+#ifndef CLOCK_CONFIG_LF_CAL_ENABLED
+#define CLOCK_CONFIG_LF_CAL_ENABLED 0
 #endif
 
 // <o> CLOCK_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -5850,7 +5963,7 @@
 // <e> RNG_ENABLED - nrf_drv_rng - RNG peripheral driver - legacy layer
 //==========================================================
 #ifndef RNG_ENABLED
-#define RNG_ENABLED 0
+#define RNG_ENABLED 1
 #endif
 // <q> RNG_CONFIG_ERROR_CORRECTION  - Error correction
  
@@ -6708,7 +6821,7 @@
  
 
 #ifndef APP_GPIOTE_ENABLED
-#define APP_GPIOTE_ENABLED 0
+#define APP_GPIOTE_ENABLED 1
 #endif
 
 // <q> APP_PWM_ENABLED  - app_pwm - PWM functionality
@@ -6779,7 +6892,7 @@
 // <31=> 1024 Hz 
 
 #ifndef APP_TIMER_CONFIG_RTC_FREQUENCY
-#define APP_TIMER_CONFIG_RTC_FREQUENCY 0
+#define APP_TIMER_CONFIG_RTC_FREQUENCY 1
 #endif
 
 // <o> APP_TIMER_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -6906,22 +7019,31 @@
 #define APP_USBD_PID 0
 #endif
 
-// <o> APP_USBD_DEVICE_VER_MAJOR - Device version, major part.  <0-99> 
+// <o> APP_USBD_DEVICE_VER_MAJOR - Major device version  <0-99> 
 
 
-// <i> Device version, will be converted automatically to BCD notation. Use just decimal values.
+// <i> Major device version, will be converted automatically to BCD notation. Use just decimal values.
 
 #ifndef APP_USBD_DEVICE_VER_MAJOR
 #define APP_USBD_DEVICE_VER_MAJOR 1
 #endif
 
-// <o> APP_USBD_DEVICE_VER_MINOR - Device version, minor part.  <0-99> 
+// <o> APP_USBD_DEVICE_VER_MINOR - Minor device version  <0-9> 
 
 
-// <i> Device version, will be converted automatically to BCD notation. Use just decimal values.
+// <i> Minor device version, will be converted automatically to BCD notation. Use just decimal values.
 
 #ifndef APP_USBD_DEVICE_VER_MINOR
 #define APP_USBD_DEVICE_VER_MINOR 0
+#endif
+
+// <o> APP_USBD_DEVICE_VER_SUB - Sub-minor device version  <0-9> 
+
+
+// <i> Sub-minor device version, will be converted automatically to BCD notation. Use just decimal values.
+
+#ifndef APP_USBD_DEVICE_VER_SUB
+#define APP_USBD_DEVICE_VER_SUB 0
 #endif
 
 // <q> APP_USBD_CONFIG_SELF_POWERED  - Self-powered device, as opposed to bus-powered.
@@ -7454,7 +7576,7 @@
 // <e> MEM_MANAGER_ENABLED - mem_manager - Dynamic memory allocator
 //==========================================================
 #ifndef MEM_MANAGER_ENABLED
-#define MEM_MANAGER_ENABLED 0
+#define MEM_MANAGER_ENABLED 1
 #endif
 // <o> MEMORY_MANAGER_SMALL_BLOCK_COUNT - Size of each memory blocks identified as 'small' block.  <0-255> 
 
@@ -7977,7 +8099,7 @@
 // <e> NRF_QUEUE_ENABLED - nrf_queue - Queue module
 //==========================================================
 #ifndef NRF_QUEUE_ENABLED
-#define NRF_QUEUE_ENABLED 0
+#define NRF_QUEUE_ENABLED 1
 #endif
 // <q> NRF_QUEUE_CLI_CMDS  - Enable CLI commands specific to the module
  
@@ -8006,7 +8128,7 @@
  
 
 #ifndef NRF_SORTLIST_ENABLED
-#define NRF_SORTLIST_ENABLED 0
+#define NRF_SORTLIST_ENABLED 1
 #endif
 
 // <q> NRF_SPI_MNGR_ENABLED  - nrf_spi_mngr - SPI transaction manager
@@ -8246,7 +8368,14 @@
  
 
 #ifndef NRF_FPRINTF_FLAG_AUTOMATIC_CR_ON_LF_ENABLED
-#define NRF_FPRINTF_FLAG_AUTOMATIC_CR_ON_LF_ENABLED 1
+#define NRF_FPRINTF_FLAG_AUTOMATIC_CR_ON_LF_ENABLED 0
+#endif
+
+// <q> NRF_FPRINTF_DOUBLE_ENABLED  - Enable IEEE-754 double precision formatting.
+ 
+
+#ifndef NRF_FPRINTF_DOUBLE_ENABLED
+#define NRF_FPRINTF_DOUBLE_ENABLED 0
 #endif
 
 // </h> 
@@ -8428,6 +8557,17 @@
 
 #ifndef NRF_LOG_FILTERS_ENABLED
 #define NRF_LOG_FILTERS_ENABLED 0
+#endif
+
+// <q> NRF_LOG_NON_DEFFERED_CRITICAL_REGION_ENABLED  - Enable use of critical region for non deffered mode when flushing logs.
+ 
+
+// <i> When enabled NRF_LOG_FLUSH is called from critical section when non deffered mode is used.
+// <i> Log output will never be corrupted as access to the log backend is exclusive
+// <i> but system will spend significant amount of time in critical section
+
+#ifndef NRF_LOG_NON_DEFFERED_CRITICAL_REGION_ENABLED
+#define NRF_LOG_NON_DEFFERED_CRITICAL_REGION_ENABLED 0
 #endif
 
 // <o> NRF_LOG_STR_PUSH_BUFFER_SIZE  - Size of the buffer dedicated for strings stored using @ref NRF_LOG_PUSH.
@@ -9763,6 +9903,73 @@
 // <h> nrf_log in nRF_Libraries 
 
 //==========================================================
+// <e> APP_BUTTON_CONFIG_LOG_ENABLED - Enables logging in the module.
+//==========================================================
+#ifndef APP_BUTTON_CONFIG_LOG_ENABLED
+#define APP_BUTTON_CONFIG_LOG_ENABLED 0
+#endif
+// <o> APP_BUTTON_CONFIG_LOG_LEVEL  - Default Severity level
+ 
+// <0=> Off 
+// <1=> Error 
+// <2=> Warning 
+// <3=> Info 
+// <4=> Debug 
+
+#ifndef APP_BUTTON_CONFIG_LOG_LEVEL
+#define APP_BUTTON_CONFIG_LOG_LEVEL 3
+#endif
+
+// <o> APP_BUTTON_CONFIG_INITIAL_LOG_LEVEL  - Initial severity level if dynamic filtering is enabled.
+ 
+
+// <i> If module generates a lot of logs, initial log level can
+// <i> be decreased to prevent flooding. Severity level can be
+// <i> increased on instance basis.
+// <0=> Off 
+// <1=> Error 
+// <2=> Warning 
+// <3=> Info 
+// <4=> Debug 
+
+#ifndef APP_BUTTON_CONFIG_INITIAL_LOG_LEVEL
+#define APP_BUTTON_CONFIG_INITIAL_LOG_LEVEL 3
+#endif
+
+// <o> APP_BUTTON_CONFIG_INFO_COLOR  - ANSI escape code prefix.
+ 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
+
+#ifndef APP_BUTTON_CONFIG_INFO_COLOR
+#define APP_BUTTON_CONFIG_INFO_COLOR 0
+#endif
+
+// <o> APP_BUTTON_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
+ 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
+
+#ifndef APP_BUTTON_CONFIG_DEBUG_COLOR
+#define APP_BUTTON_CONFIG_DEBUG_COLOR 0
+#endif
+
+// </e>
+
 // <e> APP_TIMER_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
 #ifndef APP_TIMER_CONFIG_LOG_ENABLED
@@ -11564,6 +11771,64 @@
 #define NFC_NDEF_URI_REC_ENABLED 0
 #endif
 
+// <e> NFC_PLATFORM_ENABLED - nfc_platform - NFC platform module for Clock control.
+//==========================================================
+#ifndef NFC_PLATFORM_ENABLED
+#define NFC_PLATFORM_ENABLED 0
+#endif
+// <e> NFC_PLATFORM_LOG_ENABLED - Enables logging in the module.
+//==========================================================
+#ifndef NFC_PLATFORM_LOG_ENABLED
+#define NFC_PLATFORM_LOG_ENABLED 0
+#endif
+// <o> NFC_PLATFORM_LOG_LEVEL  - Default Severity level
+ 
+// <0=> Off 
+// <1=> Error 
+// <2=> Warning 
+// <3=> Info 
+// <4=> Debug 
+
+#ifndef NFC_PLATFORM_LOG_LEVEL
+#define NFC_PLATFORM_LOG_LEVEL 3
+#endif
+
+// <o> NFC_PLATFORM_INFO_COLOR  - ANSI escape code prefix.
+ 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
+
+#ifndef NFC_PLATFORM_INFO_COLOR
+#define NFC_PLATFORM_INFO_COLOR 0
+#endif
+
+// <o> NFC_PLATFORM_DEBUG_COLOR  - ANSI escape code prefix.
+ 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
+
+#ifndef NFC_PLATFORM_DEBUG_COLOR
+#define NFC_PLATFORM_DEBUG_COLOR 0
+#endif
+
+// </e>
+
+// </e>
+
 // <e> NFC_T2T_HAL_ENABLED - nfc_t2t_hal - Hardware Abstraction Layer for NFC library.
 //==========================================================
 #ifndef NFC_T2T_HAL_ENABLED
@@ -12229,7 +12494,7 @@
 // <i> Requested BLE GAP data length to be negotiated.
 
 #ifndef NRF_SDH_BLE_GAP_DATA_LENGTH
-#define NRF_SDH_BLE_GAP_DATA_LENGTH 251
+#define NRF_SDH_BLE_GAP_DATA_LENGTH 27
 #endif
 
 // <o> NRF_SDH_BLE_PERIPHERAL_LINK_COUNT - Maximum number of peripheral links. 
@@ -12258,7 +12523,7 @@
 
 // <o> NRF_SDH_BLE_GATT_MAX_MTU_SIZE - Static maximum MTU size. 
 #ifndef NRF_SDH_BLE_GATT_MAX_MTU_SIZE
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 23
 #endif
 
 // <o> NRF_SDH_BLE_GATTS_ATTR_TAB_SIZE - Attribute Table size in bytes. The size must be a multiple of 4. 
@@ -12268,7 +12533,7 @@
 
 // <o> NRF_SDH_BLE_VS_UUID_COUNT - The number of vendor-specific UUIDs. 
 #ifndef NRF_SDH_BLE_VS_UUID_COUNT
-#define NRF_SDH_BLE_VS_UUID_COUNT 1
+#define NRF_SDH_BLE_VS_UUID_COUNT 0
 #endif
 
 // <q> NRF_SDH_BLE_SERVICE_CHANGED  - Include the Service Changed characteristic in the Attribute Table.
@@ -12561,6 +12826,13 @@
 #define NRF_BLE_GATT_BLE_OBSERVER_PRIO 1
 #endif
 
+// <o> NRF_BLE_GQ_BLE_OBSERVER_PRIO  
+// <i> Priority with which BLE events are dispatched to the GATT Queue module.
+
+#ifndef NRF_BLE_GQ_BLE_OBSERVER_PRIO
+#define NRF_BLE_GQ_BLE_OBSERVER_PRIO 1
+#endif
+
 // <o> NRF_BLE_QWR_BLE_OBSERVER_PRIO  
 // <i> Priority with which BLE events are dispatched to the Queued writes module.
 
@@ -12776,13 +13048,6 @@
 // <h> SoC Observers priorities - Invididual priorities
 
 //==========================================================
-// <o> BLE_ADV_SOC_OBSERVER_PRIO  
-// <i> Priority with which SoC events are dispatched to the Advertising module.
-
-#ifndef BLE_ADV_SOC_OBSERVER_PRIO
-#define BLE_ADV_SOC_OBSERVER_PRIO 1
-#endif
-
 // <o> BLE_DFU_SOC_OBSERVER_PRIO  
 // <i> Priority with which BLE events are dispatched to the DFU Service.
 
