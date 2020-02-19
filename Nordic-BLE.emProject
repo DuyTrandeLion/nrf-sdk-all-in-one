@@ -2331,7 +2331,7 @@
       <configuration Name="Debug" build_exclude_from_build="Yes" />
     </folder>
   </project>
-  <project Name="BLE-nRF52811">
+  <project Name="BLE-nRF52833">
     <configuration
       Name="Common"
       arm_architecture="v7EM"
@@ -2342,111 +2342,24 @@
       arm_linker_process_stack_size="0"
       arm_linker_stack_size="1024"
       arm_linker_variant="SEGGER"
-      arm_simulator_memory_simulation_parameter="RX 00000000,00030000,FFFFFFFF;RWX 20000000,00006000,CDCDCDCD"
-      arm_target_device_name="nRF52811_xxAA"
+      arm_simulator_memory_simulation_parameter="RX 00000000,00080000,FFFFFFFF;RWX 20000000,00020000,CDCDCDCD"
+      arm_target_device_name="nRF52833_xxAA"
       arm_target_interface_type="SWD"
       c_user_include_directories="SEGGER"
       debug_target_connection="J-Link"
       link_linker_script_file="Setup/SEGGER_Flash.icf"
       linker_output_format="hex"
-      linker_section_placements_segments="FLASH1 RX 0x00000000 0x00030000;RAM1 RWX 0x20000000 0x00006000"
-      project_directory="Project-nRF52811"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x00080000;RAM1 RWX 0x20000000 0x00020000"
+      project_directory="Project-nRF52833"
       project_type="Executable" />
     <configuration Name="Debug" c_preprocessor_definitions="DEBUG" />
-    <folder Name="nRF_Drivers">
-      <folder Name="integration/nrfx/legacy">
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_clock.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_power.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_ppi.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_rng.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_spi.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_spis.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_swi.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_twi.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_uart.c" />
-      </folder>
-      <folder Name="modules/nrfx/drivers">
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_adc.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_clock.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_comp.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_gpiote.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_i2s.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_lpcomp.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_pdm.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_power.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_ppi.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_pwm.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_qdec.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_qspi.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_rng.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_rtc.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_saadc.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_spi.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_spim.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_spis.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_swi.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_systick.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_timer.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_twi.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_twim.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_twis.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_uart.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_uarte.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_wdt.c" />
-        <folder Name="prs">
-          <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/prs/nrfx_prs.c" />
-        </folder>
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_usbd.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_dppi.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_nfct.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_nvmc.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_temp.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_twi_twim.c" />
-      </folder>
-      <folder Name="modules/nrfx/hal">
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/hal/nrf_ecb.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/hal/nrf_nvmc.c" />
-      </folder>
-      <folder Name="components/drivers_nrf">
-        <folder Name="nrf_soc_nosd">
-          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/nrf_soc_nosd/nrf_nvic.c" />
-          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/nrf_soc_nosd/nrf_soc.c" />
-          <configuration Name="Debug" build_exclude_from_build="Yes" />
-        </folder>
-        <folder Name="radio_config">
-          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/radio_config/radio_config.c" />
-          <configuration Name="Debug" build_exclude_from_build="Yes" />
-        </folder>
-        <folder Name="sdio">
-          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/sdio/sdio.c" />
-          <configuration Name="Debug" build_exclude_from_build="Yes" />
-        </folder>
-        <folder Name="spi_master">
-          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/spi_master/spi_5W_master.c" />
-          <configuration Name="Debug" build_exclude_from_build="Yes" />
-        </folder>
-        <folder Name="twi_master">
-          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/twi_master/deprecated/twi_hw_master.c" />
-          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/twi_master/deprecated/twi_sw_master.c" />
-          <configuration Name="Debug" build_exclude_from_build="Yes" />
-        </folder>
+    <folder Name="Application">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <file file_name="main.c" />
+      <file file_name="config/sdk_config.h" />
+      <file file_name="Core/include/main.h">
         <configuration Name="Debug" build_exclude_from_build="Yes" />
-      </folder>
-      <folder Name="modules/soc">
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/soc/nrfx_atomic.c" />
-      </folder>
-      <folder Name="components/drivers_ext">
-        <folder Name="nrf6350">
-          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_ext/nrf6350/nrf6350.c" />
-        </folder>
-        <folder Name="pcal6408a">
-          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_ext/pcal6408a/pcal6408a.c" />
-        </folder>
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
-      </folder>
-    </folder>
-    <folder Name="external/UTF8/UTF16_Converter">
-      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/utf_converter/utf.c" />
+      </file>
     </folder>
     <folder Name="Board Definition">
       <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/boards/boards.c" />
@@ -2568,7 +2481,7 @@
       </folder>
       <folder Name="ble_dis_c">
         <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/ble/ble_services/ble_dis_c/ble_dis_c.c" />
-        <configuration Name="Debug" build_exclude_from_build="No" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="ble_escs">
         <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/ble/ble_services/ble_escs/nrf_ble_escs.c" />
@@ -3000,21 +2913,6 @@
         <configuration Name="Debug" build_exclude_from_build="No" />
       </folder>
     </folder>
-    <folder Name="nRF_Log">
-      <folder Name="external/fprintf">
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/fprintf/nrf_fprintf.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/fprintf/nrf_fprintf_format.c" />
-      </folder>
-      <folder Name="components/nRF_Libraries/log">
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_backend_flash.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_backend_rtt.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_backend_serial.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_backend_uart.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_default_backends.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_frontend.c" />
-        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_str_formatter.c" />
-      </folder>
-    </folder>
     <folder Name="components/nRF_Libraries/nRF_Crypto">
       <configuration Name="Debug" build_exclude_from_build="No" />
       <folder Name="crypto/backend/cc310">
@@ -3393,11 +3291,6 @@
       </file>
       <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/softdevice/common/nrf_sdh_soc.c" />
     </folder>
-    <folder Name="external/nRF_Segger_RTT">
-      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/segger_rtt/SEGGER_RTT.c" />
-      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/segger_rtt/SEGGER_RTT_printf.c" />
-      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/segger_rtt/SEGGER_RTT_Syscalls_SES.c" />
-    </folder>
     <folder Name="components/proprietary_rf">
       <folder Name="esb">
         <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/proprietary_rf/esb/nrf_esb.c" />
@@ -3412,6 +3305,15 @@
         <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/proprietary_rf/gzll/nrf_gzp_host.c" />
         <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/proprietary_rf/gzll/nrf_gzp_host_nrf5x.c" />
       </folder>
+      <configuration Name="Debug" build_exclude_from_build="Yes" />
+    </folder>
+    <folder Name="external/cifra_AES128-EAX">
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/cifra_AES128-EAX/blockwise.c" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/cifra_AES128-EAX/cifra_cmac.c" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/cifra_AES128-EAX/cifra_eax_aes.c" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/cifra_AES128-EAX/eax.c" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/cifra_AES128-EAX/gf128.c" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/cifra_AES128-EAX/modes.c" />
       <configuration Name="Debug" build_exclude_from_build="Yes" />
     </folder>
     <folder Name="external/FATFS">
@@ -3431,18 +3333,139 @@
       </folder>
       <configuration Name="Debug" build_exclude_from_build="Yes" />
     </folder>
-    <folder Name="external/nRF_TLS">
-      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/mbedtls/library/aes.c" />
-      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/mbedtls/library/ctr_drbg.c" />
-      <configuration Name="Debug" build_exclude_from_build="No" />
+    <folder Name="external/nRF_CC310">
+      <configuration Name="Debug" build_exclude_from_build="Yes" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/nrf_cc310/lib/cortex-m4/hard-float/libnrf_cc310_0.9.12.a" />
     </folder>
     <folder Name="external/nRF_Oberon">
       <configuration Name="Debug" build_exclude_from_build="No" />
       <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/nrf_oberon/lib/cortex-m4/hard-float/liboberon_3.0.1.a" />
     </folder>
-    <folder Name="external/nRF_CC310">
-      <configuration Name="Debug" build_exclude_from_build="Yes" />
-      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/nrf_cc310/lib/cortex-m4/hard-float/libnrf_cc310_0.9.12.a" />
+    <folder Name="external/nRF_Segger_RTT">
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/segger_rtt/SEGGER_RTT.c" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/segger_rtt/SEGGER_RTT_printf.c" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/segger_rtt/SEGGER_RTT_Syscalls_SES.c" />
+    </folder>
+    <folder Name="external/nRF_TLS">
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/mbedtls/library/aes.c" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/mbedtls/library/ctr_drbg.c" />
+      <configuration Name="Debug" build_exclude_from_build="No" />
+    </folder>
+    <folder Name="external/UTF8/UTF16_Converter">
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/utf_converter/utf.c" />
+    </folder>
+    <folder Name="nRF_Drivers">
+      <folder Name="integration/nrfx/legacy">
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_clock.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_power.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_ppi.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_rng.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_spi.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_spis.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_swi.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_twi.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_uart.c" />
+      </folder>
+      <folder Name="modules/nrfx/drivers">
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_adc.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_clock.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_comp.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_gpiote.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_i2s.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_lpcomp.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_pdm.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_power.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_ppi.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_pwm.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_qdec.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_qspi.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_rng.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_rtc.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_saadc.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_spi.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_spim.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_spis.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_swi.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_systick.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_timer.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_twi.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_twim.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_twis.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_uart.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_uarte.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_wdt.c" />
+        <folder Name="prs">
+          <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/prs/nrfx_prs.c" />
+        </folder>
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_usbd.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_dppi.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_nfct.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_nvmc.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_temp.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_twi_twim.c" />
+      </folder>
+      <folder Name="modules/nrfx/hal">
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/hal/nrf_ecb.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/hal/nrf_nvmc.c" />
+      </folder>
+      <folder Name="components/drivers_nrf">
+        <folder Name="nrf_soc_nosd">
+          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/nrf_soc_nosd/nrf_nvic.c" />
+          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/nrf_soc_nosd/nrf_soc.c" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </folder>
+        <folder Name="radio_config">
+          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/radio_config/radio_config.c" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </folder>
+        <folder Name="sdio">
+          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/sdio/sdio.c" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </folder>
+        <folder Name="spi_master">
+          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/spi_master/spi_5W_master.c" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </folder>
+        <folder Name="twi_master">
+          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/twi_master/deprecated/twi_hw_master.c" />
+          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_nrf/twi_master/deprecated/twi_sw_master.c" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </folder>
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </folder>
+      <folder Name="modules/soc">
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/soc/nrfx_atomic.c" />
+      </folder>
+      <folder Name="components/drivers_ext">
+        <folder Name="nrf6350">
+          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_ext/nrf6350/nrf6350.c" />
+        </folder>
+        <folder Name="pcal6408a">
+          <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/drivers_ext/pcal6408a/pcal6408a.c" />
+        </folder>
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </folder>
+    </folder>
+    <folder Name="nRF_Log">
+      <folder Name="external/fprintf">
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/fprintf/nrf_fprintf.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/fprintf/nrf_fprintf_format.c" />
+      </folder>
+      <folder Name="components/nRF_Libraries/log">
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_backend_flash.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_backend_rtt.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_backend_serial.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_backend_uart.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_default_backends.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_frontend.c" />
+        <file file_name="../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_str_formatter.c" />
+      </folder>
+    </folder>
+    <folder Name="Toolchain">
+      <file file_name="$(StudioDir)/source/thumb_crt0.s" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/mdk/ses_startup_nrf_common.s" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/mdk/ses_startup_nrf52.s" />
+      <file file_name="../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/mdk/system_nrf52.c" />
     </folder>
   </project>
 </solution>
