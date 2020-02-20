@@ -3354,7 +3354,7 @@
       <configuration Name="Debug" build_exclude_from_build="Yes" />
     </folder>
     <folder Name="external/nRF_CC310">
-      <configuration Name="Debug" build_exclude_from_build="Yes" />
+      <configuration Name="Debug" build_exclude_from_build="No" />
       <file file_name="../nRF5_SDK_16.0.0_98a08e2/external/nrf_cc310/lib/cortex-m4/hard-float/libnrf_cc310_0.9.12.a" />
     </folder>
     <folder Name="external/nRF_Oberon">
