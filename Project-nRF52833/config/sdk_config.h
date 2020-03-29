@@ -1028,6 +1028,35 @@
 
 // </e>
 
+// <q> BLE_OTS_ENABLED  - ble_ots - Object transfer service
+ 
+
+#ifndef BLE_OTS_ENABLED
+#define BLE_OTS_ENABLED 1
+#endif
+
+// <e> BLE_OTS_C_ENABLED  - nrf_ble_ots_c - Object Transfer Service Client
+//==========================================================
+#ifndef BLE_OTS_C_ENABLED
+#define BLE_OTS_C_ENABLED 1
+#endif
+
+// <q> BLE_OTS_C_L2CAP_ENABLED  - nrf_ble_ots_c_l2cap - OTS Client L2CAP
+ 
+
+#ifndef BLE_OTS_C_L2CAP_ENABLED
+#define BLE_OTS_C_L2CAP_ENABLED 1
+#endif
+
+// <q> BLE_OTS_C_OACP_ENABLED  - nrf_ble_ots_c_oacp - OTS Client Object Action Control Point
+ 
+
+#ifndef BLE_OTS_C_OACP_ENABLED
+#define BLE_OTS_C_OACP_ENABLED 1
+#endif
+
+// </e>
+
 // <q> BLE_RSCS_C_ENABLED  - ble_rscs_c - Running Speed and Cadence Client
  
 
