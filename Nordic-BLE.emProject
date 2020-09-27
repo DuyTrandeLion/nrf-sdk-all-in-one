@@ -24,7 +24,6 @@
       debug_target_connection="J-Link"
       gcc_debugging_level="Level 3"
       gcc_entry_point="Reset_Handler"
-      link_linker_script_file="$(ProjectDir)/SEGGER_Flash.icf"
       linker_output_format="hex"
       linker_printf_fmt_level="long"
       linker_printf_width_precision_supported="Yes"
@@ -607,11 +606,6 @@
       <configuration Name="Debug" build_exclude_from_build="Yes" />
       <configuration Name="Release" build_exclude_from_build="Yes" />
     </folder>
-    <configuration
-      Name="Debug"
-      arm_linker_heap_size="4096"
-      debug_additional_load_file="$(SolutionDir)/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/hex/s140_nrf52_7.2.0_softdevice.hex"
-      linker_section_placements_segments="FLASH RX 0x0 0x100000;RAM1 RWX 0x20000000 0x40000" />
     <folder Name="components/nRF_BLE/nRF_BLE_Services">
       <folder Name="ble_ancs_c">
         <file file_name="../nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_ancs_c/ancs_app_attr_get.c" />
@@ -1271,9 +1265,6 @@
       <configuration Name="Debug" build_exclude_from_build="Yes" />
       <configuration Name="Release" build_exclude_from_build="Yes" />
     </folder>
-    <configuration
-      Name="Release"
-      linker_section_placements_segments="FLASH RX 0x0 0x100000;RAM1 RWX 0x20000000 0x40000" />
     <folder Name="external/nRF_TLS">
       <file file_name="../nRF5_SDK_17.0.2_d674dde/external/nrf_tls/mbedtls/tls_interface.c" />
       <configuration Name="Debug" build_exclude_from_build="Yes" />
@@ -1329,7 +1320,6 @@
       debug_target_connection="J-Link"
       gcc_debugging_level="Level 3"
       gcc_entry_point="Reset_Handler"
-      link_linker_script_file="$(ProjectDir)/SEGGER_Flash.icf"
       linker_output_format="hex"
       linker_printf_fmt_level="long"
       linker_printf_width_precision_supported="Yes"
@@ -1627,12 +1617,6 @@
       <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/ses_startup_nrf52.s" />
       <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52.c" />
     </folder>
-    <configuration
-      Name="Debug"
-      debug_additional_load_file="$(SolutionDir)/nRF5_SDK_17.0.2_d674dde/components/softdevice/s132/hex/s132_nrf52_7.2.0_softdevice.hex"
-      debug_register_definition_file="$(SolutionDir)/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52"
-      debug_start_from_entry_point_symbol="No"
-      linker_section_placement_file="$(ProjectDir)/flash_placement.xml" />
     <folder Name="external/FATFS">
       <folder Name="port">
         <file file_name="../nRF5_SDK_17.0.2_d674dde/external/fatfs/port/diskio_blkdev.c" />
@@ -1712,9 +1696,6 @@
       <configuration Name="Debug" build_exclude_from_build="Yes" />
       <configuration Name="Release" build_exclude_from_build="Yes" />
     </folder>
-    <configuration
-      Name="Release"
-      debug_additional_load_file="$(SolutionDir)/nRF5_SDK_17.0.2_d674dde/components/softdevice/s132/hex/s132_nrf52_7.2.0_softdevice.hex" />
     <folder Name="components/nRF_BLE">
       <folder Name="ble_advertising">
         <file file_name="../nRF5_SDK_17.0.2_d674dde/components/ble/ble_advertising/ble_advertising.c" />
@@ -2604,7 +2585,6 @@
       debug_target_connection="J-Link"
       gcc_debugging_level="Level 3"
       gcc_entry_point="Reset_Handler"
-      link_linker_script_file="$(ProjectDir)/flash_placement.xml"
       linker_output_format="hex"
       linker_printf_fmt_level="long"
       linker_printf_width_precision_supported="Yes"
@@ -2617,8 +2597,7 @@
       project_type="Executable" />
     <configuration
       Name="Debug"
-      c_preprocessor_definitions="DEBUG"
-      debug_additional_load_file="$(SolutionDir)/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/hex/s140_nrf52_7.2.0_softdevice.hex" />
+      c_preprocessor_definitions="DEBUG" />
     <folder Name="Application">
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
       <file file_name="main.c" />

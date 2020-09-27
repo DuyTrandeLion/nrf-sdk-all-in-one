@@ -95,5 +95,5 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files/>
- <ARMCrossStudioWindow activeProject="BLE-nRF52840" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="D:/Nordic-Embedded/ble-rd/nRF5_SDK_17.0.2_d674dde/external/nrf_oberon/lib/cortex-m4/hard-float" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="BLE-nRF52840" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="D:/Nordic-Embedded/ble-rd/nRF5_SDK_17.0.2_d674dde/external/nrf_oberon/lib/cortex-m4/hard-float" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
