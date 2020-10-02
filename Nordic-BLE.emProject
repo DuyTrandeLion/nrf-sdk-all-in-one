@@ -680,8 +680,8 @@
       </folder>
       <folder Name="ble_hrs">
         <file file_name="../nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_hrs/ble_hrs.c" />
-        <configuration Name="Debug" build_exclude_from_build="No" />
-        <configuration Name="Release" build_exclude_from_build="No" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Release" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="ble_hrs_c">
         <file file_name="../nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_hrs_c/ble_hrs_c.c" />
@@ -2595,9 +2595,7 @@
       macros="CMSIS_CONFIG_TOOL=../nRF5_SDK_17.0.2_d674dde/external_tools/cmsisconfig/CMSIS_Configuration_Wizard.jar"
       project_directory="Project-nRF52833"
       project_type="Executable" />
-    <configuration
-      Name="Debug"
-      c_preprocessor_definitions="DEBUG" />
+    <configuration Name="Debug" c_preprocessor_definitions="DEBUG" />
     <folder Name="Application">
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
       <file file_name="main.c" />

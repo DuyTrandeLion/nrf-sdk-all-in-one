@@ -3,7 +3,6 @@
  <Bookmarks/>
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
   <BreakpointListItem trigger="" line="628" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="nRF5_SDK_16.0.0_98a08e2/components/ble/peer_manager/security_manager.c" useHWbreakpoint="false"/>
-  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
  <FrameBufferWindow>
@@ -97,7 +96,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="932" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="Project-nRF52840/main.c" selected="1" top="910" codecName=""/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="932" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="Project-nRF52840/main.c" selected="0" top="912" codecName=""/>
  </Files>
  <ARMCrossStudioWindow activeProject="BLE-nRF52840" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="D:/Nordic-Embedded/ble-rd/nRF5_SDK_17.0.2_d674dde/external/nrf_oberon/lib/cortex-m4/hard-float" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

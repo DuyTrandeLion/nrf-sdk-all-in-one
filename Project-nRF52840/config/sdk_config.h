@@ -1032,13 +1032,13 @@
 
 
 #ifndef BLE_OTS_ENABLED
-#define BLE_OTS_ENABLED 1
+#define BLE_OTS_ENABLED 0
 #endif
 
 // <e> BLE_OTS_C_ENABLED  - nrf_ble_ots_c - Object Transfer Service Client
 //==========================================================
 #ifndef BLE_OTS_C_ENABLED
-#define BLE_OTS_C_ENABLED 1
+#define BLE_OTS_C_ENABLED 0
 #endif
 
 // <q> BLE_OTS_C_L2CAP_ENABLED  - nrf_ble_ots_c_l2cap - OTS Client L2CAP
