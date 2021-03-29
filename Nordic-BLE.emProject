@@ -238,17 +238,25 @@
         <file file_name="../nRF5_SDK_17.0.2_d674dde/integration/nrfx/legacy/nrf_drv_swi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/integration/nrfx/legacy/nrf_drv_twi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/integration/nrfx/legacy/nrf_drv_uart.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Release" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="modules/nrfx/drivers">
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_adc.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_clock.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_comp.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_comp.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_gpiote.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_i2s.c">
           <configuration Name="Debug" build_exclude_from_build="Yes" />
           <configuration Name="Release" build_exclude_from_build="Yes" />
         </file>
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_lpcomp.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_lpcomp.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_pdm.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_power.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_ppi.c" />
@@ -289,7 +297,10 @@
           <configuration Name="Release" build_exclude_from_build="Yes" />
         </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_nvmc.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_temp.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_temp.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twi_twim.c" />
       </folder>
       <folder Name="modules/nrfx/hal">
@@ -2341,43 +2352,75 @@
         <file file_name="../nRF5_SDK_17.0.2_d674dde/integration/nrfx/legacy/nrf_drv_swi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/integration/nrfx/legacy/nrf_drv_twi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/integration/nrfx/legacy/nrf_drv_uart.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Release" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="modules/nrfx/drivers">
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_adc.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_clock.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_comp.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_comp.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_gpiote.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_i2s.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_lpcomp.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_i2s.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_lpcomp.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_pdm.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_power.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_ppi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_pwm.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_qdec.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_qspi.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_qdec.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_qspi.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_rng.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_rtc.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_saadc.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_spi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_spim.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_spis.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_spis.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_swi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_systick.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_timer.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twim.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twis.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twis.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uart.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_wdt.c" />
         <folder Name="prs">
           <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/prs/nrfx_prs.c" />
         </folder>
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_usbd.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_usbd.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_dppi.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_nfct.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_nfct.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_nvmc.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_temp.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_temp.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twi_twim.c" />
       </folder>
       <folder Name="modules/nrfx/hal">
@@ -3707,43 +3750,74 @@
         <file file_name="../nRF5_SDK_17.0.2_d674dde/integration/nrfx/legacy/nrf_drv_swi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/integration/nrfx/legacy/nrf_drv_twi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/integration/nrfx/legacy/nrf_drv_uart.c" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Release" build_exclude_from_build="Yes" />
       </folder>
       <folder Name="modules/nrfx/drivers">
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_adc.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_clock.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_comp.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_comp.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_gpiote.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_i2s.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_lpcomp.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_i2s.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_lpcomp.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_pdm.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_power.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_ppi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_pwm.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_qdec.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_qspi.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_qdec.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_qspi.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_rng.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_rtc.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_saadc.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_spi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_spim.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_spis.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_spis.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_swi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_systick.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_timer.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twi.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twim.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twis.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twis.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uart.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" />
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_wdt.c" />
         <folder Name="prs">
           <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/prs/nrfx_prs.c" />
         </folder>
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_usbd.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_usbd.c">
+          <configuration Name="Release" build_exclude_from_build="No" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_dppi.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_nfct.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_nfct.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_nvmc.c" />
-        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_temp.c" />
+        <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_temp.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
         <file file_name="../nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_twi_twim.c" />
       </folder>
       <folder Name="modules/nrfx/hal">
