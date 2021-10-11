@@ -120,13 +120,17 @@
 #define LESC_DEBUG_MODE                     0                                       /**< Set to 1 to use LESC debug keys, allows you to use a sniffer to inspect traffic. */
 
 #define SEC_PARAM_BOND                      1                                       /**< Perform bonding. */
-#define SEC_PARAM_MITM                      0                                       /**< Man In The Middle protection not required. */
+#define SEC_PARAM_MITM                      1                                       /**< Man In The Middle protection not required. */
 #define SEC_PARAM_LESC                      1                                       /**< LE Secure Connections enabled. */
 #define SEC_PARAM_KEYPRESS                  0                                       /**< Keypress notifications not enabled. */
-#define SEC_PARAM_IO_CAPABILITIES           BLE_GAP_IO_CAPS_NONE                    /**< No I/O capabilities. */
+#define SEC_PARAM_IO_CAPABILITIES           BLE_GAP_IO_CAPS_DISPLAY_ONLY            /**< No I/O capabilities. */
 #define SEC_PARAM_OOB                       0                                       /**< Out Of Band data not available. */
 #define SEC_PARAM_MIN_KEY_SIZE              7                                       /**< Minimum encryption key size. */
 #define SEC_PARAM_MAX_KEY_SIZE              16                                      /**< Maximum encryption key size. */
+
+#define PASSKEY_TXT                         "Passkey:"                              /**< Message to be displayed together with the pass-key. */
+#define PASSKEY_TXT_LENGTH                  8                                       /**< Length of message to be displayed together with the pass-key. */
+#define PASSKEY_LENGTH                      6                                       /**< Length of pass-key received by the stack for display. */
 
 #define DEAD_BEEF                           0xDEADBEEF                              /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
 
@@ -141,6 +145,7 @@ APP_TIMER_DEF(m_heart_rate_timer_id);                               /**< Heart r
 APP_TIMER_DEF(m_rr_interval_timer_id);                              /**< RR interval timer. */
 APP_TIMER_DEF(m_sensor_contact_timer_id);                           /**< Sensor contact detected timer. */
 
+static pm_peer_id_t m_peer_to_be_deleted = PM_PEER_ID_INVALID;
 static uint16_t m_conn_handle         = BLE_CONN_HANDLE_INVALID;    /**< Handle of the current connection. */
 static bool     m_rr_interval_enabled = true;                       /**< Flag for enabling and disabling the registration of new RR interval measurements (the purpose of disabling this is just to test sending HRM without RR interval data. */
 
@@ -214,11 +219,45 @@ void advertising_start(bool erase_bonds)
  */
 static void pm_evt_handler(pm_evt_t const * p_evt)
 {
+    ret_code_t err_code;
+
     pm_handler_on_pm_evt(p_evt);
+    pm_handler_disconnect_on_sec_failure(p_evt);
     pm_handler_flash_clean(p_evt);
 
     switch (p_evt->evt_id)
     {
+        case PM_EVT_CONN_SEC_SUCCEEDED:
+        {
+            pm_conn_sec_status_t conn_sec_status;
+
+            // Check if the link is authenticated (meaning at least MITM).
+            err_code = pm_conn_sec_status_get(p_evt->conn_handle, &conn_sec_status);
+            APP_ERROR_CHECK(err_code);
+
+            if (conn_sec_status.mitm_protected)
+            {
+                NRF_LOG_INFO("Link secured. Role: %d. conn_handle: %d, Procedure: %d",
+                             ble_conn_state_role(p_evt->conn_handle),
+                             p_evt->conn_handle,
+                             p_evt->params.conn_sec_succeeded.procedure);
+            }
+            else
+            {
+                // The peer did not use MITM, disconnect.
+                NRF_LOG_INFO("Collector did not use MITM, disconnecting");
+                err_code = pm_peer_id_get(m_conn_handle, &m_peer_to_be_deleted);
+                APP_ERROR_CHECK(err_code);
+                err_code = sd_ble_gap_disconnect(m_conn_handle,
+                                                 BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+                APP_ERROR_CHECK(err_code);
+            }
+        } break;
+
+        case PM_EVT_CONN_SEC_FAILED:
+            m_conn_handle = BLE_CONN_HANDLE_INVALID;
+            break;
+
         case PM_EVT_PEERS_DELETE_SUCCEEDED:
             advertising_start(false);
             break;
@@ -687,22 +726,35 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
 {
     ret_code_t err_code;
 
+    pm_handler_secure_on_connection(p_ble_evt);
+
     switch (p_ble_evt->header.evt_id)
     {
+        case BLE_GAP_EVT_DISCONNECTED:
+        {
+            NRF_LOG_INFO("Disconnected, reason %d.", p_ble_evt->evt.gap_evt.params.disconnected.reason);
+            m_conn_handle = BLE_CONN_HANDLE_INVALID;
+            // Check if the last connected peer had not used MITM, if so, delete its bond information.
+            if (m_peer_to_be_deleted != PM_PEER_ID_INVALID)
+            {
+                err_code = pm_peer_delete(m_peer_to_be_deleted);
+                APP_ERROR_CHECK(err_code);
+                NRF_LOG_DEBUG("Collector's bond deleted");
+                m_peer_to_be_deleted = PM_PEER_ID_INVALID;
+            }
+        } break;
+
         case BLE_GAP_EVT_CONNECTED:
-            NRF_LOG_INFO("Connected.");
+        {
+            NRF_LOG_INFO("Connected");
+            m_peer_to_be_deleted = PM_PEER_ID_INVALID;
             err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
             APP_ERROR_CHECK(err_code);
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
             err_code = nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle);
             APP_ERROR_CHECK(err_code);
-            break;
-
-        case BLE_GAP_EVT_DISCONNECTED:
-            NRF_LOG_INFO("Disconnected, reason %d.",
-                          p_ble_evt->evt.gap_evt.params.disconnected.reason);
-            m_conn_handle = BLE_CONN_HANDLE_INVALID;
-            break;
+            // Start Security Request timer.
+        } break;
 
         case BLE_GAP_EVT_PHY_UPDATE_REQUEST:
         {
@@ -735,6 +787,15 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
         case BLE_GAP_EVT_SEC_PARAMS_REQUEST:
             NRF_LOG_DEBUG("BLE_GAP_EVT_SEC_PARAMS_REQUEST");
             break;
+
+        case BLE_GAP_EVT_PASSKEY_DISPLAY:
+        {
+            char passkey[PASSKEY_LENGTH + 1];
+            memcpy(passkey, p_ble_evt->evt.gap_evt.params.passkey_display.passkey, PASSKEY_LENGTH);
+            passkey[PASSKEY_LENGTH] = 0;
+
+            NRF_LOG_INFO("Passkey: %s", nrf_log_push(passkey));
+        } break;
         
         case BLE_GAP_EVT_AUTH_KEY_REQUEST:
             NRF_LOG_INFO("BLE_GAP_EVT_AUTH_KEY_REQUEST");
